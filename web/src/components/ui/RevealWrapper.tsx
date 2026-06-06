@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, Variants } from 'framer-motion';
 import { useRef, ReactNode } from 'react';
 
 interface RevealWrapperProps {
@@ -14,7 +14,7 @@ export default function RevealWrapper({ children, delay = 0, className = '', dir
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-80px' });
 
-  const variants = {
+  const variants: Variants = {
     hidden: {
       opacity: 0,
       y: direction === 'up' ? 40 : 0,
