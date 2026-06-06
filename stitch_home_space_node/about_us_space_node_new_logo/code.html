@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | SPACE NODE ARCHITECTURE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Hanken+Grotesk:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#010101",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#ffd399",
+                    "surface-variant": "#e4e2de",
+                    "surface-container-highest": "#e4e2de",
+                    "on-primary-fixed-variant": "#474746",
+                    "surface-bright": "#fbf9f5",
+                    "surface-container-low": "#f5f3ef",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#1d1c1b",
+                    "on-surface": "#1b1c1a",
+                    "primary": "#010101",
+                    "on-tertiary-fixed-variant": "#484645",
+                    "inverse-on-surface": "#f2f0ec",
+                    "secondary-fixed-dim": "#eac088",
+                    "surface-container-high": "#eae8e4",
+                    "outline-variant": "#c4c7c7",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#1b1c1a",
+                    "on-tertiary-fixed": "#1c1b1a",
+                    "secondary-fixed": "#ffddb3",
+                    "surface-dim": "#dbdad6",
+                    "on-primary": "#ffffff",
+                    "primary-container": "#1c1c1c",
+                    "primary-fixed": "#e5e2e1",
+                    "on-secondary-fixed": "#291800",
+                    "tertiary-fixed-dim": "#cac6c4",
+                    "on-primary-container": "#858484",
+                    "on-surface-variant": "#444748",
+                    "warm-bg": "#F8F6F2",
+                    "surface": "#fbf9f5",
+                    "on-error": "#ffffff",
+                    "background": "#fbf9f5",
+                    "muted-divider": "#D9D4CC",
+                    "tertiary-fixed": "#e6e2df",
+                    "surface-tint": "#5f5e5e",
+                    "error-container": "#ffdad6",
+                    "ink-black": "#1C1C1C",
+                    "outline": "#747878",
+                    "surface-container": "#efeeea",
+                    "on-secondary-fixed-variant": "#5e4115",
+                    "secondary": "#78592a",
+                    "brand-blue": "#00718F",
+                    "on-tertiary-container": "#878482",
+                    "on-primary-fixed": "#1b1b1b",
+                    "inverse-primary": "#c8c6c5",
+                    "on-secondary-container": "#79592b",
+                    "error": "#ba1a1a",
+                    "inverse-surface": "#30312e",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-tablet": "40px",
+                    "container-max": "1440px",
+                    "section-padding": "160px",
+                    "unit": "8px",
+                    "margin-desktop": "80px",
+                    "gutter": "32px",
+                    "margin-mobile": "24px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Hanken Grotesk"],
+                    "body-md": ["Hanken Grotesk"],
+                    "display-xl": ["Playfair Display"],
+                    "display-xl-mobile": ["Playfair Display"],
+                    "label-caps": ["Hanken Grotesk"],
+                    "headline-md": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "body-lg": ["20px", {"lineHeight": "32px", "fontWeight": "300"}],
+                    "body-md": ["16px", {"lineHeight": "26px", "fontWeight": "400"}],
+                    "display-xl": ["84px", {"lineHeight": "92px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "display-xl-mobile": ["48px", {"lineHeight": "54px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                    "headline-md": ["40px", {"lineHeight": "48px", "fontWeight": "400"}],
+                    "headline-lg": ["56px", {"lineHeight": "64px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            text-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .selection\:bg-brand-blue::selection {
+            background-color: #00718F;
+            color: #fbf9f5;
+        }
+    </style>
+</head>
+<body class="bg-warm-bg text-ink-black selection:bg-brand-blue selection:text-surface">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-tertiary/80 backdrop-blur-xl border-b border-muted-divider dark:border-outline-variant">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center space-x-4">
+<img alt="SPACE NODE Logo" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmoicPW2vY3KOurLJdmd5FL3MHUD9lLnFxNHrKTXGpHLhG6CI8-nkRID9kTffUVRr5u4mucLsAoFnaqeW19Rf4U79wuUKbVZ9loYaj3-kQyMKincUy5PE3ejez6Xp-w7xrTAlFoVIerrSC6yWeWkXFbdtOSGRTx483XVdQsi2Jccbhv39zWXWWO0eWUdiToEpH9X0SgdJuXCkFLI52ztb4Mg4sKQhihgBi-sCWMnURBT7cihLKy5W73CDo_gnfsb9psD_9LjS5viM"/>
+<div class="flex flex-col">
+<span class="font-label-caps text-sm tracking-[0.3em] font-bold text-ink-black dark:text-surface">SPACE NODE</span>
+<span class="text-[8px] tracking-[0.4em] font-label-caps text-on-surface-variant">ARCHITECTURE • INTERIORS</span>
+</div>
+</div>
+<div class="hidden md:flex space-x-8">
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-surface-variant hover:text-brand-blue transition-colors" href="#">Home</a>
+<a class="font-label-caps text-label-caps text-brand-blue border-b-2 border-brand-blue pb-1" href="#">About Us</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-surface-variant hover:text-brand-blue transition-colors" href="#">Expertise</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-surface-variant hover:text-brand-blue transition-colors" href="#">Projects</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-surface-variant hover:text-brand-blue transition-colors" href="#">Contact</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-surface-variant hover:text-brand-blue transition-colors" href="#">Careers</a>
+</div>
+<div class="flex items-center space-x-6">
+<button class="hidden lg:block border border-ink-black px-6 py-2 font-label-caps text-label-caps hover:bg-brand-blue hover:text-surface hover:border-brand-blue transition-all duration-300">
+                    Book Consultation
+                </button>
+<button class="material-symbols-outlined text-ink-black dark:text-surface">menu</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative h-[90vh] w-full overflow-hidden">
+<div class="absolute inset-0">
+<img alt="Hero Architectural Space" class="w-full h-full object-cover grayscale-[20%]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPc1k47DDoedp-E9-QiqTi2qMVrtJqc1eVfSEIz8CsbkHGMJkD-7yYYWNzW-GvqdNOK0kK5WaVMTwuyNgxd4Mn59C-6-tkdyeMxix-azyK0GGXO5d9fGERJ3KYG9cK6cJ8Z_v8B_IE7f0wYrixYqm9WFrRqa-mRCWOWogBduJEYUjji0LZTUx3ix3er4jsr_jPA7gL2Q5WPujeoeyiNSwU7cnyJ3agN5T7rlKu2BhAtb_R46l8QqvML2vztdAEXyJE7E77j_5Qp6g"/>
+<div class="absolute inset-0 bg-black/40"></div>
+</div>
+<div class="relative z-10 h-full flex flex-col justify-end px-margin-mobile md:px-margin-desktop pb-32 max-w-container-max mx-auto">
+<div class="max-w-2xl">
+<h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl text-surface leading-tight mb-8">
+                    Creating Places, <br/>Not Just Buildings.
+                </h1>
+<div class="w-16 h-px bg-brand-blue mb-8"></div>
+<p class="font-body-lg text-body-lg text-surface/90 max-w-md">
+                    We are a collective of architects, designers and thinkers committed to crafting spaces that inspire, connect and endure.
+                </p>
+</div>
+</div>
+</header>
+<!-- Who We Are Section -->
+<section class="py-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto overflow-hidden">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 mb-12 md:mb-0">
+<div class="flex items-center space-x-4 mb-8">
+<span class="font-label-caps text-label-caps text-brand-blue uppercase tracking-widest">Who We Are</span>
+<div class="w-12 h-px bg-muted-divider"></div>
+</div>
+<h2 class="font-headline-lg text-headline-lg mb-8 leading-tight">
+                    A studio driven by purpose and passion.
+                </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm mb-6">
+                    Space Node is a multidisciplinary architecture studio creating timeless residential, commercial and landscape environments.
+                </p>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">
+                    Our approach is rooted in the dialogue between the environment and human experience, ensuring every line drawn serves a narrative of light and form.
+                </p>
+</div>
+<div class="md:col-span-7">
+<div class="relative group">
+<img alt="Studio Interior" class="w-full h-[600px] object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfvz-N5HwLbuVbyuJmJVsTu4azb36vn_KAHWylvuileMMCrcau-o6VyPt-erOQJDR2ys98Z6Pj1kkT8jMLEPyq5-Sl9Eko6nKymDewJ3ZIqUBaKy9SWdxxvcLRTIwqjfqi4ra_BczXDublj_p5iKZyw9FUuYzoV_708nvMsUM3oe4aL4jNI12gHoWlKOUweIW0hTlbpYRUEtCLQOkViQfbsz55JOrYXYP2S3qVfmwwxUmxRLMiBE6l-upIs-d7euoqblj-dl-7e5g"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Philosophy Statement Section -->
+<section class="bg-surface-container-low py-section-padding px-margin-mobile md:px-margin-desktop">
+<div class="max-w-4xl mx-auto text-center">
+<div class="relative inline-block">
+<div class="absolute -top-12 -left-8 opacity-10">
+<img alt="Shadow abstraction" class="w-32 h-32 object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpKAauzOEIYFLfBR4V8duw-8h7g830nCKrLHVsTXcnOsb_YzseoTB8C1mN4FH-JNoyoBESsJZAt6f8wV_3mtyLuE6onFaGoTH6ebVRktAz4jhxHfHADLNHenSjfe3cnKCzh4ctaHXS9xrFLrkYrDmBYYGYKlWZAnfHaFvS0LDT2yOoynQdB3u4DpGPirKfk44M7nVaq898fsvOeklo7Kj0ic0ecBM8_7JTwDaQGs2_8EqJ0lbhNf57OSv5c-NWrBS3aWG2jGUQ5uQ"/>
+</div>
+<blockquote class="font-headline-lg text-headline-lg italic leading-[1.2] mb-0 text-ink-black">
+                    "Good architecture is not about buildings. <br class="hidden md:block"/> It’s about how people <span class="text-brand-blue italic">experience</span> space."
+                </blockquote>
+</div>
+</div>
+</section>
+<!-- Team Gallery Section -->
+<section class="py-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex items-center space-x-4 mb-16">
+<span class="font-label-caps text-label-caps text-brand-blue uppercase tracking-widest">Our Team</span>
+<div class="w-12 h-px bg-muted-divider"></div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-high mb-6">
+<img alt="Ar. Neeraj Menon" class="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZCALd78ArQhC6hqVTBbCTB7CnGnCTBuLAYS8kvoDSDvsdmJPxtsM0R-cGzw9OdlCO-Rc8mlFKlGXK8Dcbg6SQ3t-pkF3JuUo1FE6q01bmUDaltc4LBt2BUWKqungWJQbcQOhZ3SBRUcm1x9jW0okpYPQKOwuWeoZPDs0NTyEYD6vfPjmWSOFO0iQ0BWQ_64p2_o2U-dwGS1CY1YDmXt7s0bFUtiJPZAojIXlxNKUbawkKDc2ZZWQrXT6h5TXCmFYeyvjqyixjjOE"/>
+</div>
+<h3 class="font-label-caps text-label-caps tracking-widest text-center group-hover:text-brand-blue transition-colors">Ar. Neeraj Menon</h3>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-high mb-6">
+<img alt="Ar. Kavya Iyer" class="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRxkGoyMFKTqqo51Bg0B9vdsoGrc6KiurEn62bXODUif7amBNtcciyRqIZd-ZFHxQlEmK-_Q32tuZtCvXAgM5Sw2N-viEbLPdycvhnn7XF6XWBczXF8T_rZ1nsM8_he13m8ssBz8CS5248P6B9mRhR4cukGgcqG6vCoDvoW6R2uQH6LXOr6CX4PDWFAOnKde2j3XAMUN7dd2I1UW1GOl8qWwNAXAbftxjIBVDKjjskpGZyomWn3ddFLNDZDU5Owa4VRanT9xzte8w"/>
+</div>
+<h3 class="font-label-caps text-label-caps tracking-widest text-center group-hover:text-brand-blue transition-colors">Ar. Kavya Iyer</h3>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-high mb-6">
+<img alt="Ar. Rohan Das" class="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRey6j5kVHa4qcLKAKnUd-qV3j5DDKJEvgkXpYV-f8b_J5tKeBn1mOWN2-sAaa2h8MkOSqpp231dzY4_gBnZAtthgID_CbDY9xy57HVfbGEvULQ7p3dXdP9CcZxy6EZymilsCBOUJM3r_eVhNKzK3IPmKLhKIO0zI_Z-OlTAXV9dfl2DBmohbdas3pH0S3RjuLaUAyrBEQzPoh-9v7DgcKgoqguzv2nfM0kiyGMqKyyxpwzCvdMJfDLH4Yd_k8V9yBKvk8JHnsSJQ"/>
+</div>
+<h3 class="font-label-caps text-label-caps tracking-widest text-center group-hover:text-brand-blue transition-colors">Ar. Rohan Das</h3>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-high mb-6">
+<img alt="Ar. Meera Nair" class="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDO0aZotj8893pgD_cVENxVjE_9UrcFtTCoQBV-Jc9vgx_WjdzTtGW_gXIiFEpr__7KW4z2TPQwORksfIUpHmoLsEDy6C5xQvkMDg8w3tq_qjOI3tMH9nROnEz-5YNrTyHunHJ1XfB-JaF2dDVaEcbpeqpSjVjpsApGgTxHZPxxe72hYOlmllXLb2GJk1NmGc3mqY4KB0dmGpEhXwfiZPfORQShegLF-Ev5BQlJkuB-z7eXUblvPdRFaG0wSazGm5AVsgnz8G_hEME"/>
+</div>
+<h3 class="font-label-caps text-label-caps tracking-widest text-center group-hover:text-brand-blue transition-colors">Ar. Meera Nair</h3>
+</div>
+</div>
+</section>
+<!-- Full-width Visual Section -->
+<div class="w-full h-[60vh] md:h-[80vh] overflow-hidden">
+<img alt="Architectural Magnitude" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAL4HM7WvEkP9CpRmq8gpAXirGQOYcGNBFF3e4h1k9SyRpClqS-6moSkUhWj1anCW-h51gAdPTOIkU8uVDA1_ajNIc21J2VKKUYrDLNCy7u1BZGP8UpuP7V6UKnkSCHcoND0_RZKpTOA7gV9DbShfSuM2ZBN-bjW-o3zU7NNiAakE0fe9wBXgAJ4pxW6tenyQUkso4elQfWMZCyD89LgxFZhDrrct-hwaNunMYM-vQ7QcV2uGMhnf8-eWE7ez97ZfWCyQ0lw99QWlI"/>
+</div>
+<!-- Testimonial Section -->
+<section class="py-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
+<span class="material-symbols-outlined text-brand-blue text-5xl mb-8" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<h2 class="font-display-xl-mobile md:font-headline-lg max-w-4xl mx-auto mb-10">
+            Space Node transformed our vision into a space that feels timeless.
+        </h2>
+<div class="w-16 h-px bg-brand-blue mx-auto mb-6"></div>
+<p class="font-label-caps text-label-caps tracking-[0.2em] text-on-surface-variant">— THE COURTYARD VILLA</p>
+</section>
+<!-- Dark CTA Section -->
+<section class="bg-tertiary text-surface py-24 md:py-32 relative overflow-hidden">
+<div class="absolute right-0 top-0 w-1/3 h-full opacity-20 hidden md:block">
+<img alt="Texture detail" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0r3I-azPKVqm84FgQ4vd1tpTbyVta4_LFLtCtbwqs7wv0pEmSvGlBb7rCdPFSE9XXTsIM1848ulmuWSbAw5OqRcQ-36h0tOVxo4Ih8SH-r2MndMd7U5rqI64fzvCdMF2grElK1NH8t1gAFVc15G5vltTGUpaRV7XZDu4lk0q0ycvWmvHylnldHIKG_zJcpaSiVeckLF4ysH80WDLu3ZCWyutKfDVs5frW9v3F07vbC10MyRDTpG3cKUnos0sEqTRXekcgw6zR5Ho"/>
+</div>
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+<div>
+<h2 class="font-display-xl-mobile md:font-headline-lg text-headline-lg leading-tight mb-12">
+                        Let’s Create Something <br/>Exceptional<span class="text-brand-blue">.</span>
+</h2>
+<a class="inline-flex items-center space-x-6 group border border-surface/30 px-10 py-5 hover:border-brand-blue transition-all duration-300" href="#">
+<span class="font-label-caps text-label-caps tracking-widest text-surface group-hover:text-brand-blue">BOOK CONSULTATION</span>
+<span class="material-symbols-outlined text-surface group-hover:text-brand-blue transition-transform group-hover:translate-x-2">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-tertiary border-t border-surface/10">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-mobile md:px-margin-desktop py-24 max-w-container-max mx-auto">
+<div class="col-span-12 md:col-span-4 mb-12 md:mb-0">
+<div class="flex items-center space-x-4 mb-8">
+<img alt="SPACE NODE Logo" class="h-12 w-auto object-contain brightness-0 invert opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmoicPW2vY3KOurLJdmd5FL3MHUD9lLnFxNHrKTXGpHLhG6CI8-nkRID9kTffUVRr5u4mucLsAoFnaqeW19Rf4U79wuUKbVZ9loYaj3-kQyMKincUy5PE3ejez6Xp-w7xrTAlFoVIerrSC6yWeWkXFbdtOSGRTx483XVdQsi2Jccbhv39zWXWWO0eWUdiToEpH9X0SgdJuXCkFLI52ztb4Mg4sKQhihgBi-sCWMnURBT7cihLKy5W73CDo_gnfsb9psD_9LjS5viM"/>
+<span class="font-label-caps text-lg tracking-[0.3em] text-surface block">SPACE NODE</span>
+</div>
+<p class="font-body-md text-body-md text-surface-variant max-w-xs">
+                    Crafting architectural narratives that define contemporary living across the globe.
+                </p>
+</div>
+<div class="col-span-6 md:col-span-2">
+<h4 class="font-label-caps text-label-caps text-surface mb-8">PAGES</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-surface-variant hover:text-brand-blue transition-colors" href="#">Projects</a></li>
+<li><a class="font-body-md text-body-md text-surface-variant hover:text-brand-blue transition-colors" href="#">Expertise</a></li>
+<li><a class="font-body-md text-body-md text-surface-variant hover:text-brand-blue transition-colors" href="#">About</a></li>
+<li><a class="font-body-md text-body-md text-surface-variant hover:text-brand-blue transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<div class="col-span-6 md:col-span-2">
+<h4 class="font-label-caps text-label-caps text-surface mb-8">SOCIAL</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-surface-variant hover:text-brand-blue transition-colors" href="#">Instagram</a></li>
+<li><a class="font-body-md text-body-md text-surface-variant hover:text-brand-blue transition-colors" href="#">LinkedIn</a></li>
+<li><a class="font-body-md text-body-md text-surface-variant hover:text-brand-blue transition-colors" href="#">Behance</a></li>
+</ul>
+</div>
+<div class="col-span-12 md:col-span-4 mt-12 md:mt-0">
+<h4 class="font-label-caps text-label-caps text-surface mb-8">NEWSLETTER</h4>
+<div class="relative border-b border-surface/30 group focus-within:border-brand-blue transition-all duration-300">
+<input class="bg-transparent border-none w-full py-4 text-surface placeholder:text-surface-variant focus:ring-0 font-label-caps text-label-caps" placeholder="EMAIL ADDRESS" type="email"/>
+<button class="absolute right-0 top-1/2 -translate-y-1/2 material-symbols-outlined text-surface hover:text-brand-blue transition-colors">arrow_right_alt</button>
+</div>
+</div>
+</div>
+<div class="px-margin-mobile md:px-margin-desktop py-8 border-t border-surface/10 max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center text-[10px] tracking-[0.2em] font-label-caps text-surface-variant/40">
+<span>© 2024 SPACE NODE ARCHITECTURE. ALL RIGHTS RESERVED.</span>
+<div class="flex space-x-8 mt-4 md:mt-0">
+<a class="hover:text-surface transition-colors" href="#">PRIVACY POLICY</a>
+<a class="hover:text-surface transition-colors" href="#">TERMS OF SERVICE</a>
+</div>
+</div>
+</footer>
+<script>
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'ease-out', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+</body></html>

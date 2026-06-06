@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Brand Colors */
+  --color-brand-blue: #0D7A9E;
+  --color-dark-blue: #0A2333;
+  --color-accent-blue: #178CB5;
+  --color-light-blue: #6EB8D0;
+  --color-pale-blue: #E8F4F8;
+  
+  /* Neutrals */
+  --color-bg: #F8F9FA;
+  --color-surface: #FFFFFF;
+  --color-ink: #161616;
+  --color-muted: #6B7280;
+  --color-divider: #E5E7EB;
+  --color-divider-warm: #D9D4CC;
+}
+
+:root {
+  --background: #F8F9FA;
+  --foreground: #161616;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Hanken Grotesk', system-ui, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Node pulse animation */
+@keyframes nodePulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+
+@keyframes nodeRing {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+@keyframes drawLine {
+  from { stroke-dashoffset: 1000; }
+  to { stroke-dashoffset: 0; }
+}
+
+.node-pulse {
+  animation: nodePulse 3s ease-in-out infinite;
+}
+
+.node-ring {
+  animation: nodeRing 2.5s ease-out infinite;
+}
+
+.draw-line {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawLine 2s ease-out forwards;
+}
+
+@keyframes flowLine {
+  from { stroke-dashoffset: 20; }
+  to { stroke-dashoffset: 0; }
+}
+
+.flow-line {
+  stroke-dasharray: 2 4;
+  animation: flowLine 2s linear infinite;
+}
+
+@keyframes floatAmbient {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(1.5px, -1.5px); }
+  66% { transform: translate(-1.5px, 1.5px); }
+}
+
+.float-ambient {
+  animation: floatAmbient 12s ease-in-out infinite;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F8F9FA;
+}
+::-webkit-scrollbar-thumb {
+  background: #0D7A9E;
+  border-radius: 3px;
+}
+
+::selection {
+  background: #0D7A9E;
+  color: white;
+}
+
+*:focus-visible {
+  outline: 2px solid #0D7A9E;
+  outline-offset: 2px;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

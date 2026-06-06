@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projects | SPACE NODE ARCHITECTURE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Hanken+Grotesk:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#010101",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#ffd399",
+                        "surface-variant": "#e4e2de",
+                        "surface-container-highest": "#e4e2de",
+                        "on-primary-fixed-variant": "#474746",
+                        "surface-bright": "#fbf9f5",
+                        "surface-container-low": "#f5f3ef",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#1d1c1b",
+                        "on-surface": "#1b1c1a",
+                        "primary": "#010101",
+                        "on-tertiary-fixed-variant": "#484645",
+                        "inverse-on-surface": "#f2f0ec",
+                        "secondary-fixed-dim": "#eac088",
+                        "surface-container-high": "#eae8e4",
+                        "outline-variant": "#c4c7c7",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1b1c1a",
+                        "on-tertiary-fixed": "#1c1b1a",
+                        "secondary-fixed": "#ffddb3",
+                        "surface-dim": "#dbdad6",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#1c1c1c",
+                        "primary-fixed": "#e5e2e1",
+                        "on-secondary-fixed": "#291800",
+                        "tertiary-fixed-dim": "#cac6c4",
+                        "on-primary-container": "#858484",
+                        "on-surface-variant": "#444748",
+                        "warm-bg": "#F8F6F2",
+                        "surface": "#fbf9f5",
+                        "on-error": "#ffffff",
+                        "background": "#fbf9f5",
+                        "muted-divider": "#D9D4CC",
+                        "tertiary-fixed": "#e6e2df",
+                        "surface-tint": "#5f5e5e",
+                        "error-container": "#ffdad6",
+                        "ink-black": "#1C1C1C",
+                        "outline": "#747878",
+                        "surface-container": "#efeeea",
+                        "on-secondary-fixed-variant": "#5e4115",
+                        "secondary": "#78592a",
+                        "brand-blue": "#00718F",
+                        "on-tertiary-container": "#878482",
+                        "on-primary-fixed": "#1b1b1b",
+                        "inverse-primary": "#c8c6c5",
+                        "on-secondary-container": "#79592b",
+                        "error": "#ba1a1a",
+                        "inverse-surface": "#30312e",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-secondary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-tablet": "40px",
+                        "container-max": "1440px",
+                        "section-padding": "160px",
+                        "unit": "8px",
+                        "margin-desktop": "80px",
+                        "gutter": "32px",
+                        "margin-mobile": "24px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "display-xl": ["Playfair Display"],
+                        "display-xl-mobile": ["Playfair Display"],
+                        "label-caps": ["Hanken Grotesk"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["20px", {"lineHeight": "32px", "fontWeight": "300"}],
+                        "body-md": ["16px", {"lineHeight": "26px", "fontWeight": "400"}],
+                        "display-xl": ["84px", {"lineHeight": "92px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "display-xl-mobile": ["48px", {"lineHeight": "54px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                        "headline-md": ["40px", {"lineHeight": "48px", "fontWeight": "400"}],
+                        "headline-lg": ["56px", {"lineHeight": "64px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-tertiary/80 backdrop-blur-xl border-b border-muted-divider dark:border-outline-variant transition-all duration-300">
+<div class="flex justify-between items-center w-full px-margin-desktop py-6 max-w-container-max mx-auto transition-all duration-300" id="nav-container">
+<!-- Brand Logo -->
+<a class="flex items-center gap-4 group" href="#">
+<img alt="Space Node Architecture" class="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmoicPW2vY3KOurLJdmd5FL3MHUD9lLnFxNHrKTXGpHLhG6CI8-nkRID9kTffUVRr5u4mucLsAoFnaqeW19Rf4U79wuUKbVZ9loYaj3-kQyMKincUy5PE3ejez6Xp-w7xrTAlFoVIerrSC6yWeWkXFbdtOSGRTx483XVdQsi2Jccbhv39zWXWWO0eWUdiToEpH9X0SgdJuXCkFLI52ztb4Mg4sKQhihgBi-sCWMnURBT7cihLKy5W73CDo_gnfsb9psD_9LjS5viM"/>
+<div class="font-label-caps text-[14px] tracking-[0.3em] font-bold text-ink-black dark:text-surface flex flex-col">
+<span>SPACE NODE</span>
+<span class="text-[7px] tracking-[0.5em] mt-0.5 opacity-60">ARCHITECTURE</span>
+</div>
+</a>
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex items-center space-x-12">
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-surface-variant hover:text-brand-blue transition-colors" href="#">Home</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-surface-variant hover:text-brand-blue transition-colors" href="#">About Us</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-surface-variant hover:text-brand-blue transition-colors" href="#">Expertise</a>
+<a class="font-label-caps text-label-caps text-brand-blue border-b-2 border-brand-blue pb-1" href="#">Projects</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-surface-variant hover:text-brand-blue transition-colors" href="#">Contact</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-surface-variant hover:text-brand-blue transition-colors" href="#">Careers</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-6">
+<a class="hidden md:block border border-ink-black px-6 py-3 font-label-caps text-[11px] tracking-widest hover:bg-brand-blue hover:border-brand-blue hover:text-surface transition-all duration-300" href="#">
+                BOOK CONSULTATION
+            </a>
+<button class="flex items-center justify-center w-10 h-10 bg-ink-black text-surface rounded-full md:hidden">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-32">
+<!-- Hero Section -->
+<section class="px-margin-desktop max-w-container-max mx-auto py-24">
+<div class="grid grid-cols-12 gap-gutter">
+<div class="col-span-12 md:col-span-8 lg:col-span-6">
+<span class="font-label-caps text-brand-blue tracking-[0.2em] mb-4 block">OUR WORK</span>
+<h1 class="font-display-xl text-display-xl-mobile md:text-display-xl text-ink-black mb-8">Selected<br/>Works<span class="text-brand-blue">.</span></h1>
+<div class="w-20 h-[1px] bg-muted-divider mb-8"></div>
+<p class="font-body-lg text-on-surface-variant max-w-md">
+                    A curated collection of residential, commercial and hospitality projects defined by architectural permanence and spatial clarity.
+                </p>
+</div>
+</div>
+</section>
+<!-- Category Filter -->
+<section class="sticky top-[88px] z-40 bg-surface/95 backdrop-blur-sm border-y border-muted-divider overflow-x-auto transition-all duration-300" id="filter-bar">
+<div class="px-margin-desktop max-w-container-max mx-auto flex items-center justify-start md:justify-center py-6 space-x-12 min-w-max">
+<button class="font-label-caps text-[11px] tracking-widest text-brand-blue border-b border-brand-blue pb-1">ALL PROJECTS</button>
+<button class="font-label-caps text-[11px] tracking-widest text-on-surface-variant hover:text-brand-blue transition-colors">RESIDENTIAL</button>
+<button class="font-label-caps text-[11px] tracking-widest text-on-surface-variant hover:text-brand-blue transition-colors">COMMERCIAL</button>
+<button class="font-label-caps text-[11px] tracking-widest text-on-surface-variant hover:text-brand-blue transition-colors">HOSPITALITY</button>
+<button class="font-label-caps text-[11px] tracking-widest text-on-surface-variant hover:text-brand-blue transition-colors">LANDSCAPE</button>
+<button class="font-label-caps text-[11px] tracking-widest text-on-surface-variant hover:text-brand-blue transition-colors">MIXED USE</button>
+</div>
+</section>
+<!-- Immersive Projects Gallery -->
+<section class="w-full">
+<!-- Project 1: The Obsidian House -->
+<div class="relative w-full h-[90vh] overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="A luxurious modern villa at dusk, featuring expansive glass walls that glow with warm interior lighting. The architecture consists of sharp obsidian-toned concrete planes and rich wooden accents, surrounded by a minimalist reflection pool and manicured desert landscaping under a twilight sky." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJvz5rEaLg5Okxt-5BuaQrzrx1LXIqJqkqXK9-09RClR-jvj3-EHzX2U8l7bHkEqvZhJAPpYkSD4WrLiANc5pD113ffD9h9EK9OTMYpc6SFhaQiCH35923Hw_lNAhn3XYDF6V4N-HsoDOgffn6AKoG83yxlqE7wha8uiIe7ad23Eb6u3RMs9_2tuFJCBWNY5l9D_PYSs5lZ7lpvwcwc8e4BVth7ErHh-1mu6rz3IvMOpEQoAtnwViZ_eFqymUra2PQpIwFDZjjjX8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-ink-black/80 via-transparent to-transparent pointer-events-none"></div>
+<div class="absolute bottom-16 left-margin-desktop text-surface z-10">
+<h2 class="font-headline-lg text-headline-lg mb-4">The Obsidian House</h2>
+<div class="w-12 h-[1px] bg-brand-blue mb-4"></div>
+<p class="font-label-caps tracking-widest text-[11px]">RESIDENTIAL</p>
+</div>
+<a class="absolute inset-0" href="#"></a>
+</div>
+<!-- Project 2: The Courtyard Villa -->
+<div class="relative w-full h-[90vh] overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="A serene Mediterranean courtyard villa during the golden hour. Smooth limestone walls enclose a central garden with a single ancient olive tree. Soft shadows stretch across the paved walkways while large floor-to-ceiling windows create a seamless transition between the indoor living space and the outdoor sanctuary." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8awZOWNE9SZlkZuhnRXhqM-_ZptAbclvB7oNNtdGT-ykIJ_YjnNHsu-sorS_ptzC-7XyqkyWazHacM4xUamKMeoEMnJ5QLqOopMOLrDFyDOTZNwSgUls8-yECjzmbPsiVIn1S3d9Zb1Jf3-HhiMq87hhzkGaRbarCGCwNeoXPZODPk5gNWgoNLwAQArQRbdhzi8aOpq2QTTukFPiEtwkw0-sMTscvATMgOvkvDfw32LYkZ8r-m3466zHO8_BHn0sdGrgy6DixsbE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-ink-black/80 via-transparent to-transparent pointer-events-none"></div>
+<div class="absolute bottom-16 left-margin-desktop text-surface z-10">
+<h2 class="font-headline-lg text-headline-lg mb-4">The Courtyard Villa</h2>
+<div class="w-12 h-[1px] bg-brand-blue mb-4"></div>
+<p class="font-label-caps tracking-widest text-[11px]">RESIDENTIAL</p>
+</div>
+<a class="absolute inset-0" href="#"></a>
+</div>
+<!-- Project 3: The Horizon Offices -->
+<div class="relative w-full h-[90vh] overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5oeHv-A8SGKZzvxGIYKVXkXEiS7tYSNqazMOVp6CkpRz_kylE4tbcwCI28NThI5Fz8zveIAquKmZkACwjVsfcGPlwW3CmE-NvkpIOB3JA8i-1qMgZV5o2X4usRVOpY8WGsolO5kXkIc0YwNqo9ajDf9CfkQsILG73LyenCg8Hx7UQhwtx76i5LXnhfgOlon_m8bYT1TI-xTHJENTUf-sngsOwN6vXhuREo7dLtAonh9m_6qXPMfYApBXv54yo6YMY5O_qf0gpJd0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-ink-black/80 via-transparent to-transparent pointer-events-none"></div>
+<div class="absolute bottom-16 left-margin-desktop text-surface z-10">
+<h2 class="font-headline-lg text-headline-lg mb-4">The Horizon Offices</h2>
+<div class="w-12 h-[1px] bg-brand-blue mb-4"></div>
+<p class="font-label-caps tracking-widest text-[11px]">COMMERCIAL</p>
+</div>
+<a class="absolute inset-0" href="#"></a>
+</div>
+<!-- Project 4: The Forest Retreat -->
+<div class="relative w-full h-[90vh] overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="A minimalist timber retreat nestled deep within a dense temperate forest. The structure features dark stained wood cladding and dramatic cantilevered decks that overlook a misty valley. Warm golden light emanates from within, casting a cozy glow against the surrounding dark green foliage of the towering pines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDO9JJeDypiQarqcbzohGqbbCsB-Nh5zfhrnGcarp1Fv1gkrDt_QgWZ3yOHepxQoDjYCM4GNdmDUNeU5Qa_30V_NcYUhZD0QSG1s5JIOMICbj_Gi6M-QLcbLlC9PgWh8tMSAcuasFh1O39s8bcGohUJcmNNMtdUeLaXj1GGuNTb1xKtuTRNn-gpJXuLT02gGWvSB7dzIiikzyUh-VTBtcDCmHLg_gMeUdkK_gr-GImd_G18b8QgwWX3-dAIWv9ajeEmzDVzpouBxEs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-ink-black/80 via-transparent to-transparent pointer-events-none"></div>
+<div class="absolute bottom-16 left-margin-desktop text-surface z-10">
+<h2 class="font-headline-lg text-headline-lg mb-4">The Forest Retreat</h2>
+<div class="w-12 h-[1px] bg-brand-blue mb-4"></div>
+<p class="font-label-caps tracking-widest text-[11px]">HOSPITALITY</p>
+</div>
+<a class="absolute inset-0" href="#"></a>
+</div>
+</section>
+<!-- Bottom CTA -->
+<section class="bg-tertiary text-surface py-section-padding px-margin-desktop">
+<div class="max-w-container-max mx-auto grid grid-cols-12 items-center gap-gutter">
+<div class="col-span-12 md:col-span-7">
+<h2 class="font-display-xl text-headline-lg md:text-display-xl-mobile lg:text-display-xl mb-4">Have a project in mind?</h2>
+<p class="font-body-lg text-surface-variant mb-12">Let's create something extraordinary together. From private residences to global flagships.</p>
+</div>
+<div class="col-span-12 md:col-span-5 flex flex-col md:flex-row gap-6 md:justify-end">
+<a class="bg-brand-blue text-surface px-10 py-6 font-label-caps tracking-widest text-[13px] flex items-center justify-between group" href="#">
+<span>BOOK CONSULTATION</span>
+<span class="material-symbols-outlined ml-4 group-hover:translate-x-2 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+<a class="border border-surface-variant/30 text-surface px-10 py-6 font-label-caps tracking-widest text-[13px] flex items-center justify-between hover:border-surface transition-colors" href="#">
+<span>WHATSAPP US</span>
+<span class="material-symbols-outlined ml-4" data-icon="chat">chat</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-tertiary dark:bg-surface-container-lowest text-surface dark:text-tertiary w-full py-section-padding">
+<div class="grid grid-cols-12 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<!-- Brand Column -->
+<div class="col-span-12 lg:col-span-4 mb-16 lg:mb-0">
+<div class="flex items-center gap-6 mb-8">
+<img alt="Space Node Architecture" class="h-16 w-auto object-contain brightness-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmoicPW2vY3KOurLJdmd5FL3MHUD9lLnFxNHrKTXGpHLhG6CI8-nkRID9kTffUVRr5u4mucLsAoFnaqeW19Rf4U79wuUKbVZ9loYaj3-kQyMKincUy5PE3ejez6Xp-w7xrTAlFoVIerrSC6yWeWkXFbdtOSGRTx483XVdQsi2Jccbhv39zWXWWO0eWUdiToEpH9X0SgdJuXCkFLI52ztb4Mg4sKQhihgBi-sCWMnURBT7cihLKy5W73CDo_gnfsb9psD_9LjS5viM"/>
+<div class="font-label-caps text-body-lg tracking-[0.3em] text-surface dark:text-tertiary">
+                    SPACE NODE
+                </div>
+</div>
+<p class="font-body-md text-surface-variant max-w-xs opacity-70">
+                Pushing the boundaries of spatial design through precision, materiality, and the quiet luxury of space.
+            </p>
+</div>
+<!-- Navigation Links -->
+<div class="col-span-6 md:col-span-3 lg:col-span-2">
+<h4 class="font-label-caps text-[11px] tracking-widest mb-8 opacity-40">NAVIGATION</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-surface-variant hover:text-brand-blue transition-colors" href="#">Projects</a></li>
+<li><a class="font-body-md text-surface-variant hover:text-brand-blue transition-colors" href="#">Expertise</a></li>
+<li><a class="font-body-md text-surface-variant hover:text-brand-blue transition-colors" href="#">About Us</a></li>
+<li><a class="font-body-md text-surface-variant hover:text-brand-blue transition-colors" href="#">Careers</a></li>
+</ul>
+</div>
+<!-- Social Links -->
+<div class="col-span-6 md:col-span-3 lg:col-span-2">
+<h4 class="font-label-caps text-[11px] tracking-widest mb-8 opacity-40">CONNECT</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-surface-variant hover:text-brand-blue transition-colors" href="#">Instagram</a></li>
+<li><a class="font-body-md text-surface-variant hover:text-brand-blue transition-colors" href="#">LinkedIn</a></li>
+<li><a class="font-body-md text-surface-variant hover:text-brand-blue transition-colors" href="#">Pinterest</a></li>
+</ul>
+</div>
+<!-- Legal Links -->
+<div class="col-span-12 md:col-span-6 lg:col-span-4 mt-12 lg:mt-0 lg:text-right">
+<h4 class="font-label-caps text-[11px] tracking-widest mb-8 opacity-40">OFFICES</h4>
+<address class="font-body-md text-surface-variant not-italic opacity-70 mb-4">
+                88 Architecture Row, Suite 100<br/>Design District, CA 90210
+            </address>
+<p class="font-body-md text-surface-variant opacity-70">hello@spacenode.com</p>
+</div>
+<!-- Copyright Bar -->
+<div class="col-span-12 pt-16 mt-16 border-t border-surface-variant/10 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="font-label-caps text-[10px] tracking-widest text-surface-variant opacity-40 uppercase">© 2024 SPACE NODE ARCHITECTURE. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-8">
+<a class="font-label-caps text-[10px] tracking-widest text-surface-variant hover:text-brand-blue transition-colors" href="#">PRIVACY POLICY</a>
+<a class="font-label-caps text-[10px] tracking-widest text-surface-variant hover:text-brand-blue transition-colors" href="#">TERMS OF SERVICE</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    // Subtle Parallax & Scroll Reveal micro-interactions
+    window.addEventListener('scroll', () => {
+        const scroll = window.scrollY;
+        document.querySelectorAll('section img:not(header img):not(footer img)').forEach(img => {
+            const speed = 0.05;
+            const rect = img.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                const offset = (window.innerHeight - rect.top) * speed;
+                img.style.transform = `scale(1.05) translateY(${offset - 20}px)`;
+            }
+        });
+    });
+
+    // Sticky header adjustments
+    const header = document.querySelector('header');
+    const navContainer = document.querySelector('#nav-container');
+    const filterBar = document.querySelector('#filter-bar');
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navContainer.classList.add('py-4');
+            navContainer.classList.remove('py-6');
+            if (filterBar) filterBar.style.top = "72px";
+        } else {
+            navContainer.classList.add('py-6');
+            navContainer.classList.remove('py-4');
+            if (filterBar) filterBar.style.top = "88px";
+        }
+    });
+</script>
+</body></html>
