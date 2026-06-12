@@ -85,15 +85,15 @@ export default function ExpertisePreview() {
                         }`} 
                       />
                       
-                      <div className="relative z-10 flex items-start gap-8 md:gap-12 px-4">
-                        <span className={`font-sans text-[11px] tracking-[0.2em] font-bold transition-colors duration-300 pt-3 ${
+                      <div className="relative z-10 flex items-start gap-5 md:gap-8 lg:gap-12 px-2 md:px-4">
+                        <span className={`font-sans text-[11px] tracking-[0.2em] font-bold transition-colors duration-300 pt-1 md:pt-3 ${
                           isHovered ? 'text-[#0D7A9E]' : 'text-[#9CA3AF]'
                         }`}>
                           {service.num}
                         </span>
                         
                         <div className="flex-1">
-                          <h3 className={`font-serif text-4xl md:text-5xl transition-colors duration-300 mb-4 ${
+                          <h3 className={`font-serif text-3xl md:text-4xl lg:text-5xl transition-colors duration-300 mb-2 md:mb-4 ${
                             isHovered ? 'text-[#0D7A9E]' : 'text-[#161616]'
                           }`}>
                             {service.title}
@@ -102,11 +102,11 @@ export default function ExpertisePreview() {
                           {/* Smooth expanding description */}
                           <div 
                             className={`grid transition-all duration-500 ease-in-out ${
-                              isHovered ? 'grid-rows-[1fr] opacity-100 mt-4' : 'grid-rows-[0fr] opacity-0'
+                              isHovered ? 'grid-rows-[1fr] opacity-100 mt-2 md:mt-4' : 'grid-rows-[0fr] opacity-0'
                             }`}
                           >
                             <div className="overflow-hidden">
-                              <p className="font-sans font-light text-[15px] text-[#4B5563] leading-relaxed max-w-md pb-2">
+                              <p className="font-sans font-light text-sm md:text-[15px] text-[#4B5563] leading-relaxed max-w-md pb-2">
                                 {service.desc}
                               </p>
                               <div className="flex items-center gap-2 mt-4 text-[#0D7A9E] font-sans text-[10px] font-bold tracking-[0.2em] uppercase">
