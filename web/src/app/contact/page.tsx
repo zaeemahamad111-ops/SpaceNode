@@ -54,10 +54,9 @@ export default function ContactPage() {
                     Studio
                   </h2>
                   <address className="not-italic font-serif text-2xl text-[#161616] leading-relaxed mb-6">
-                    88 Architecture Row,<br />
-                    Suite 140,<br />
-                    Cochin, Kerala 682018<br />
-                    <span className="font-sans font-light text-base text-[#6B7280]">India</span>
+                    First Floor, Velleparambil building,<br />
+                    Kaloor, Cochin-17,<br />
+                    Kerala<br />
                   </address>
                 </div>
 
@@ -66,15 +65,15 @@ export default function ContactPage() {
                     Inquiries
                   </h3>
                   <div className="space-y-3">
-                    <a href="mailto:hello@spacenode.com"
+                    <a href="mailto:enquiries@spacenodearchitects.in"
                       className="flex items-center gap-2.5 font-sans text-sm text-[#161616] hover:text-[#0D7A9E] transition-colors duration-300 group">
                       <Mail size={14} className="text-[#0D7A9E]" />
-                      hello@spacenode.com
+                      enquiries@spacenodearchitects.in
                     </a>
-                    <a href="tel:+914842345678"
+                    <a href="tel:04843175594"
                       className="flex items-center gap-2.5 font-sans text-sm text-[#161616] hover:text-[#0D7A9E] transition-colors duration-300">
                       <Phone size={14} className="text-[#0D7A9E]" />
-                      +91 484 234 5678
+                      0484 3175594
                     </a>
                     <a href="https://wa.me/914842345678" target="_blank" rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 font-sans text-[11px] font-semibold tracking-[0.15em] uppercase text-[#0D7A9E] mt-2 hover:text-[#0A2333] transition-colors duration-300">
@@ -86,44 +85,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="mb-10">
-                  <h3 className="font-sans text-[10px] font-semibold tracking-[0.2em] uppercase text-[#0D7A9E] mb-5">
-                    Social
-                  </h3>
-                  {/* Social Node Visualization */}
-                  <div className="relative h-28 mb-4">
-                    <svg viewBox="0 0 200 80" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                      <circle cx="100" cy="40" r="6" fill="#0A2333"/>
-                      <circle cx="100" cy="40" r="6" fill="none" stroke="#0D7A9E" strokeWidth="0.8" opacity="0.7"/>
-                      <text x="100" y="43" textAnchor="middle" fontSize="4" fontFamily="'Hanken Grotesk', sans-serif" fill="#0D7A9E" fontWeight="600">SN</text>
-                      {[
-                        { cx: 40, cy: 20, label: 'Instagram' },
-                        { cx: 100, cy: 70, label: 'Facebook' },
-                        { cx: 160, cy: 20, label: 'LinkedIn' },
-                      ].map((s) => (
-                        <g key={s.label}>
-                          <line x1="100" y1="40" x2={s.cx} y2={s.cy} stroke="#6EB8D0" strokeWidth="0.4" strokeDasharray="2 2" opacity="0.5"/>
-                          <circle cx={s.cx} cy={s.cy} r="3.5" fill="#0D7A9E" opacity="0.8">
-                            <animate attributeName="r" values="3.5;4.5;3.5" dur="3s" repeatCount="indefinite"/>
-                          </circle>
-                          <text x={s.cx} y={s.cy + 9} textAnchor="middle" fontSize="4" fontFamily="'Hanken Grotesk', sans-serif" fill="#6B7280">{s.label}</text>
-                        </g>
-                      ))}
-                    </svg>
-                  </div>
-                  <div className="flex gap-4">
-                    {[
-                      { label: 'Instagram', href: '#', icon: Camera },
-                      { label: 'Facebook', href: '#', icon: Users },
-                      { label: 'LinkedIn', href: '#', icon: Briefcase },
-                    ].map(({ label, href, icon: Icon }) => (
-                      <a key={label} href={href}
-                        className="flex items-center gap-1.5 font-sans text-[10px] tracking-[0.1em] uppercase text-[#6B7280] hover:text-[#0D7A9E] transition-colors duration-300">
-                        <Icon size={13} /> {label}
-                      </a>
-                    ))}
-                  </div>
-                </div>
+                  {/* Social section removed */}
               </RevealWrapper>
             </div>
 
@@ -219,27 +181,7 @@ export default function ContactPage() {
                       </div>
                     </div>
 
-                    {/* Budget */}
-                    <div>
-                      <label htmlFor="contact-budget" className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#0D7A9E] block mb-2">
-                        Approximate Budget
-                      </label>
-                      <select
-                        id="contact-budget"
-                        name="budget"
-                        value={formState.budget}
-                        onChange={handleChange}
-                        className="w-full bg-transparent border-b border-[#D9D4CC] focus:border-[#0D7A9E] py-3 font-sans text-sm text-[#161616] outline-none transition-colors duration-300 appearance-none cursor-pointer"
-                      >
-                        <option value="">Select budget range</option>
-                        <option>Under ₹1 Crore</option>
-                        <option>₹1 Crore – ₹5 Crore</option>
-                        <option>₹5 Crore – ₹20 Crore</option>
-                        <option>₹20 Crore – ₹50 Crore</option>
-                        <option>Above ₹50 Crore</option>
-                        <option>To be discussed</option>
-                      </select>
-                    </div>
+                    {/* Budget field removed */}
 
                     {/* Message */}
                     <div>
@@ -307,9 +249,82 @@ export default function ContactPage() {
           </p>
           <a href="#contact-form"
             className="inline-flex items-center gap-3 border border-[#0A2333] text-[#0A2333] px-10 py-5 font-sans text-[11px] font-semibold tracking-[0.2em] uppercase hover:bg-[#0A2333] hover:text-white transition-all duration-300">
-            Book Your Consultation <ArrowRight size={14} />
+            GET US NOW <ArrowRight size={14} />
           </a>
         </RevealWrapper>
+      </section>
+
+      {/* Portfolio Submission / Job Vacancies */}
+      <section id="careers-apply" className="py-24 md:py-32 bg-white" aria-labelledby="portfolio-heading">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+            {/* Left */}
+            <div className="lg:col-span-4">
+              <RevealWrapper>
+                <div className="mb-8 font-sans text-[11px] font-semibold tracking-[0.15em] uppercase text-[#0D7A9E] leading-loose">
+                  <p>JOB VACANCY STATUS</p>
+                  <p>LOOKING FOR AN ARCHITECT</p>
+                  <p>NO VACANCIES ...ETC</p>
+                </div>
+                <h2 id="portfolio-heading" className="font-serif text-4xl md:text-5xl text-[#161616] mb-8">
+                  Submit Your<br /><span className="italic text-[#0D7A9E]">Portfolio</span>
+                </h2>
+                <div>
+                  <p className="font-sans text-[10px] tracking-[0.15em] uppercase text-[#0D7A9E] mb-2">Inquiries</p>
+                  <a href="mailto:careers@spacenodearchitects.in"
+                    className="font-sans text-sm text-[#161616] hover:text-[#0D7A9E] transition-colors duration-300">
+                    careers@spacenodearchitects.in
+                  </a>
+                </div>
+              </RevealWrapper>
+            </div>
+
+            {/* Form */}
+            <div className="lg:col-span-8">
+              <RevealWrapper delay={0.1}>
+                <form className="space-y-8" id="portfolio-form" aria-label="Portfolio submission form">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                      <label htmlFor="careers-name" className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#0D7A9E] block mb-2">Full Name *</label>
+                      <input id="careers-name" name="name" type="text" required placeholder="Your name"
+                        className="w-full bg-transparent border-b border-[#D9D4CC] focus:border-[#0D7A9E] py-3 font-sans text-sm text-[#161616] placeholder-[#6B7280]/50 outline-none transition-colors duration-300"/>
+                    </div>
+                    <div>
+                      <label htmlFor="careers-email" className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#0D7A9E] block mb-2">Email Address *</label>
+                      <input id="careers-email" name="email" type="email" required placeholder="your@email.com"
+                        className="w-full bg-transparent border-b border-[#D9D4CC] focus:border-[#0D7A9E] py-3 font-sans text-sm text-[#161616] placeholder-[#6B7280]/50 outline-none transition-colors duration-300"/>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                      <label htmlFor="careers-location" className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#0D7A9E] block mb-2">Current Home Location</label>
+                      <input id="careers-location" name="location" type="text" placeholder="Your city"
+                        className="w-full bg-transparent border-b border-[#D9D4CC] focus:border-[#0D7A9E] py-3 font-sans text-sm text-[#161616] placeholder-[#6B7280]/50 outline-none transition-colors duration-300"/>
+                    </div>
+                    <div>
+                      <label htmlFor="careers-portfolio" className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#0D7A9E] block mb-2">Portfolio Link (URL)</label>
+                      <input id="careers-portfolio" name="portfolio" type="url" placeholder="https://"
+                        className="w-full bg-transparent border-b border-[#D9D4CC] focus:border-[#0D7A9E] py-3 font-sans text-sm text-[#161616] placeholder-[#6B7280]/50 outline-none transition-colors duration-300"/>
+                    </div>
+                  </div>
+                  <div>
+                    <label htmlFor="careers-statement" className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#0D7A9E] block mb-2">Statement of Intent</label>
+                    <textarea id="careers-statement" name="statement" rows={4}
+                      placeholder="Briefly describe your design philosophy..."
+                      className="w-full bg-transparent border-b border-[#D9D4CC] focus:border-[#0D7A9E] py-3 font-sans text-sm text-[#161616] placeholder-[#6B7280]/50 outline-none transition-colors duration-300 resize-none"/>
+                  </div>
+                  <div className="flex justify-end pt-4">
+                    <button type="button" id="careers-submit-btn"
+                      className="group inline-flex items-center gap-3 bg-[#0A2333] text-white px-10 py-5 font-sans text-[11px] font-semibold tracking-[0.2em] uppercase hover:bg-[#0D7A9E] transition-all duration-300">
+                      Submit Application
+                      <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                    </button>
+                  </div>
+                </form>
+              </RevealWrapper>
+            </div>
+          </div>
+        </div>
       </section>
     </>
   );

@@ -15,10 +15,11 @@ const services = [
   {
     id: 'architecture',
     num: '01',
-    title: 'Architecture',
+    title: 'Architectural Design Services',
+    shortTitle: 'Architecture',
     subtitle: 'Residential & Private Estates · Commercial & Office Spaces · Hospitality & Mixed-Use',
     description:
-      'Architecture is the primary discipline at Space Node. We design buildings that respond to their site and context, achieving timeless spatial quality through rigorous design thinking. Our architectural portfolio spans private residences, commercial offices, hospitality properties, and mixed-use developments across India, UAE, and USA.',
+      'We provide end-to-end architectural design solutions—from concept development and planning to technical drawings, approvals, and execution support. By combining thoughtful design, technical precision, and functional planning, we create spaces that are timeless, practical, and aligned with each client’s vision.',
     image: '/images/expertise-architecture.png',
     href: '/projects?category=Residential',
     reversed: false,
@@ -26,10 +27,11 @@ const services = [
   {
     id: 'interior',
     num: '02',
-    title: 'Interior Design',
+    title: 'Interior design services',
+    shortTitle: 'Interior Design',
     subtitle: 'Thoughtful interiors that reflect personality',
     description:
-      'Our interiors reflect the same rigour and restraint as our architecture. We design spaces that elevate everyday living through composite materiality and light. Every interior project begins with a deep understanding of how the inhabitants will use and experience the space, creating environments that are simultaneously beautiful and functional.',
+      'At Space Node Architects, we create thoughtfuly designed interiors that balance aesthetics, comfort, and functionality. Our approach focuses on transforming spaces into environments that reflect the client\'s lifestyle, personality, and practical needs while maintaining timeless design appeal. We ensure every element is carefully considered to create cohesive, elegant, and functional interiors that enhance everyday living and working experiences.',
     image: '/images/expertise-interior.png',
     href: '/projects',
     reversed: true,
@@ -37,10 +39,11 @@ const services = [
   {
     id: 'landscape',
     num: '03',
-    title: 'Landscape Design',
+    title: 'Landscape Design Services',
+    shortTitle: 'Landscape Design',
     subtitle: 'Outdoor spaces that connect architecture with nature',
     description:
-      'Outdoor spaces that connect architecture with nature, creating seamless transitions between built form and the environment. Our landscape approach is ecological and site-specific — we work with the natural terrain, hydrology, and existing vegetation to create landscapes that feel inevitable rather than imposed.',
+      'We create thoughtfully designed outdoor environments that enhance the beauty and functionality of a space. From site planning and planting concepts to outdoor living areas and material selection, we design landscapes that harmoniously connect architecture and nature. We believe landscape design completes a project—transforming spaces into a well-balanced and enriching living atmosphere.',
     image: '/images/expertise-landscape.png',
     href: '/projects?category=Landscape',
     reversed: false,
@@ -48,10 +51,11 @@ const services = [
   {
     id: 'consultancy',
     num: '04',
-    title: 'Project Consultancy',
+    title: 'Project Management Service',
+    shortTitle: 'Project Management',
     subtitle: 'Strategic guidance and expert management',
     description:
-      'Strategic guidance and expert management from initial concept through to final completion, ensuring uncompromising quality at every stage. We offer consultancy services to developers, institutions, and private clients who require expert design oversight and project leadership without compromising on their vision.',
+      'Project management is one of our core strengths—especially for clients residing abroad or who require trusted on-ground coordination. Acting as the client’s representative, we oversee every stage of the project, from design coordination and vendor selection to procurement, budgeting, execution, and final handover. By collaborating with specialized contractors and vendors for each scope of work, we ensure superior quality, cost transparency, and timely delivery while maintaining the integrity of the design. Through regular updates, quality checks, and seamless coordination, we provide a stress-free experience—allowing clients to stay confident and informed, no matter where they are.',
     image: '/images/expertise-consultancy.png',
     href: '/contact',
     reversed: true,
@@ -104,7 +108,7 @@ export default function ExpertisePage() {
               <a key={s.id} href={`#${s.id}`}
                 className="group flex-1 min-w-[140px] py-6 px-4 border-r border-[#E5E7EB] last:border-r-0 text-center hover:bg-white transition-colors duration-300">
                 <div className="font-sans text-[10px] tracking-[0.15em] uppercase text-[#0D7A9E] mb-1">{s.num}</div>
-                <div className="font-serif text-base text-[#161616] group-hover:text-[#0D7A9E] transition-colors duration-300">{s.title}</div>
+                <div className="font-serif text-base text-[#161616] group-hover:text-[#0D7A9E] transition-colors duration-300">{s.shortTitle || s.title}</div>
               </a>
             ))}
           </RevealWrapper>

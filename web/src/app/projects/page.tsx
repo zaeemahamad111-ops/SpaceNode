@@ -76,12 +76,8 @@ export default function ProjectsPage() {
         </div>
         <div className="max-w-[1440px] mx-auto px-6 md:px-20 relative z-10">
           <RevealWrapper>
-            <span className="font-sans text-[11px] font-semibold tracking-[0.25em] uppercase text-[#0D7A9E] block mb-6">
-              Our Work
-            </span>
-            <h1 className="font-serif text-6xl md:text-7xl text-[#161616] leading-[1.05] tracking-[-0.02em] mb-6">
-              Selected<br />
-              Works<span className="text-[#0D7A9E]">.</span>
+            <h1 className="font-serif text-5xl md:text-6xl text-[#161616] leading-[1.05] tracking-[-0.02em] mb-6 mt-6">
+              Selected Works<span className="text-[#0D7A9E]">.</span>
             </h1>
           </RevealWrapper>
           <RevealWrapper delay={0.1}>
@@ -92,26 +88,7 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* Filter Bar */}
-      <div className="sticky top-16 md:top-20 z-30 bg-white border-b border-[#E5E7EB] shadow-sm">
-        <div className="max-w-[1440px] mx-auto px-6 md:px-20">
-          <div className="flex items-center gap-0 overflow-x-auto no-scrollbar">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`flex-shrink-0 px-5 py-4 font-sans text-[10px] font-semibold tracking-[0.15em] uppercase transition-all duration-300 border-b-2 ${
-                  activeCategory === cat
-                    ? 'text-[#0D7A9E] border-[#0D7A9E]'
-                    : 'text-[#6B7280] border-transparent hover:text-[#161616]'
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
+      {/* Filter Bar Removed */}
 
       {/* Project Grid */}
       <section className="bg-[#F8F9FA] py-2" aria-label="Project gallery">

@@ -178,17 +178,19 @@ export default function CareersPage() {
             {/* Left */}
             <div className="lg:col-span-4">
               <RevealWrapper>
-                <h2 id="portfolio-heading" className="font-serif text-4xl md:text-5xl text-[#161616] mb-6">
+                <div className="mb-8 font-sans text-[11px] font-semibold tracking-[0.15em] uppercase text-[#0D7A9E] leading-loose">
+                  <p>JOB VACANCY STATUS</p>
+                  <p>LOOKING FOR AN ARCHITECT</p>
+                  <p>NO VACANCIES ...ETC</p>
+                </div>
+                <h2 id="portfolio-heading" className="font-serif text-4xl md:text-5xl text-[#161616] mb-8">
                   Submit Your<br /><span className="italic text-[#0D7A9E]">Portfolio</span>
                 </h2>
-                <p className="font-sans font-light text-base text-[#6B7280] leading-relaxed mb-8">
-                  Even if you don't see a perfect match, we are always interested in meeting exceptional people who share our philosophy.
-                </p>
                 <div>
                   <p className="font-sans text-[10px] tracking-[0.15em] uppercase text-[#0D7A9E] mb-2">Inquiries</p>
-                  <a href="mailto:careers@spacenode.com"
+                  <a href="mailto:careers@spacenodearchitects.in"
                     className="font-sans text-sm text-[#161616] hover:text-[#0D7A9E] transition-colors duration-300">
-                    careers@spacenode.com
+                    careers@spacenodearchitects.in
                   </a>
                 </div>
               </RevealWrapper>
@@ -212,16 +214,9 @@ export default function CareersPage() {
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
-                      <label htmlFor="careers-role" className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#0D7A9E] block mb-2">Role of Interest</label>
-                      <select id="careers-role" name="role"
-                        className="w-full bg-transparent border-b border-[#D9D4CC] focus:border-[#0D7A9E] py-3 font-sans text-sm text-[#161616] outline-none transition-colors duration-300 appearance-none cursor-pointer">
-                        <option value="">Select a role</option>
-                        <option>Senior Architect</option>
-                        <option>Interior Designer</option>
-                        <option>Project Manager</option>
-                        <option>Landscape Architect</option>
-                        <option>Other / Open Application</option>
-                      </select>
+                      <label htmlFor="careers-location" className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#0D7A9E] block mb-2">Current Home Location</label>
+                      <input id="careers-location" name="location" type="text" placeholder="Your city"
+                        className="w-full bg-transparent border-b border-[#D9D4CC] focus:border-[#0D7A9E] py-3 font-sans text-sm text-[#161616] placeholder-[#6B7280]/50 outline-none transition-colors duration-300"/>
                     </div>
                     <div>
                       <label htmlFor="careers-portfolio" className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#0D7A9E] block mb-2">Portfolio Link (URL)</label>

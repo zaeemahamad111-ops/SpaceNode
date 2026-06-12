@@ -1,10 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight, ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import RevealWrapper from '@/components/ui/RevealWrapper';
 import NodeMesh from '@/components/ui/NodeMesh';
 
@@ -22,14 +22,14 @@ function AboutHero() {
             </RevealWrapper>
             <RevealWrapper delay={0.1}>
               <h1 className="font-serif text-5xl md:text-7xl text-[#161616] leading-[1.05] tracking-[-0.02em] mb-8">
-                Creating Places,<br />
+                Creating Spaces,<br />
                 Not Just<br />
-                <span className="italic text-[#0D7A9E]">Buildings.</span>
+                <span className="italic text-[#0D7A9E]">Structures.</span>
               </h1>
             </RevealWrapper>
             <RevealWrapper delay={0.2}>
               <p className="font-sans font-light text-lg text-[#6B7280] leading-relaxed max-w-md mb-8">
-                We are a collective of architects, designers and thinkers committed to crafting spaces that endure, connect and inspire.
+                We are a collective of architects, designers, and thinkers crafting meaningful spaces through architecture, interiors, landscapes, and project management.
               </p>
             </RevealWrapper>
           </div>
@@ -66,13 +66,13 @@ function StudioStory() {
               Our Studio
             </span>
             <h2 id="studio-story-heading" className="font-serif text-4xl md:text-5xl text-[#161616] leading-tight mb-8">
-              A studio driven<br />by purpose and<br /><span className="italic">passion.</span>
+              A studio shaped<br />by vision and<br /><span className="italic">purpose.</span>
             </h2>
             <p className="font-sans font-light text-base text-[#6B7280] leading-relaxed mb-6">
-              Space Node is a multidisciplinary architecture studio creating timeless residential, commercial and landscape environments. Founded in 2008 in Cochin, Kerala, we have grown into a practice that operates across India, the UAE, and the United States.
+              Space Node Architects is a multidisciplinary architecture and design practice creating refined residential and commercial environments. Rooted in purposeful planning, timeless aesthetics, and thoughtful execution, we shape spaces that inspire and endure.
             </p>
             <p className="font-sans font-light text-base text-[#6B7280] leading-relaxed mb-10">
-              Our approach is rooted in the dialogue between the environment and human experience, ensuring every line drawn serves a narrative of light and form. We believe that great architecture begins with listening — to the site, to the client, and to the culture.
+              With projects and design collaborations spanning India, UAE, Australia, and the USA, our studio brings a global perspective to every space we create.
             </p>
             <div className="grid grid-cols-3 gap-6 pt-8 border-t border-[#E5E7EB]">
               {[
@@ -258,10 +258,9 @@ function PhilosophyDiagram() {
 
 // --- TEAM GRID ---
 const team = [
-  { name: 'Ar. Ranjith Menon', title: 'Founding Principal', image: '/images/expertise-architecture.png' },
-  { name: 'Ar. Priya Nair', title: 'Design Director', image: '/images/expertise-interior.png' },
-  { name: 'Ar. Arjun Das', title: 'Associate Director', image: '/images/about-hero.png' },
-  { name: 'Ar. Meera Pillai', title: 'Landscape Lead', image: '/images/expertise-landscape.png' },
+  { name: 'Ar. Jeffin Kuncheria Varghese', title: 'Principal Architect, Founder', image: '' },
+  { name: 'Ar. Jinsamol P Reji', title: 'Design Head, Co-founder', image: '' },
+  { name: 'Ar. Bibite Joy', title: 'Associate Architect', image: '' },
 ];
 
 function TeamGrid() {
@@ -277,18 +276,28 @@ function TeamGrid() {
           </h2>
         </RevealWrapper>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {team.map((member, i) => (
             <RevealWrapper key={member.name} delay={i * 0.1}>
               <div className="group">
                 <div className="overflow-hidden aspect-[3/4] mb-4 relative bg-[#F8F9FA]">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    sizes="(max-width: 768px) 50vw, 25vw"
-                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
-                  />
+                  {member.image ? (
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center border border-[#E5E7EB]">
+                      <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-30 group-hover:opacity-60 transition-opacity duration-300">
+                        <line x1="10" y1="10" x2="50" y2="50" stroke="#0D7A9E" strokeWidth="1" strokeDasharray="4 4" />
+                        <line x1="50" y1="10" x2="10" y2="50" stroke="#0D7A9E" strokeWidth="1" strokeDasharray="4 4" />
+                        <rect x="15" y="15" width="30" height="30" stroke="#0D7A9E" strokeWidth="1" fill="none" />
+                      </svg>
+                    </div>
+                  )}
                   {/* Node connection indicator */}
                   <div className="absolute top-3 right-3 w-2 h-2 rounded-full bg-[#0D7A9E] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
@@ -319,34 +328,189 @@ function TeamGrid() {
 }
 
 // --- TESTIMONIALS ---
+const testimonials = [
+  {
+    quote: "Space Node transformed our vision into a timeless space that feels both deeply rooted and beautifully contemporary.",
+    name: "Anand Menon",
+    designation: "Client",
+    company: "The Kerala Residence",
+    image: "/images/expertise-architecture.png",
+    clientImage: ""
+  },
+  {
+    quote: "Their meticulous attention to detail and profound understanding of light created a workspace that our team genuinely loves.",
+    name: "Sarah Jenkins",
+    designation: "CEO",
+    company: "TechNova Solutions",
+    image: "/images/expertise-interior.png",
+    clientImage: ""
+  },
+  {
+    quote: "From concept to execution, the process was seamless. They masterfully blended nature with architecture to give us an unforgettable retreat.",
+    name: "Arun Patel",
+    designation: "Managing Director",
+    company: "Luxe Hospitality Group",
+    image: "/images/expertise-landscape.png",
+    clientImage: ""
+  }
+];
+
 function Testimonials() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const goToNext = () => setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+  const goToPrev = () => setCurrentIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+
   return (
-    <section className="relative py-32 md:py-40 bg-[#0A2333] overflow-hidden" aria-label="Testimonials">
-      <div className="absolute inset-0 opacity-20">
-        <NodeMesh variant="section" animated={true} />
-      </div>
-      <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-20 text-center">
-        <RevealWrapper>
-          <svg className="w-10 h-10 mx-auto mb-8" viewBox="0 0 40 40" fill="none">
-            <circle cx="20" cy="8" r="3" fill="#0D7A9E" opacity="0.8"/>
-            <circle cx="8" cy="32" r="2.5" fill="#0D7A9E" opacity="0.6"/>
-            <circle cx="32" cy="32" r="2.5" fill="#0D7A9E" opacity="0.6"/>
-            <line x1="20" y1="8" x2="8" y2="32" stroke="#6EB8D0" strokeWidth="0.8" opacity="0.5"/>
-            <line x1="20" y1="8" x2="32" y2="32" stroke="#6EB8D0" strokeWidth="0.8" opacity="0.5"/>
-            <line x1="8" y1="32" x2="32" y2="32" stroke="#6EB8D0" strokeWidth="0.5" opacity="0.3"/>
-          </svg>
+    <section className="py-24 md:py-32 bg-[#F8F9FA] overflow-hidden" aria-label="Client Testimonials">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-20">
+        
+        <RevealWrapper className="mb-12">
+          <span className="font-sans text-[11px] font-semibold tracking-[0.25em] uppercase text-[#0D7A9E] block mb-4">
+            Client Voices
+          </span>
+          <h2 className="font-serif text-4xl md:text-5xl text-[#161616] leading-tight">
+            Perspectives from<br /><span className="italic text-[#0D7A9E]">our clients</span>
+          </h2>
         </RevealWrapper>
-        <RevealWrapper delay={0.1}>
-          <blockquote className="font-serif text-3xl md:text-5xl text-white leading-[1.25] max-w-3xl mx-auto mb-10">
-            &ldquo;Space Node transformed our vision into a timeless space that feels both deeply rooted and beautifully contemporary.&rdquo;
-          </blockquote>
-        </RevealWrapper>
-        <RevealWrapper delay={0.2}>
-          <div className="w-12 h-px bg-[#0D7A9E] mx-auto mb-5" />
-          <p className="font-sans text-[11px] tracking-[0.2em] uppercase text-white/40">
-            — Client, The Kerala Residence
-          </p>
-        </RevealWrapper>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-stretch">
+          
+          {/* Architectural Image Side */}
+          <div className="lg:col-span-5 relative h-[400px] md:h-[500px] w-full overflow-hidden bg-[#E5E7EB]">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentIndex}
+                initial={{ opacity: 0, scale: 1.05 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.7, ease: [0.21, 0.47, 0.32, 0.98] }}
+                className="absolute inset-0"
+              >
+                <Image
+                  src={testimonials[currentIndex].image}
+                  alt={testimonials[currentIndex].company}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                />
+              </motion.div>
+            </AnimatePresence>
+            
+            {/* Architectural overlay lines */}
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute top-8 left-8 w-8 h-px bg-white/60" />
+              <div className="absolute top-8 left-8 w-px h-8 bg-white/60" />
+              <div className="absolute bottom-8 right-8 w-8 h-px bg-white/60" />
+              <div className="absolute bottom-8 right-8 w-px h-8 bg-white/60" />
+            </div>
+          </div>
+
+          {/* Testimonial Content Side */}
+          <div className="lg:col-span-7 flex flex-col justify-between py-6">
+            
+            <div className="relative min-h-[300px] md:min-h-[250px]">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentIndex}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  className="absolute inset-0"
+                >
+                  <svg className="w-8 h-8 mb-6" viewBox="0 0 40 40" fill="none">
+                    <circle cx="10" cy="10" r="3" fill="#0D7A9E" opacity="0.8"/>
+                    <circle cx="30" cy="30" r="2.5" fill="#0D7A9E" opacity="0.6"/>
+                    <line x1="10" y1="10" x2="30" y2="30" stroke="#0D7A9E" strokeWidth="1" opacity="0.5"/>
+                  </svg>
+                  
+                  <blockquote className="font-serif text-3xl md:text-4xl text-[#161616] leading-[1.3] mb-10">
+                    &ldquo;{testimonials[currentIndex].quote}&rdquo;
+                  </blockquote>
+                  
+                  <div className="flex items-center gap-5">
+                    {/* Circular Avatar Cutout */}
+                    <div className="w-14 h-14 rounded-full overflow-hidden bg-[#E5E7EB] border border-[#D1D5DB] flex items-center justify-center relative shrink-0">
+                      {testimonials[currentIndex].clientImage ? (
+                        <Image
+                          src={testimonials[currentIndex].clientImage}
+                          alt={testimonials[currentIndex].name}
+                          fill
+                          className="object-cover"
+                        />
+                      ) : (
+                        <svg className="w-6 h-6 text-[#9CA3AF]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                      )}
+                    </div>
+                    
+                    <div>
+                      <p className="font-sans text-[13px] font-bold tracking-[0.1em] uppercase text-[#161616] mb-1">
+                        {testimonials[currentIndex].name}
+                      </p>
+                      <p className="font-sans text-[11px] tracking-[0.2em] uppercase text-[#6B7280] mb-1">
+                        {testimonials[currentIndex].designation}
+                      </p>
+                      <p className="font-sans text-[11px] tracking-[0.2em] uppercase text-[#0D7A9E]">
+                        {testimonials[currentIndex].company}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* Architectural Navigation Tabs */}
+            <div className="mt-12 md:mt-16 flex items-center gap-8 border-t border-[#E5E7EB] pt-6">
+              
+              <div className="flex gap-2">
+                <button 
+                  onClick={goToPrev}
+                  className="p-3 border border-[#E5E7EB] text-[#161616] hover:bg-[#0D7A9E] hover:text-white hover:border-[#0D7A9E] transition-all duration-300"
+                  aria-label="Previous testimonial"
+                >
+                  <ChevronLeft size={20} strokeWidth={1.5} />
+                </button>
+                <button 
+                  onClick={goToNext}
+                  className="p-3 border border-[#E5E7EB] text-[#161616] hover:bg-[#0D7A9E] hover:text-white hover:border-[#0D7A9E] transition-all duration-300"
+                  aria-label="Next testimonial"
+                >
+                  <ChevronRight size={20} strokeWidth={1.5} />
+                </button>
+              </div>
+
+              {/* Progress Indicator */}
+              <div className="flex-1 flex items-center gap-4">
+                <span className="font-sans text-[10px] tracking-[0.2em] font-semibold text-[#161616]">
+                  0{currentIndex + 1}
+                </span>
+                <div className="flex-1 h-px bg-[#E5E7EB] relative overflow-hidden">
+                  <motion.div 
+                    className="absolute top-0 left-0 h-full bg-[#0D7A9E]"
+                    initial={{ width: '0%' }}
+                    animate={{ width: `${((currentIndex + 1) / testimonials.length) * 100}%` }}
+                    transition={{ duration: 0.5 }}
+                  />
+                </div>
+                <span className="font-sans text-[10px] tracking-[0.2em] font-medium text-[#9CA3AF]">
+                  0{testimonials.length}
+                </span>
+              </div>
+              
+            </div>
+
+          </div>
+        </div>
       </div>
     </section>
   );

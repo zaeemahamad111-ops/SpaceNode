@@ -10,29 +10,29 @@ import RevealWrapper from '@/components/ui/RevealWrapper';
 const services = [
   {
     num: '01',
-    title: 'Architecture',
-    desc: 'Residential, commercial, and hospitality buildings designed with purpose, permanence, and contextual sensitivity to their environment.',
+    title: 'Architectural Design Services',
+    desc: 'We provide end-to-end architectural design solutions—from concept development and planning to technical drawings, approvals, and execution support.',
     href: '/expertise#architecture',
     image: '/images/expertise-architecture.png'
   },
   {
     num: '02',
-    title: 'Interior Design',
-    desc: 'Thoughtful interiors that reflect personality and elevate everyday living through material honesty, natural light, and bespoke detailing.',
+    title: 'Interior design services',
+    desc: 'At Space Node Architects, we create thoughtfuly designed interiors that balance aesthetics, comfort, and functionality.',
     href: '/expertise#interior',
     image: '/images/expertise-interior.png'
   },
   {
     num: '03',
-    title: 'Landscape Design',
-    desc: 'Outdoor spaces that connect architecture with nature, creating seamless transitions between built form and natural environments.',
+    title: 'Landscape Design Services',
+    desc: 'We create thoughtfully designed outdoor environments that enhance the beauty and functionality of a space.',
     href: '/expertise#landscape',
     image: '/images/expertise-landscape.png'
   },
   {
     num: '04',
-    title: 'Project Consultancy',
-    desc: 'Strategic guidance and expert management from initial concept through to final completion, ensuring uncompromising quality.',
+    title: 'Project Management Service',
+    desc: 'Project management is one of our core strengths—especially for clients residing abroad or who require trusted on-ground coordination.',
     href: '/expertise#consultancy',
     image: '/images/expertise-consultancy.png'
   },

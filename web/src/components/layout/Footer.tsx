@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Mail, Phone, Camera, Users, Briefcase, ArrowUpRight } from 'lucide-react';
+import { Mail, Phone, ArrowUpRight, MessageCircle } from 'lucide-react';
 import NodeMesh from '@/components/ui/NodeMesh';
 
 const footerNav = [
@@ -9,20 +9,41 @@ const footerNav = [
   { label: 'Expertise', href: '/expertise' },
   { label: 'Projects', href: '/projects' },
   { label: 'Contact', href: '/contact' },
-  { label: 'Careers', href: '/careers' },
 ];
 
 const services = [
   { label: 'Architecture', href: '/expertise' },
   { label: 'Interior Design', href: '/expertise' },
   { label: 'Landscape Design', href: '/expertise' },
-  { label: 'Project Consultancy', href: '/expertise' },
+  { label: 'Project Management', href: '/expertise' },
 ];
 
+const InstagramIcon = ({ size = 16 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+  </svg>
+);
+
+const FacebookIcon = ({ size = 16 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+  </svg>
+);
+
+const LinkedinIcon = ({ size = 16 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+    <rect x="2" y="9" width="4" height="12"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
+  </svg>
+);
+
 const socials = [
-  { label: 'Instagram', href: '#', icon: Camera },
-  { label: 'Facebook', href: '#', icon: Users },
-  { label: 'LinkedIn', href: '#', icon: Briefcase },
+  { label: 'Instagram', href: '#', icon: InstagramIcon },
+  { label: 'Facebook', href: '#', icon: FacebookIcon },
+  { label: 'LinkedIn', href: '#', icon: LinkedinIcon },
 ];
 
 export default function Footer() {
@@ -120,29 +141,30 @@ export default function Footer() {
             </h3>
             <address className="not-italic space-y-4">
               <p className="font-sans text-sm text-white/50 leading-relaxed">
-                88 Architecture Row, Suite 140<br />
-                Cochin, Kerala — 682018<br />
-                <span className="text-white/30 text-xs">India · UAE · USA</span>
+                First Floor, Velleparambil building<br />
+                Kaloor, Cochin-17, Kerala
               </p>
               <div className="space-y-2">
                 <a href="tel:+914842345678" className="flex items-center gap-2 font-sans text-sm text-white/50 hover:text-[#6EB8D0] transition-colors duration-300">
                   <Phone size={13} />
                   +91 484 234 5678
                 </a>
-                <a href="mailto:hello@spacenode.com" className="flex items-center gap-2 font-sans text-sm text-white/50 hover:text-[#6EB8D0] transition-colors duration-300">
+                <a href="mailto:enquiries@spacenodearchitects.in" className="flex items-center gap-2 font-sans text-sm text-white/50 hover:text-[#6EB8D0] transition-colors duration-300">
                   <Mail size={13} />
-                  hello@spacenode.com
+                  enquiries@spacenodearchitects.in
                 </a>
               </div>
             </address>
 
             {/* CTA */}
-            <Link
-              href="/contact"
+            <a
+              href="https://wa.me/914842345678"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-8 inline-flex items-center gap-2 border border-[#0D7A9E] text-[#0D7A9E] px-5 py-2.5 font-sans text-[10px] font-semibold tracking-[0.15em] uppercase hover:bg-[#0D7A9E] hover:text-white transition-all duration-300"
             >
-              Start a Project <ArrowUpRight size={12} />
-            </Link>
+              WhatsApp Us <MessageCircle size={12} />
+            </a>
           </div>
         </div>
 

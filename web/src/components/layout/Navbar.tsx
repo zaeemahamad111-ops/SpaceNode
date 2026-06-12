@@ -13,7 +13,6 @@ const navLinks = [
   { label: 'Expertise', href: '/expertise' },
   { label: 'Projects', href: '/projects' },
   { label: 'Contact', href: '/contact' },
-  { label: 'Careers', href: '/careers' },
 ];
 
 export default function Navbar() {
@@ -70,11 +69,11 @@ export default function Navbar() {
               }}
               priority
             />
-            <div className="flex flex-col leading-none gap-0.5">
+            <div className="flex flex-col leading-none gap-1">
               <span className={`font-sans font-bold text-base tracking-[0.25em] uppercase transition-colors duration-300 text-white`}>
                 SPACE NODE
               </span>
-              <span className={`font-sans text-[10px] tracking-[0.2em] uppercase opacity-60 transition-colors duration-300 text-white`}>
+              <span className={`font-sans font-bold text-base tracking-[0.25em] uppercase transition-colors duration-300 text-white`}>
                 ARCHITECTS
               </span>
             </div>
@@ -98,15 +97,6 @@ export default function Navbar() {
               );
             })}
           </nav>
-
-          {/* CTA Button */}
-          <Link
-            href="/contact"
-            className="hidden md:flex items-center gap-2 border px-5 py-2.5 font-sans text-[11px] font-semibold tracking-[0.15em] uppercase transition-all duration-300 border-white text-white hover:bg-white hover:text-[#0D7A9E]"
-          >
-            Book Consultation
-            <ArrowUpRight size={13} />
-          </Link>
 
           {/* Mobile Menu Toggle */}
           <button
