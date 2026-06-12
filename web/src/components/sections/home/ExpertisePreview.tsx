@@ -78,23 +78,22 @@ export default function ExpertisePreview() {
                     onMouseEnter={() => setHoveredIndex(i)}
                   >
                     <Link href={service.href} className="block py-10 relative overflow-hidden">
-                      {/* Hover background slide effect */}
                       <div 
                         className={`absolute inset-0 bg-white transition-transform duration-500 origin-left ${
-                          isHovered ? 'scale-x-100' : 'scale-x-0'
+                          isHovered ? 'scale-x-100' : 'scale-x-100 lg:scale-x-0'
                         }`} 
                       />
                       
                       <div className="relative z-10 flex items-start gap-5 md:gap-8 lg:gap-12 px-2 md:px-4">
                         <span className={`font-sans text-[11px] tracking-[0.2em] font-bold transition-colors duration-300 pt-1 md:pt-3 ${
-                          isHovered ? 'text-[#0D7A9E]' : 'text-[#9CA3AF]'
+                          isHovered ? 'text-[#0D7A9E]' : 'text-[#0D7A9E] lg:text-[#9CA3AF]'
                         }`}>
                           {service.num}
                         </span>
                         
                         <div className="flex-1">
                           <h3 className={`font-serif text-3xl md:text-4xl lg:text-5xl transition-colors duration-300 mb-2 md:mb-4 ${
-                            isHovered ? 'text-[#0D7A9E]' : 'text-[#161616]'
+                            isHovered ? 'text-[#0D7A9E]' : 'text-[#0D7A9E] lg:text-[#161616]'
                           }`}>
                             {service.title}
                           </h3>
@@ -102,7 +101,7 @@ export default function ExpertisePreview() {
                           {/* Smooth expanding description */}
                           <div 
                             className={`grid transition-all duration-500 ease-in-out ${
-                              isHovered ? 'grid-rows-[1fr] opacity-100 mt-2 md:mt-4' : 'grid-rows-[0fr] opacity-0'
+                              isHovered ? 'grid-rows-[1fr] opacity-100 mt-2 md:mt-4' : 'grid-rows-[1fr] opacity-100 mt-2 md:mt-4 lg:grid-rows-[0fr] lg:opacity-0 lg:mt-0'
                             }`}
                           >
                             <div className="overflow-hidden">
