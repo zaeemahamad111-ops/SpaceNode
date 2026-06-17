@@ -53,12 +53,13 @@ export default function HomeCTA() {
 
         {/* Bottom atmospheric image */}
         <RevealWrapper delay={0.3} className="overflow-hidden h-72 md:h-96 relative">
-          <Image
-            src="/images/cta-pathway.png"
-            alt="Atmospheric architectural corridor with blue-lit opening"
-            fill
-            sizes="100vw"
-            className="object-cover hover:scale-105 transition-transform duration-700"
+          <video
+            src="/videos/home-cta-video.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#161616]/70 via-black/20 to-transparent" />
           <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
