@@ -148,7 +148,7 @@ export default function ExpertisePreview() {
       {/* --- MOBILE: Scroll-Jacking Horizontal Scroll --- */}
       <div ref={targetRef} className="lg:hidden h-[400vh] relative mt-8">
         <div className="sticky top-20 h-[60vh] flex items-center overflow-hidden">
-          <motion.div style={{ x }} className="flex gap-4 px-6 w-[360vw] md:w-[260vw]">
+          <motion.div style={{ x }} className="flex gap-4 px-6 w-[360vw] md:w-[260vw] h-full">
             {services.map((service, i) => (
               <div
                 key={service.num}
