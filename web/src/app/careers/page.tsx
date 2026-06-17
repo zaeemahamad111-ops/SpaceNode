@@ -1,15 +1,12 @@
-import type { Metadata } from 'next';
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import RevealWrapper from '@/components/ui/RevealWrapper';
 import NodeMesh from '@/components/ui/NodeMesh';
-
-export const metadata: Metadata = {
-  title: 'Careers',
-  description:
-    'Join Space Node Architects — a multidisciplinary practice creating timeless architecture. View open positions and submit your portfolio.',
-};
+import ApplicationModal from '@/components/sections/careers/ApplicationModal';
 
 const openRoles = [
   {
@@ -47,8 +44,23 @@ const openRoles = [
 ];
 
 export default function CareersPage() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedRole, setSelectedRole] = useState<string | null>(null);
+
+  const handleApplyClick = (e: React.MouseEvent<HTMLAnchorElement>, roleTitle: string) => {
+    e.preventDefault();
+    setSelectedRole(roleTitle);
+    setModalOpen(true);
+  };
+
   return (
     <>
+      <ApplicationModal 
+        isOpen={modalOpen} 
+        onClose={() => setModalOpen(false)} 
+        jobRole={selectedRole} 
+      />
+
       {/* Hero */}
       <section className="relative pt-36 pb-20 bg-[#F8F9FA] overflow-hidden" aria-label="Careers hero">
         <div className="max-w-[1440px] mx-auto px-6 md:px-20">
@@ -160,8 +172,9 @@ export default function CareersPage() {
                   <p className="font-sans font-light text-sm text-[#6B7280] leading-relaxed mb-6">
                     {role.desc}
                   </p>
-                  <a href="#careers-apply"
-                    className="group/btn inline-flex items-center gap-1.5 font-sans text-[11px] font-semibold tracking-[0.15em] uppercase text-[#0D7A9E] hover:text-[#0A2333] transition-colors duration-300">
+                  <a href="#apply"
+                    onClick={(e) => handleApplyClick(e, role.title)}
+                    className="group/btn inline-flex items-center gap-1.5 font-sans text-[11px] font-semibold tracking-[0.15em] uppercase text-[#0D7A9E] hover:text-[#0A2333] transition-colors duration-300 cursor-pointer">
                     Apply Now <ArrowRight size={12} className="group-hover/btn:translate-x-1 transition-transform" />
                   </a>
                 </div>
@@ -171,78 +184,6 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* Portfolio Submission */}
-      <section id="careers-apply" className="py-32 md:py-40 bg-[#F8F9FA]" aria-labelledby="portfolio-heading">
-        <div className="max-w-[1440px] mx-auto px-6 md:px-20">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-            {/* Left */}
-            <div className="lg:col-span-4">
-              <RevealWrapper>
-                <div className="mb-8 font-sans text-[11px] font-semibold tracking-[0.15em] uppercase text-[#0D7A9E] leading-loose">
-                  <p>JOB VACANCY STATUS</p>
-                  <p>LOOKING FOR AN ARCHITECT</p>
-                  <p>NO VACANCIES ...ETC</p>
-                </div>
-                <h2 id="portfolio-heading" className="font-serif text-4xl md:text-5xl text-[#161616] mb-8">
-                  Submit Your<br /><span className="italic text-[#0D7A9E]">Portfolio</span>
-                </h2>
-                <div>
-                  <p className="font-sans text-[10px] tracking-[0.15em] uppercase text-[#0D7A9E] mb-2">Inquiries</p>
-                  <a href="mailto:careers@spacenodearchitects.in"
-                    className="font-sans text-sm text-[#161616] hover:text-[#0D7A9E] transition-colors duration-300">
-                    careers@spacenodearchitects.in
-                  </a>
-                </div>
-              </RevealWrapper>
-            </div>
-
-            {/* Form */}
-            <div className="lg:col-span-8">
-              <RevealWrapper delay={0.1}>
-                <form className="space-y-8" id="portfolio-form" aria-label="Portfolio submission form">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div>
-                      <label htmlFor="careers-name" className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#0D7A9E] block mb-2">Full Name *</label>
-                      <input id="careers-name" name="name" type="text" required placeholder="Your name"
-                        className="w-full bg-transparent border-b border-[#D9D4CC] focus:border-[#0D7A9E] py-3 font-sans text-sm text-[#161616] placeholder-[#6B7280]/50 outline-none transition-colors duration-300"/>
-                    </div>
-                    <div>
-                      <label htmlFor="careers-email" className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#0D7A9E] block mb-2">Email Address *</label>
-                      <input id="careers-email" name="email" type="email" required placeholder="your@email.com"
-                        className="w-full bg-transparent border-b border-[#D9D4CC] focus:border-[#0D7A9E] py-3 font-sans text-sm text-[#161616] placeholder-[#6B7280]/50 outline-none transition-colors duration-300"/>
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div>
-                      <label htmlFor="careers-location" className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#0D7A9E] block mb-2">Current Home Location</label>
-                      <input id="careers-location" name="location" type="text" placeholder="Your city"
-                        className="w-full bg-transparent border-b border-[#D9D4CC] focus:border-[#0D7A9E] py-3 font-sans text-sm text-[#161616] placeholder-[#6B7280]/50 outline-none transition-colors duration-300"/>
-                    </div>
-                    <div>
-                      <label htmlFor="careers-portfolio" className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#0D7A9E] block mb-2">Portfolio Link (URL)</label>
-                      <input id="careers-portfolio" name="portfolio" type="url" placeholder="https://"
-                        className="w-full bg-transparent border-b border-[#D9D4CC] focus:border-[#0D7A9E] py-3 font-sans text-sm text-[#161616] placeholder-[#6B7280]/50 outline-none transition-colors duration-300"/>
-                    </div>
-                  </div>
-                  <div>
-                    <label htmlFor="careers-statement" className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#0D7A9E] block mb-2">Statement of Intent</label>
-                    <textarea id="careers-statement" name="statement" rows={4}
-                      placeholder="Briefly describe your design philosophy..."
-                      className="w-full bg-transparent border-b border-[#D9D4CC] focus:border-[#0D7A9E] py-3 font-sans text-sm text-[#161616] placeholder-[#6B7280]/50 outline-none transition-colors duration-300 resize-none"/>
-                  </div>
-                  <div className="flex justify-end pt-4">
-                    <button type="submit" id="careers-submit-btn"
-                      className="group inline-flex items-center gap-3 bg-[#0A2333] text-white px-10 py-5 font-sans text-[11px] font-semibold tracking-[0.2em] uppercase hover:bg-[#0D7A9E] transition-all duration-300">
-                      Submit Application
-                      <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                    </button>
-                  </div>
-                </form>
-              </RevealWrapper>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 }
