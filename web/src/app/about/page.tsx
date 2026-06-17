@@ -548,7 +548,6 @@ export default function AboutPage() {
     <>
       <AboutHero />
       <StudioStory />
-      <PhilosophyDiagram />
       <TeamGrid />
       <Testimonials />
       <AboutCTA />
