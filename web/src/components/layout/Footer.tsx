@@ -65,14 +65,18 @@ export default function Footer() {
               <Image
                 src="/images/logo-white.png"
                 alt="Space Node Architects logo"
-                width={72}
-                height={72}
+                width={110}
+                height={110}
                 className="object-contain flex-shrink-0"
-                style={{ width: '72px', height: '72px' }}
+                style={{ width: '110px', height: '110px' }}
               />
-              <div>
-                <div className="font-sans font-bold text-[11px] tracking-[0.3em] uppercase text-white">SPACE NODE</div>
-                <div className="font-sans text-[7px] tracking-[0.25em] uppercase text-white/40">ARCHITECTS</div>
+              <div className="flex flex-col leading-none gap-1">
+                <span className="font-sans font-bold text-base tracking-[0.25em] uppercase text-white">
+                  SPACE NODE
+                </span>
+                <span className="font-sans font-bold text-base tracking-[0.25em] uppercase text-white">
+                  ARCHITECTS
+                </span>
               </div>
             </Link>
             <p className="font-sans text-sm text-white/50 leading-relaxed max-w-xs mb-8">
