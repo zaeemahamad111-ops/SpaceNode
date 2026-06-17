@@ -64,7 +64,7 @@ export default function ExpertisePreview() {
 
         {/* Interactive Horizontal Accordion */}
         <RevealWrapper delay={0.2}>
-          <div className="flex flex-col lg:flex-row w-full h-[600px] lg:h-[550px] gap-2 lg:gap-3">
+          <div className="flex flex-row overflow-x-auto lg:overflow-visible w-full h-[400px] md:h-[500px] lg:h-[550px] gap-4 lg:gap-3 pb-6 lg:pb-0 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
             {services.map((service, i) => {
               const isActive = hoveredIndex === i;
               
@@ -72,8 +72,8 @@ export default function ExpertisePreview() {
                 <div
                   key={service.num}
                   onMouseEnter={() => setHoveredIndex(i)}
-                  className={`relative overflow-hidden rounded-[2rem] transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] cursor-pointer group ${
-                    isActive ? 'flex-[4] lg:flex-[3]' : 'flex-1'
+                  className={`relative overflow-hidden rounded-[2rem] transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] cursor-pointer group shrink-0 snap-center w-[85vw] md:w-[60vw] lg:w-auto lg:shrink ${
+                    isActive ? 'lg:flex-[3]' : 'lg:flex-1'
                   }`}
                 >
                   <Link href={service.href} className="block w-full h-full relative">
@@ -83,29 +83,35 @@ export default function ExpertisePreview() {
                       alt={service.title}
                       fill
                       className="object-cover transition-transform duration-1000 group-hover:scale-105"
-                      sizes={isActive ? "(max-width: 1024px) 100vw, 50vw" : "(max-width: 1024px) 100vw, 20vw"}
+                      sizes="(max-width: 1024px) 85vw, 50vw"
                       priority={i === 0}
                     />
                     
                     {/* Dark Gradient Overlay for text readability */}
-                    <div className={`absolute inset-0 transition-opacity duration-700 ${isActive ? 'bg-gradient-to-t from-black/90 via-black/40 to-black/10' : 'bg-black/40 group-hover:bg-black/20'}`} />
+                    <div className={`absolute inset-0 transition-opacity duration-700 ${
+                      isActive 
+                        ? 'bg-gradient-to-t from-black/90 via-black/40 to-black/10' 
+                        : 'bg-gradient-to-t from-black/90 via-black/40 to-black/10 lg:bg-black/40 lg:group-hover:bg-black/20'
+                    }`} />
 
                     {/* Content */}
                     <div className="absolute inset-x-0 bottom-0 p-6 md:p-8 flex flex-col justify-end h-full">
                       <div className="mt-auto">
-                        {/* Title - Truncate and scale down slightly when inactive */}
+                        {/* Title - Truncate and scale down slightly when inactive on desktop */}
                         <h3 className={`font-sans tracking-wide uppercase text-white transition-all duration-700 whitespace-nowrap overflow-hidden text-ellipsis ${
                           isActive 
                             ? 'text-2xl md:text-3xl font-semibold mb-3' 
-                            : 'text-sm md:text-base font-medium origin-left'
+                            : 'text-2xl md:text-3xl font-semibold mb-3 lg:text-base lg:font-medium lg:mb-0 lg:origin-left'
                         }`}>
                           {service.title}
                         </h3>
                         
-                        {/* Description - Fade and slide in/out */}
+                        {/* Description - Fade and slide in/out on desktop, always visible on mobile */}
                         <div 
                           className={`grid transition-all duration-700 ease-in-out ${
-                            isActive ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                            isActive 
+                              ? 'grid-rows-[1fr] opacity-100' 
+                              : 'grid-rows-[1fr] opacity-100 lg:grid-rows-[0fr] lg:opacity-0'
                           }`}
                         >
                           <div className="overflow-hidden">
