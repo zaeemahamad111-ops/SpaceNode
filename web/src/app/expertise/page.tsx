@@ -162,52 +162,6 @@ export default function ExpertisePage() {
         </section>
       ))}
 
-      {/* Process Section */}
-      <section className="py-32 md:py-40 bg-[#0A2333] overflow-hidden relative" aria-labelledby="process-heading">
-        <div className="absolute inset-0 opacity-20">
-          <NodeMesh variant="footer" animated={true} />
-        </div>
-        <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-20">
-          <RevealWrapper className="text-center mb-20">
-            <span className="font-sans text-[11px] font-semibold tracking-[0.25em] uppercase text-[#0D7A9E] block mb-4">
-              Our Process
-            </span>
-            <h2 id="process-heading" className="font-serif text-4xl md:text-5xl text-white">
-              How We <span className="italic text-[#6EB8D0]">Work</span>
-            </h2>
-          </RevealWrapper>
-
-          {/* Node-driven timeline */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-0 relative">
-            {/* Connection line */}
-            <div className="absolute top-6 left-0 right-0 h-px bg-[#0D7A9E]/30 hidden md:block" />
-
-            {processSteps.map((step, i) => (
-              <RevealWrapper key={step.num} delay={i * 0.12}>
-                <div className="relative text-center px-4 pb-8">
-                  {/* Node on timeline */}
-                  <div className="relative inline-flex items-center justify-center mb-6">
-                    <div className="w-12 h-12 rounded-full border-2 border-[#0D7A9E] bg-[#0A2333] flex items-center justify-center relative z-10">
-                      <span className="font-sans text-[10px] font-semibold tracking-[0.15em] text-[#0D7A9E]">{step.num}</span>
-                    </div>
-                    <div className="absolute w-12 h-12 rounded-full bg-[#0D7A9E]/20 animate-ping" style={{ animationDuration: `${3 + i * 0.5}s` }} />
-                  </div>
-
-                  <h3 className="font-serif text-2xl text-white mb-3">{step.title}</h3>
-                  <p className="font-sans font-light text-sm text-white/50 leading-relaxed">{step.desc}</p>
-
-                  {/* Arrow between steps */}
-                  {i < processSteps.length - 1 && (
-                    <div className="absolute top-5 -right-3 md:block hidden z-20">
-                      <ArrowRight size={16} className="text-[#0D7A9E]" />
-                    </div>
-                  )}
-                </div>
-              </RevealWrapper>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA */}
       <section className="py-28 bg-[#F8F9FA]" aria-label="Expertise CTA">
