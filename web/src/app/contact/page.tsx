@@ -1,61 +1,18 @@
-'use client';
-
-import { useState } from 'react';
-import { ArrowRight, MapPin, Phone, Mail, Camera, Users, Briefcase } from 'lucide-react';
+import type { Metadata } from 'next';
+import { ArrowRight, Mail, Phone } from 'lucide-react';
 import RevealWrapper from '@/components/ui/RevealWrapper';
 import NodeMesh from '@/components/ui/NodeMesh';
-import ApplicationModal from '@/components/sections/careers/ApplicationModal';
+import ContactForm from '@/components/sections/contact/ContactForm';
+import ContactOpenRoles from '@/components/sections/contact/ContactOpenRoles';
 
-const openRoles = [
-  {
-    id: 'architect',
-    dept: 'Architecture',
-    title: 'Architect',
-    location: 'Cochin, Kerala',
-    type: 'Full Time',
-    desc: 'Lead ultra-high-net-worth residential projects from concept through completion in our Cochin studio. Minimum 8 years experience in premium residential architecture.',
-  },
-  {
-    id: 'draftsman',
-    dept: 'Architecture',
-    title: 'Draftsman',
-    location: 'Cochin / Dubai',
-    type: 'Full Time',
-    desc: 'Specialise in material curation and bespoke furniture integration for international hospitality and residential clients. Portfolio demonstrating luxury interiors required.',
-  },
-];
+export const metadata: Metadata = {
+  title: 'Contact Us',
+  description: 'Start a journey with Space Node Architects. Let\'s build something extraordinary together.',
+};
 
 export default function ContactPage() {
-  const [modalOpen, setModalOpen] = useState(false);
-  const [selectedRole, setSelectedRole] = useState<string | null>(null);
-
-  const handleApplyClick = (e: React.MouseEvent<HTMLAnchorElement>, roleTitle: string) => {
-    e.preventDefault();
-    setSelectedRole(roleTitle);
-    setModalOpen(true);
-  };
-
-  const [formState, setFormState] = useState({
-    name: '', email: '', phone: '', projectType: '', budget: '', message: '',
-  });
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    setFormState(prev => ({ ...prev, [e.target.name]: e.target.value }));
-  };
-
   return (
     <>
-      <ApplicationModal 
-        isOpen={modalOpen} 
-        onClose={() => setModalOpen(false)} 
-        jobRole={selectedRole} 
-      />
       {/* Hero */}
       <section className="relative pt-36 pb-20 bg-[#F8F9FA] overflow-hidden" aria-label="Contact hero">
         <div className="absolute right-0 inset-y-0 w-1/2 opacity-10 pointer-events-none">
@@ -117,139 +74,12 @@ export default function ContactPage() {
                     </a>
                   </div>
                 </div>
-
-                  {/* Social section removed */}
               </RevealWrapper>
             </div>
 
             {/* Contact Form */}
             <div className="lg:col-span-8">
-              <RevealWrapper delay={0.1}>
-                {submitted ? (
-                  <div className="flex flex-col items-center justify-center h-full min-h-[400px] text-center">
-                    <div className="w-16 h-16 rounded-full border-2 border-[#0D7A9E] flex items-center justify-center mb-6">
-                      <svg viewBox="0 0 24 24" className="w-8 h-8 text-[#0D7A9E]" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                    </div>
-                    <h3 className="font-serif text-3xl text-[#161616] mb-3">Message Sent</h3>
-                    <p className="font-sans font-light text-[#6B7280] max-w-xs">
-                      Thank you for reaching out. We'll get back to you within 24 hours.
-                    </p>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-8" id="contact-form" aria-label="Contact form">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                      {/* Name */}
-                      <div className="group">
-                        <label htmlFor="contact-name" className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#0D7A9E] block mb-2">
-                          Full Name *
-                        </label>
-                        <input
-                          id="contact-name"
-                          name="name"
-                          type="text"
-                          required
-                          value={formState.name}
-                          onChange={handleChange}
-                          placeholder="Your name"
-                          className="w-full bg-transparent border-b border-[#D9D4CC] focus:border-[#0D7A9E] py-3 font-sans text-sm text-[#161616] placeholder-[#6B7280]/50 outline-none transition-colors duration-300"
-                        />
-                      </div>
-                      {/* Email */}
-                      <div>
-                        <label htmlFor="contact-email" className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#0D7A9E] block mb-2">
-                          Email Address *
-                        </label>
-                        <input
-                          id="contact-email"
-                          name="email"
-                          type="email"
-                          required
-                          value={formState.email}
-                          onChange={handleChange}
-                          placeholder="your@email.com"
-                          className="w-full bg-transparent border-b border-[#D9D4CC] focus:border-[#0D7A9E] py-3 font-sans text-sm text-[#161616] placeholder-[#6B7280]/50 outline-none transition-colors duration-300"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                      {/* Phone */}
-                      <div>
-                        <label htmlFor="contact-phone" className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#0D7A9E] block mb-2">
-                          Phone Number
-                        </label>
-                        <input
-                          id="contact-phone"
-                          name="phone"
-                          type="tel"
-                          value={formState.phone}
-                          onChange={handleChange}
-                          placeholder="+91 000 000 0000"
-                          className="w-full bg-transparent border-b border-[#D9D4CC] focus:border-[#0D7A9E] py-3 font-sans text-sm text-[#161616] placeholder-[#6B7280]/50 outline-none transition-colors duration-300"
-                        />
-                      </div>
-                      {/* Project Type */}
-                      <div>
-                        <label htmlFor="contact-project-type" className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#0D7A9E] block mb-2">
-                          Project Type
-                        </label>
-                        <select
-                          id="contact-project-type"
-                          name="projectType"
-                          value={formState.projectType}
-                          onChange={handleChange}
-                          className="w-full bg-transparent border-b border-[#D9D4CC] focus:border-[#0D7A9E] py-3 font-sans text-sm text-[#161616] outline-none transition-colors duration-300 appearance-none cursor-pointer"
-                        >
-                          <option value="" className="text-[#6B7280]">Select project type</option>
-                          <option>Residential Architecture</option>
-                          <option>Commercial Architecture</option>
-                          <option>Hospitality</option>
-                          <option>Interior Design</option>
-                          <option>Landscape Design</option>
-                          <option>Project Consultancy</option>
-                          <option>Mixed Use</option>
-                        </select>
-                      </div>
-                    </div>
-
-                    {/* Budget field removed */}
-
-                    {/* Message */}
-                    <div>
-                      <label htmlFor="contact-message" className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#0D7A9E] block mb-2">
-                        Project Description *
-                      </label>
-                      <textarea
-                        id="contact-message"
-                        name="message"
-                        required
-                        rows={5}
-                        value={formState.message}
-                        onChange={handleChange}
-                        placeholder="Tell us about your vision..."
-                        className="w-full bg-transparent border-b border-[#D9D4CC] focus:border-[#0D7A9E] py-3 font-sans text-sm text-[#161616] placeholder-[#6B7280]/50 outline-none transition-colors duration-300 resize-none"
-                      />
-                    </div>
-
-                    {/* Submit */}
-                    <div className="flex items-center justify-between pt-4">
-                      <p className="font-sans text-[10px] tracking-[0.1em] text-[#6B7280]">
-                        * Required fields
-                      </p>
-                      <button
-                        type="submit"
-                        id="contact-submit-btn"
-                        className="group inline-flex items-center gap-3 bg-[#0A2333] text-white px-10 py-5 font-sans text-[11px] font-semibold tracking-[0.2em] uppercase hover:bg-[#0D7A9E] transition-all duration-300"
-                      >
-                        Send Inquiry
-                        <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                      </button>
-                    </div>
-                  </form>
-                )}
-              </RevealWrapper>
+              <ContactForm />
             </div>
           </div>
         </div>
@@ -288,46 +118,7 @@ export default function ContactPage() {
       </section>
 
       {/* Open Roles */}
-      <section className="py-32 md:py-40 bg-white" aria-labelledby="open-roles-heading">
-        <div className="max-w-[1440px] mx-auto px-6 md:px-20">
-          <RevealWrapper className="flex items-end justify-between mb-16">
-            <div>
-              <h2 id="open-roles-heading" className="font-serif text-4xl md:text-5xl text-[#161616]">
-                Open <span className="italic">Roles</span>
-              </h2>
-            </div>
-            <p className="hidden md:block font-sans text-[11px] text-[#6B7280] tracking-[0.1em]">
-              Select a role to view details and requirements.
-            </p>
-          </RevealWrapper>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {openRoles.map((role, i) => (
-              <RevealWrapper key={role.id} delay={i * 0.1}>
-                <div id={role.id} className="group border-t-2 border-[#0D7A9E] pt-6">
-                  <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#0D7A9E] block mb-2">
-                    {role.dept}
-                  </span>
-                  <h3 className="font-serif text-2xl text-[#161616] mb-3 group-hover:text-[#0D7A9E] transition-colors duration-300">
-                    {role.title}
-                  </h3>
-                  <p className="font-sans text-[10px] tracking-[0.1em] uppercase text-[#6B7280] mb-4">
-                    {role.location} · {role.type}
-                  </p>
-                  <p className="font-sans font-light text-sm text-[#6B7280] leading-relaxed mb-6">
-                    {role.desc}
-                  </p>
-                  <a href="#apply"
-                    onClick={(e) => handleApplyClick(e, role.title)}
-                    className="group/btn inline-flex items-center gap-1.5 font-sans text-[11px] font-semibold tracking-[0.15em] uppercase text-[#0D7A9E] hover:text-[#0A2333] transition-colors duration-300 cursor-pointer">
-                    Apply Now <ArrowRight size={12} className="group-hover/btn:translate-x-1 transition-transform" />
-                  </a>
-                </div>
-              </RevealWrapper>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ContactOpenRoles />
     </>
   );
 }
