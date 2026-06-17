@@ -48,7 +48,7 @@ export default function HeroSection() {
           transition={{ duration: 0.9, delay: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
           className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-[-0.02em] text-white mb-6 max-w-3xl"
         >
-          Structured <span className="text-[#0D7A9E]">/</span> Styled <span className="text-[#0D7A9E]">/</span> Sustained<span className="text-[#0D7A9E]">.</span>
+          Structured / Styled / Sustained.
         </motion.h1>
 
         {/* Subhead */}
