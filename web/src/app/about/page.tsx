@@ -150,7 +150,7 @@ function TeamGrid() {
             <RevealWrapper key={member.name} delay={i * 0.1}>
               <div className="group">
                 <div className="overflow-hidden aspect-[3/4] mb-5 relative bg-[#F8F9FA]">
-                  {member.image ? (
+                  {member.image && member.image.trim().length > 0 ? (
                     <Image
                       src={member.image}
                       alt={member.name}

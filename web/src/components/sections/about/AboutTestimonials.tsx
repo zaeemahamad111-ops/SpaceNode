@@ -113,7 +113,7 @@ export default function AboutTestimonials() {
                   <div className="flex items-center gap-5">
                     {/* Circular Avatar Cutout */}
                     <div className="w-14 h-14 rounded-full overflow-hidden bg-[#E5E7EB] border border-[#D1D5DB] flex items-center justify-center relative shrink-0">
-                      {testimonials[currentIndex].clientImage ? (
+                      {testimonials[currentIndex].clientImage && testimonials[currentIndex].clientImage.trim().length > 0 ? (
                         <Image
                           src={testimonials[currentIndex].clientImage}
                           alt={testimonials[currentIndex].name}
