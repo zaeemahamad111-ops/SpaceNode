@@ -53,7 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
       </head>
-      <body className="bg-[#F8F9FA] text-[#161616] antialiased overflow-x-hidden">
+      <body className="bg-[#F8F9FA] text-[#161616] antialiased overflow-x-clip">
         <SmoothScroll>
           <Navbar />
           <main>{children}</main>

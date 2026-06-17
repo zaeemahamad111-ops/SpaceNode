@@ -1,9 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import RevealWrapper from '@/components/ui/RevealWrapper';
 
 const services = [
@@ -40,6 +41,17 @@ const services = [
 export default function ExpertisePreview() {
   const [hoveredIndex, setHoveredIndex] = useState(0);
 
+  // For Mobile Scroll Jacking
+  const targetRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start start", "end end"]
+  });
+  
+  // Translate the row to the left as user scrolls down.
+  // We translate by -75% so that the last of the 4 items reaches the screen.
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"]);
+
   return (
     <section className="py-24 md:py-32 bg-white relative" aria-labelledby="expertise-heading">
       <div className="max-w-[1440px] mx-auto px-6 md:px-20">
@@ -62,9 +74,9 @@ export default function ExpertisePreview() {
           </div>
         </RevealWrapper>
 
-        {/* Interactive Horizontal Accordion */}
-        <RevealWrapper delay={0.2}>
-          <div className="flex flex-row overflow-x-auto lg:overflow-visible w-full h-[400px] md:h-[500px] lg:h-[550px] gap-4 lg:gap-3 pb-6 lg:pb-0 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+        {/* --- DESKTOP: Interactive Horizontal Accordion --- */}
+        <RevealWrapper delay={0.2} className="hidden lg:block">
+          <div className="flex flex-row w-full h-[550px] gap-3">
             {services.map((service, i) => {
               const isActive = hoveredIndex === i;
               
@@ -72,8 +84,8 @@ export default function ExpertisePreview() {
                 <div
                   key={service.num}
                   onMouseEnter={() => setHoveredIndex(i)}
-                  className={`relative overflow-hidden rounded-[2rem] transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] cursor-pointer group shrink-0 snap-center w-[85vw] md:w-[60vw] lg:w-auto lg:shrink ${
-                    isActive ? 'lg:flex-[3]' : 'lg:flex-1'
+                  className={`relative overflow-hidden rounded-[2rem] transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] cursor-pointer group shrink ${
+                    isActive ? 'flex-[3]' : 'flex-1'
                   }`}
                 >
                   <Link href={service.href} className="block w-full h-full relative">
@@ -91,27 +103,27 @@ export default function ExpertisePreview() {
                     <div className={`absolute inset-0 transition-opacity duration-700 ${
                       isActive 
                         ? 'bg-gradient-to-t from-black/90 via-black/40 to-black/10' 
-                        : 'bg-gradient-to-t from-black/90 via-black/40 to-black/10 lg:bg-black/40 lg:group-hover:bg-black/20'
+                        : 'bg-black/40 group-hover:bg-black/20'
                     }`} />
 
                     {/* Content */}
-                    <div className="absolute inset-x-0 bottom-0 p-6 md:p-8 flex flex-col justify-end h-full">
+                    <div className="absolute inset-x-0 bottom-0 p-8 flex flex-col justify-end h-full">
                       <div className="mt-auto">
                         {/* Title - Truncate and scale down slightly when inactive on desktop */}
                         <h3 className={`font-sans tracking-wide uppercase text-white transition-all duration-700 whitespace-nowrap overflow-hidden text-ellipsis ${
                           isActive 
-                            ? 'text-2xl md:text-3xl font-semibold mb-3' 
-                            : 'text-2xl md:text-3xl font-semibold mb-3 lg:text-base lg:font-medium lg:mb-0 lg:origin-left'
+                            ? 'text-3xl font-semibold mb-3' 
+                            : 'text-base font-medium origin-left'
                         }`}>
                           {service.title}
                         </h3>
                         
-                        {/* Description - Fade and slide in/out on desktop, always visible on mobile */}
+                        {/* Description - Fade and slide in/out on desktop */}
                         <div 
                           className={`grid transition-all duration-700 ease-in-out ${
                             isActive 
                               ? 'grid-rows-[1fr] opacity-100' 
-                              : 'grid-rows-[1fr] opacity-100 lg:grid-rows-[0fr] lg:opacity-0'
+                              : 'grid-rows-[0fr] opacity-0'
                           }`}
                         >
                           <div className="overflow-hidden">
@@ -130,16 +142,66 @@ export default function ExpertisePreview() {
               );
             })}
           </div>
-          
-          <div className="mt-8 flex justify-center md:hidden">
-            <Link
-              href="/expertise"
-              className="inline-flex items-center gap-1.5 group font-sans text-[11px] font-semibold tracking-[0.15em] uppercase text-[#161616] border-b border-[#161616] pb-1"
-            >
-              Explore All <ArrowUpRight size={13} />
-            </Link>
-          </div>
         </RevealWrapper>
+      </div>
+
+      {/* --- MOBILE: Scroll-Jacking Horizontal Scroll --- */}
+      <div ref={targetRef} className="lg:hidden h-[400vh] relative mt-8">
+        <div className="sticky top-20 h-[60vh] flex items-center overflow-hidden">
+          <motion.div style={{ x }} className="flex gap-4 px-6 w-[360vw] md:w-[260vw]">
+            {services.map((service, i) => (
+              <div
+                key={service.num}
+                className="relative overflow-hidden rounded-[2rem] w-[85vw] md:w-[60vw] shrink-0 h-full"
+              >
+                <Link href={service.href} className="block w-full h-full relative">
+                  {/* Background Image */}
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 85vw, 50vw"
+                    priority={i === 0}
+                  />
+                  
+                  {/* Dark Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10" />
+
+                  {/* Content */}
+                  <div className="absolute inset-x-0 bottom-0 p-6 flex flex-col justify-end h-full">
+                    <div className="mt-auto">
+                      <h3 className="font-sans tracking-wide uppercase text-white text-2xl md:text-3xl font-semibold mb-3">
+                        {service.title}
+                      </h3>
+                      
+                      <div className="grid grid-rows-[1fr] opacity-100">
+                        <div className="overflow-hidden">
+                          <p className="font-sans font-light text-sm text-white/80 leading-relaxed mb-4">
+                            {service.desc}
+                          </p>
+                          <span className="inline-flex items-center gap-1.5 font-sans text-[10px] font-bold tracking-[0.2em] uppercase text-white">
+                            Discover More <ArrowUpRight size={14} />
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </div>
+      
+      {/* Mobile Explore All Button */}
+      <div className="mt-8 flex justify-center lg:hidden relative z-10 px-6">
+        <Link
+          href="/expertise"
+          className="inline-flex items-center gap-1.5 group font-sans text-[11px] font-semibold tracking-[0.15em] uppercase text-[#161616] border-b border-[#161616] pb-1"
+        >
+          Explore All <ArrowUpRight size={13} />
+        </Link>
       </div>
     </section>
   );
