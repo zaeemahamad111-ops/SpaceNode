@@ -63,7 +63,7 @@ export default function HomeCTA() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#161616]/70 via-black/20 to-transparent" />
           <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
             <p className="font-sans text-[10px] tracking-[0.2em] uppercase text-white/70">
-              Cochin · Dubai · New York
+              Cochin
             </p>
             <p className="font-sans text-[10px] tracking-[0.2em] uppercase text-white/70">
               Space Node Architects

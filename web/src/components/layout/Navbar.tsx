@@ -168,7 +168,7 @@ export default function Navbar() {
                 Book Consultation <ArrowUpRight size={14} />
               </Link>
               <p className="font-sans text-[11px] tracking-widest uppercase text-white/30 mt-6 text-center">
-                Cochin · Dubai · New York
+                Cochin
               </p>
             </motion.div>
           </motion.div>

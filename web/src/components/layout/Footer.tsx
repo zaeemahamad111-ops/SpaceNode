@@ -76,7 +76,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="font-sans text-sm text-white/50 leading-relaxed max-w-xs mb-8">
-              A multidisciplinary architectural and design practice delivering innovative and context-driven projects across India, UAE, and USA.
+              A multidisciplinary architectural and design practice delivering innovative and context-driven projects across India, UAE, USA, and Australia.
             </p>
             {/* Social Links */}
             <div className="flex items-center gap-4">
