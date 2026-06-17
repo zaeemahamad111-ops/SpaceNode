@@ -8,36 +8,20 @@ import ApplicationModal from '@/components/sections/careers/ApplicationModal';
 
 const openRoles = [
   {
-    id: 'senior-architect',
+    id: 'architect',
     dept: 'Architecture',
-    title: 'Senior Architect',
+    title: 'Architect',
     location: 'Cochin, Kerala',
     type: 'Full Time',
     desc: 'Lead ultra-high-net-worth residential projects from concept through completion in our Cochin studio. Minimum 8 years experience in premium residential architecture.',
   },
   {
-    id: 'interior-designer',
-    dept: 'Interiors',
-    title: 'Interior Designer',
+    id: 'draftsman',
+    dept: 'Architecture',
+    title: 'Draftsman',
     location: 'Cochin / Dubai',
     type: 'Full Time',
     desc: 'Specialise in material curation and bespoke furniture integration for international hospitality and residential clients. Portfolio demonstrating luxury interiors required.',
-  },
-  {
-    id: 'project-manager',
-    dept: 'Project Management',
-    title: 'Project Manager',
-    location: 'Cochin, Kerala',
-    type: 'Full Time',
-    desc: 'Oversee project delivery across residential and commercial projects. 5+ years of construction project management experience in architectural practice.',
-  },
-  {
-    id: 'landscape-architect',
-    dept: 'Landscape',
-    title: 'Landscape Architect',
-    location: 'Cochin, Kerala',
-    type: 'Full Time',
-    desc: 'Design ecological and site-responsive landscapes for premium residential and hospitality clients across South India. Deep knowledge of tropical planting required.',
   },
 ];
 
