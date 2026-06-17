@@ -54,23 +54,23 @@ export default function Navbar() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${navBg}`}
         id="main-nav"
       >
-        <div className="max-w-[1440px] mx-auto px-6 md:px-20 flex items-center justify-between h-20 md:h-24">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-20 flex items-center justify-between h-16 md:h-20">
           
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 md:gap-3 group flex-shrink-0 -ml-2 md:-ml-4">
+          <Link href="/" className="flex items-center gap-2.5 md:gap-3 group flex-shrink-0 -ml-4 md:-ml-10">
             <Image
               src="/images/logo-white.png"
               alt="Space Node Architects logo"
-              width={80}
-              height={80}
-              className="object-contain flex-shrink-0 transition-all duration-300 w-[60px] h-[60px] md:w-[75px] md:h-[75px]"
+              width={60}
+              height={60}
+              className="object-contain flex-shrink-0 transition-all duration-300 w-[45px] h-[45px] md:w-[55px] md:h-[55px]"
               priority
             />
             <div className="flex flex-col leading-none gap-1">
-              <span className={`font-sans font-bold text-sm md:text-base tracking-[0.25em] uppercase transition-colors duration-300 text-white`}>
+              <span className={`font-sans font-bold text-xs md:text-sm tracking-[0.25em] uppercase transition-colors duration-300 text-white`}>
                 SPACE NODE
               </span>
-              <span className={`font-sans font-bold text-sm md:text-base tracking-[0.25em] uppercase transition-colors duration-300 text-white`}>
+              <span className={`font-sans font-bold text-xs md:text-sm tracking-[0.25em] uppercase transition-colors duration-300 text-white`}>
                 ARCHITECTS
               </span>
             </div>
