@@ -74,11 +74,9 @@ function StudioStory() {
             <p className="font-sans font-light text-base text-[#6B7280] leading-relaxed mb-10">
               With projects and design collaborations spanning India, UAE, Australia, and the USA, our studio brings a global perspective to every space we create.
             </p>
-            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-[#E5E7EB]">
+            <div className="pt-8 border-t border-[#E5E7EB]">
               {[
-                { num: '120+', label: 'Projects Completed' },
-                { num: '45+', label: 'Design Awards' },
-                { num: '3', label: 'Global Offices' },
+                { num: '170+', label: 'Projects Completed' },
               ].map((s) => (
                 <div key={s.label}>
                   <div className="font-serif text-3xl text-[#0D7A9E]">{s.num}</div>
