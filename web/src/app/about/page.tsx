@@ -261,6 +261,7 @@ const team = [
   { name: 'Ar. Jeffin Kuncheria Varghese', title: 'Principal Architect, Founder', image: '' },
   { name: 'Ar. Jinsamol P Reji', title: 'Design Head, Co-founder', image: '' },
   { name: 'Ar. Bibite Joy', title: 'Associate Architect', image: '' },
+  { name: 'Ar. George Zachariah Mathew', title: 'Associate Architect', image: '' },
 ];
 
 function TeamGrid() {
@@ -276,7 +277,7 @@ function TeamGrid() {
           </h2>
         </RevealWrapper>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {team.map((member, i) => (
             <RevealWrapper key={member.name} delay={i * 0.1}>
               <div className="group">
@@ -286,7 +287,7 @@ function TeamGrid() {
                       src={member.image}
                       alt={member.name}
                       fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                       className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                     />
                   ) : (
