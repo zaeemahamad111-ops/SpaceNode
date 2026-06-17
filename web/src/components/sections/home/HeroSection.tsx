@@ -46,12 +46,9 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
-          className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-[-0.02em] text-white mb-6 max-w-3xl"
+          className="font-serif text-3xl md:text-5xl lg:text-6xl leading-[1.1] tracking-[-0.02em] text-[#EF4444] mb-6 max-w-3xl font-bold uppercase"
         >
-          Connecting<br />
-          Spaces<span className="text-[#0D7A9E]">,</span><br />
-          <span className="italic">Functions</span>,<br />
-          and Experiences<span className="text-[#0D7A9E]">.</span>
+          STRUCTURED/STYLED/SUSTAINED
         </motion.h1>
 
         {/* Subhead */}
@@ -61,7 +58,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="font-sans font-light text-lg text-white/70 mb-10 max-w-md leading-relaxed"
         >
-          A multidisciplinary practice delivering innovative architecture across India, UAE, and USA.
+          A multidisciplinary practice delivering innovative architecture across India, UAE, and USA <span className="text-[#EF4444] font-medium">& Australia</span>.
         </motion.p>
 
         {/* CTA Buttons */}
