@@ -256,10 +256,30 @@ function PhilosophyDiagram() {
 
 // --- TEAM GRID ---
 const team = [
-  { name: 'Ar. Jeffin Kuncheria Varghese', title: 'Principal Architect, Founder', image: '' },
-  { name: 'Ar. Jinsamol P Reji', title: 'Design Head, Co-founder', image: '' },
-  { name: 'Ar. Bibite Joy', title: 'Associate Architect', image: '' },
-  { name: 'Ar. George Zachariah Mathew', title: 'Associate Architect', image: '' },
+  { 
+    name: 'Ar. Jeffin Kuncheria Varghese', 
+    title: 'Principal Architect, Founder', 
+    image: '', 
+    desc: "Guiding the studio's architectural vision with a profound commitment to contextual design and material honesty. Jeffin brings over a decade of experience in crafting bespoke spaces." 
+  },
+  { 
+    name: 'Ar. Jinsamol P Reji', 
+    title: 'Design Head, Co-founder', 
+    image: '', 
+    desc: "Leading the interior and spatial design narratives. Jinsamol seamlessly integrates architectural intent with refined interior detailing, creating holistic environments that resonate with purpose." 
+  },
+  { 
+    name: 'Ar. Bibite Joy', 
+    title: 'Associate Architect', 
+    image: '', 
+    desc: "Driving project execution and technical excellence. Bibite ensures that complex architectural concepts are translated flawlessly into built reality, focusing on precision and sustainability." 
+  },
+  { 
+    name: 'Ar. George Zachariah Mathew', 
+    title: 'Associate Architect', 
+    image: '', 
+    desc: "Spearheading design development and client coordination. George bridges the gap between conceptual ideation and practical functionality, ensuring every project meets our exacting standards." 
+  },
 ];
 
 function TeamGrid() {
@@ -275,11 +295,11 @@ function TeamGrid() {
           </h2>
         </RevealWrapper>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {team.map((member, i) => (
             <RevealWrapper key={member.name} delay={i * 0.1}>
               <div className="group">
-                <div className="overflow-hidden aspect-[3/4] mb-4 relative bg-[#F8F9FA]">
+                <div className="overflow-hidden aspect-[3/4] mb-5 relative bg-[#F8F9FA]">
                   {member.image ? (
                     <Image
                       src={member.image}
@@ -300,8 +320,11 @@ function TeamGrid() {
                   {/* Node connection indicator */}
                   <div className="absolute top-3 right-3 w-2 h-2 rounded-full bg-[#0D7A9E] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-                <h3 className="font-serif text-lg text-[#161616] mb-0.5">{member.name}</h3>
-                <p className="font-sans text-[10px] tracking-[0.15em] uppercase text-[#0D7A9E]">{member.title}</p>
+                <h3 className="font-serif text-lg text-[#161616] mb-1">{member.name}</h3>
+                <p className="font-sans text-[10px] tracking-[0.15em] uppercase text-[#0D7A9E] mb-3">{member.title}</p>
+                <p className="font-sans font-light text-sm text-[#6B7280] leading-relaxed">
+                  {member.desc}
+                </p>
               </div>
             </RevealWrapper>
           ))}
