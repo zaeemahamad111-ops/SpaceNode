@@ -57,24 +57,20 @@ export default function Navbar() {
         <div className="max-w-[1440px] mx-auto px-6 md:px-20 flex items-center justify-between h-20 md:h-24">
           
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group flex-shrink-0">
+          <Link href="/" className="flex items-center gap-2.5 md:gap-3 group flex-shrink-0 -ml-2 md:-ml-4">
             <Image
               src="/images/logo-white.png"
               alt="Space Node Architects logo"
-              width={110}
-              height={110}
-              className="object-contain flex-shrink-0 transition-all duration-300"
-              style={{
-                width: '110px',
-                height: '110px',
-              }}
+              width={80}
+              height={80}
+              className="object-contain flex-shrink-0 transition-all duration-300 w-[60px] h-[60px] md:w-[75px] md:h-[75px]"
               priority
             />
             <div className="flex flex-col leading-none gap-1">
-              <span className={`font-sans font-bold text-base tracking-[0.25em] uppercase transition-colors duration-300 text-white`}>
+              <span className={`font-sans font-bold text-sm md:text-base tracking-[0.25em] uppercase transition-colors duration-300 text-white`}>
                 SPACE NODE
               </span>
-              <span className={`font-sans font-bold text-base tracking-[0.25em] uppercase transition-colors duration-300 text-white`}>
+              <span className={`font-sans font-bold text-sm md:text-base tracking-[0.25em] uppercase transition-colors duration-300 text-white`}>
                 ARCHITECTS
               </span>
             </div>
