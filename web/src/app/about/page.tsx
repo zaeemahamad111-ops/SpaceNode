@@ -108,27 +108,44 @@ function StudioStory() {
 const team = [
   { 
     name: 'Ar. Jeffin Kuncheria Varghese', 
-    title: 'Principal Architect, Founder', 
+    title: 'Founder & Principal Architect', 
     image: '', 
-    desc: "Guiding the studio's architectural vision with a profound commitment to contextual design and material honesty. Jeffin brings over a decade of experience in crafting bespoke spaces." 
+    desc: [
+      "Jeffin is the Founder and Principal Architect of Space Node Architects, established in 2017. His practice is driven by a clear architectural intent—where space is shaped through function, context, and structural honesty rather than excess.",
+      "With projects across India, the UAE, and the USA, spanning residential, commercial, and assembly typologies, his work reflects a disciplined yet adaptive approach to design and execution.",
+      "Under his leadership, Space Node Architects focuses on creating precise, enduring architecture defined by clarity, proportion, and material integrity."
+    ]
   },
   { 
-    name: 'Ar. Jinsamol P Reji', 
-    title: 'Design Head, Co-founder', 
+    name: 'Ar. Jinsa Reji', 
+    title: 'Design Head & Co-founder', 
     image: '', 
-    desc: "Leading the interior and spatial design narratives. Jinsamol seamlessly integrates architectural intent with refined interior detailing, creating holistic environments that resonate with purpose." 
+    desc: [
+      "Jinsa is the Design Head & Co-founder of Space Node Architects, bringing extensive professional experience across India, the UAE, and Australia. Since 2017, she has worked on a diverse portfolio of residential, commercial, and interior projects, developing a design approach that is both globally informed and deeply responsive to local context.",
+      "She leads the studio's creative direction, guiding projects from the earliest design concepts through to execution. With expertise in design development, multidisciplinary coordination, and project delivery, she ensures that every project is thoughtfully resolved with clarity, precision, and attention to detail.",
+      "Her work is driven by the belief that architecture should elevate everyday life through spaces that are purposeful, timeless, and enduring. By balancing innovation with practicality, she creates environments that reflect each client's vision while responding sensitively to their context, function, and way of living.",
+      "As Design Head, Jinsa is committed to shaping architecture and interiors that embody refined aesthetics, technical excellence, and a lasting sense of place."
+    ]
   },
   { 
     name: 'Ar. Bibite Joy', 
     title: 'Associate Architect', 
     image: '', 
-    desc: "Driving project execution and technical excellence. Bibite ensures that complex architectural concepts are translated flawlessly into built reality, focusing on precision and sustainability." 
+    desc: [
+      "Bibite Joy is an Associate Architect collaborating with Space Node Architects on large-scale and complex projects, bringing over a decade of professional experience in architecture and project delivery. With extensive expertise in residential and commercial developments across Kerala, he contributes a deep understanding of regional design practices, construction methodologies, and project execution.",
+      "His experience spans the complete design and delivery process, from conceptual planning and technical coordination to on-site execution, ensuring that every project is resolved with precision and practicality. Known for his collaborative approach and attention to detail, he works closely with the design team to translate ideas into well-crafted architectural solutions.",
+      "At Space Node Architects, Bibite plays a key role in delivering projects that balance design excellence, technical integrity, and functional performance, contributing to spaces that are thoughtful, enduring, and contextually responsive."
+    ]
   },
   { 
-    name: 'Ar. George Zachariah Mathew', 
-    title: 'Associate Architect', 
+    name: 'Ar. George Zacharia Mathew', 
+    title: 'Consulting Architect', 
     image: '', 
-    desc: "Spearheading design development and client coordination. George bridges the gap between conceptual ideation and practical functionality, ensuring every project meets our exacting standards." 
+    desc: [
+      "George Zacharia is a Consulting Architect with over 10 years of professional experience in architectural design, planning, and project execution across a wide range of typologies and scales. His practice is guided by a strong emphasis on contextual responsiveness, functional efficiency, and a refined contemporary architectural approach.",
+      "He combines conceptual clarity with technical expertise to develop well-resolved spatial solutions that are both purposeful and precise in execution.",
+      "He is currently engaged in a collaborative practice with Space Node Architects, delivering projects across India and the United States, with a focus on sustainable, context-driven residential and commercial architecture."
+    ]
   },
 ];
 
@@ -172,9 +189,11 @@ function TeamGrid() {
                 </div>
                 <h3 className="font-serif text-lg text-[#161616] mb-1">{member.name}</h3>
                 <p className="font-sans text-[10px] tracking-[0.15em] uppercase text-[#0D7A9E] mb-3">{member.title}</p>
-                <p className="font-sans font-light text-sm text-[#6B7280] leading-relaxed">
-                  {member.desc}
-                </p>
+                <div className="font-sans font-light text-sm text-[#6B7280] leading-relaxed space-y-3">
+                  {member.desc.map((para, idx) => (
+                    <p key={idx}>{para}</p>
+                  ))}
+                </div>
               </div>
             </RevealWrapper>
           ))}
