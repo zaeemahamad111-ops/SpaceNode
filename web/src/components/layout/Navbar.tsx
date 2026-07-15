@@ -61,9 +61,9 @@ export default function Navbar() {
             <Image
               src="/images/logo-white.png"
               alt="Space Node Architects logo"
-              width={60}
-              height={60}
-              className="object-contain flex-shrink-0 transition-all duration-300 w-[45px] h-[45px] md:w-[55px] md:h-[55px]"
+              width={100}
+              height={100}
+              className="object-contain flex-shrink-0 transition-all duration-300 w-[55px] h-[55px] md:w-[80px] md:h-[80px]"
               priority
             />
             <div className="flex flex-col leading-none gap-1">

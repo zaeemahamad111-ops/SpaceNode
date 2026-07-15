@@ -14,43 +14,25 @@ export const metadata: Metadata = {
 // --- HERO ---
 function AboutHero() {
   return (
-    <section className="relative pt-32 pb-0 bg-[#F8F9FA] overflow-hidden min-h-[80vh] flex items-end" aria-label="About hero">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-20 pb-0 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
-          <div className="pb-16">
-            <RevealWrapper>
-              <span className="font-sans text-[11px] font-semibold tracking-[0.25em] uppercase text-[#0D7A9E] block mb-6">
-                Who We Are
-              </span>
-            </RevealWrapper>
-            <RevealWrapper delay={0.1}>
-              <h1 className="font-serif text-5xl md:text-7xl text-[#161616] leading-[1.05] tracking-[-0.02em] mb-8">
-                Creating Spaces,<br />
-                Not Just<br />
-                <span className="italic text-[#0D7A9E]">Structures.</span>
-              </h1>
-            </RevealWrapper>
-            <RevealWrapper delay={0.2}>
-              <p className="font-sans font-light text-lg text-[#6B7280] leading-relaxed max-w-md mb-8">
-                We are a collective of architects, designers, and thinkers crafting meaningful spaces through architecture, interiors, landscapes, and project management.
-              </p>
-            </RevealWrapper>
-          </div>
-
-          {/* Hero image */}
-          <RevealWrapper delay={0.15} direction="right" className="relative h-[500px] lg:h-[600px] overflow-hidden">
-            <Image
-              src="/images/about-hero.png"
-              alt="Dramatic contemporary building facade"
-              fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#F8F9FA]/20" />
-            <div className="absolute inset-0 opacity-20">
-              <NodeMesh variant="section" animated={false} />
-            </div>
+    <section className="relative pt-32 pb-0 bg-[#F8F9FA] overflow-hidden min-h-[60vh] flex items-end" aria-label="About hero">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-20 pb-16 w-full">
+        <div className="max-w-3xl">
+          <RevealWrapper>
+            <span className="font-sans text-[11px] font-semibold tracking-[0.25em] uppercase text-[#0D7A9E] block mb-6">
+              Who We Are
+            </span>
+          </RevealWrapper>
+          <RevealWrapper delay={0.1}>
+            <h1 className="font-serif text-5xl md:text-7xl text-[#161616] leading-[1.05] tracking-[-0.02em] mb-8">
+              Creating Spaces,<br />
+              Not Just<br />
+              <span className="italic text-[#0D7A9E]">Structures.</span>
+            </h1>
+          </RevealWrapper>
+          <RevealWrapper delay={0.2}>
+            <p className="font-sans font-light text-lg text-[#6B7280] leading-relaxed max-w-md mb-8">
+              We are a collective of architects, designers, and thinkers crafting meaningful spaces through architecture, interiors, landscapes, and project management.
+            </p>
           </RevealWrapper>
         </div>
       </div>
@@ -63,7 +45,7 @@ function StudioStory() {
   return (
     <section className="py-32 md:py-40 bg-white overflow-hidden" aria-labelledby="studio-story-heading">
       <div className="max-w-[1440px] mx-auto px-6 md:px-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-3xl">
           <RevealWrapper direction="left">
             <span className="font-sans text-[11px] font-semibold tracking-[0.25em] uppercase text-[#0D7A9E] block mb-6">
               Our Studio
@@ -87,16 +69,6 @@ function StudioStory() {
                 </div>
               ))}
             </div>
-          </RevealWrapper>
-
-          <RevealWrapper delay={0.2} direction="right" className="relative h-[500px] overflow-hidden">
-            <Image
-              src="/images/expertise-interior.png"
-              alt="Space Node studio — premium interior design example"
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
-            />
           </RevealWrapper>
         </div>
       </div>

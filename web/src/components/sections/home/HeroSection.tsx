@@ -1,7 +1,6 @@
 'use client';
 
 import { useRef } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, ChevronDown } from 'lucide-react';
@@ -15,19 +14,8 @@ export default function HeroSection() {
 
   return (
     <section ref={ref} className="relative h-screen min-h-[700px] w-full flex items-center overflow-hidden" aria-label="Hero">
-      {/* Background image with parallax */}
-      <motion.div className="absolute inset-0 z-0" style={{ y }}>
-        <Image
-          src="/images/hero.png"
-          alt="Space Node Architects — premium contemporary architecture with infinity pool at twilight"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0A2333]/80 via-[#0A2333]/50 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0A2333]/60 via-transparent to-transparent" />
-      </motion.div>
+      {/* Solid background instead of image */}
+      <motion.div className="absolute inset-0 z-0 bg-[#0A2333]" style={{ y }} />
 
       {/* Interactive Node mesh — full overlay */}
       <div className="absolute inset-0 z-10">
@@ -48,7 +36,7 @@ export default function HeroSection() {
           transition={{ duration: 0.9, delay: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
           className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-[-0.02em] text-white mb-6 max-w-3xl"
         >
-          Structured / Styled / Sustained.
+          Structured Styled Sustained.
         </motion.h1>
 
         {/* Subhead */}
