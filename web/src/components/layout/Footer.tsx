@@ -149,9 +149,9 @@ export default function Footer() {
                 Kaloor, Cochin-17, Kerala
               </p>
               <div className="space-y-2">
-                <a href="tel:+914842345678" className="flex items-center gap-2 font-sans text-sm text-white/50 hover:text-[#6EB8D0] transition-colors duration-300">
-                  <Phone size={13} />
-                  +91 484 234 5678
+                <a href="tel:+918848162343" className="flex items-center gap-2 font-sans text-sm text-white/50 hover:text-[#6EB8D0] transition-colors duration-300">
+                  <Phone size={14} className="text-[#6EB8D0]" />
+                  +91 88481 62343
                 </a>
                 <a href="mailto:enquiries@spacenodearchitects.in" className="flex items-center gap-2 font-sans text-sm text-white/50 hover:text-[#6EB8D0] transition-colors duration-300">
                   <Mail size={13} />
@@ -162,7 +162,7 @@ export default function Footer() {
 
             {/* CTA */}
             <a
-              href="https://wa.me/914842345678"
+              href="https://wa.me/918848162343"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-8 inline-flex items-center gap-2 border border-[#0D7A9E] text-[#0D7A9E] px-5 py-2.5 font-sans text-[10px] font-semibold tracking-[0.15em] uppercase hover:bg-[#0D7A9E] hover:text-white transition-all duration-300"

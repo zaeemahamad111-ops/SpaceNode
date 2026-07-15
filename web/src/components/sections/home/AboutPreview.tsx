@@ -29,7 +29,7 @@ export default function AboutPreview() {
           
           {/* Floating stat card */}
           <div className="absolute bottom-8 left-8 bg-white/90 backdrop-blur-sm p-5 border-l-2 border-[#0D7A9E]">
-            <div className="font-serif text-3xl text-[#161616]">2008</div>
+            <div className="font-serif text-3xl text-[#161616]">2017</div>
             <div className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#6B7280] mt-1">Founded in Cochin</div>
           </div>
         </RevealWrapper>

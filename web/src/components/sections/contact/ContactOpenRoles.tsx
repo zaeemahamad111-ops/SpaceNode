@@ -12,7 +12,7 @@ const openRoles = [
     title: 'Architect',
     location: 'Cochin, Kerala',
     type: 'Full Time',
-    desc: 'Lead ultra-high-net-worth residential projects from concept through completion in our Cochin studio. Minimum 8 years experience in premium residential architecture.',
+    desc: 'Junior Architect (0-2 Years Experience): We are seeking a passionate and detail-oriented architect with 0-2 years of experience to join our studio. The ideal candidate should have a strong design sensibility, proficiency in AutoCAD, SketchUp, Lumion & D5, and a desire to contribute to the design and delivery of high-end projects.',
   },
   {
     id: 'draftsman',
@@ -20,7 +20,7 @@ const openRoles = [
     title: 'Draftsman',
     location: 'Cochin / Dubai',
     type: 'Full Time',
-    desc: 'Specialise in material curation and bespoke furniture integration for international hospitality and residential clients. Portfolio demonstrating luxury interiors required.',
+    desc: 'Architectural Draftsman: We are looking for a skilled and detail-oriented Architectural Draftsman to join our team. The ideal candidate should be proficient in AutoCAD, possess a strong understanding of architectural drawings and construction detailing, and be able to produce accurate working drawings for high-end projects. Experience in coordinating with architects and consultants is an advantage.',
   },
 ];
 

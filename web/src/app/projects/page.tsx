@@ -25,8 +25,11 @@ export default function ProjectsPage() {
             </h1>
           </RevealWrapper>
           <RevealWrapper delay={0.1}>
-            <p className="font-sans font-light text-lg text-[#6B7280] leading-relaxed max-w-md">
-              A curated collection of residential, commercial and hospitality projects defined by architectural permanence and spatial clarity.
+            <p className="font-sans text-[#6B7280] text-sm font-semibold tracking-wide mb-2">
+              Selected Projects.
+            </p>
+            <p className="font-sans font-light text-[#6B7280] text-sm leading-relaxed max-w-2xl">
+              Every project is an exploration of space, light, material, and form—designed to enrich everyday life while responding to its unique context.
             </p>
           </RevealWrapper>
         </div>
@@ -58,7 +61,7 @@ export default function ProjectsPage() {
               className="group inline-flex items-center gap-3 bg-[#0D7A9E] text-white px-8 py-4 font-sans text-[11px] font-semibold tracking-[0.2em] uppercase hover:bg-[#178CB5] transition-all duration-300">
               Book Consultation <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
             </Link>
-            <a href="https://wa.me/914842345678" target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/918848162343" target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-2 border border-white/20 text-white px-8 py-4 font-sans text-[11px] font-semibold tracking-[0.2em] uppercase hover:border-[#0D7A9E] transition-all duration-300">
               WhatsApp Us
             </a>

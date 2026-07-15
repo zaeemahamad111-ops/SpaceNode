@@ -171,7 +171,7 @@ export default function PhilosophyStatement() {
 
         <RevealWrapper delay={0.5}>
           <p className="font-sans font-light text-white/40 mt-6 tracking-[0.15em] text-sm uppercase">
-            Space Node Architects · Est. 2008 · Cochin, Kerala
+            Space Node Architects · Est. 2017 · Cochin, Kerala
           </p>
         </RevealWrapper>
       </div>

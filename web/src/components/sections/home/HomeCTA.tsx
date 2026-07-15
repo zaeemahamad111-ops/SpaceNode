@@ -40,7 +40,7 @@ export default function HomeCTA() {
               <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
             </Link>
             <a
-              href="https://wa.me/914842345678"
+              href="https://wa.me/918848162343"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-3 border border-[#E5E7EB] text-[#161616] px-8 py-5 font-sans text-[11px] font-semibold tracking-[0.2em] uppercase hover:border-[#0D7A9E] hover:text-[#0D7A9E] transition-all duration-300"
