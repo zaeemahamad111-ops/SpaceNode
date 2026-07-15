@@ -12,7 +12,7 @@ const navLinks = [
   { label: 'About Us', href: '/about' },
   { label: 'Expertise', href: '/expertise' },
   { label: 'Projects', href: '/projects' },
-  { label: 'Products', href: '/products' },
+  { label: "Arte 'O' Node", href: '/products' },
   { label: 'Contact', href: '/contact' },
 ];
 

@@ -14,18 +14,21 @@ export default function ProductsPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-36 pb-16 bg-[#F8F9FA] overflow-hidden" aria-label="Products hero">
+      <section className="relative pt-36 pb-16 bg-[#F8F9FA] overflow-hidden" aria-label="Arte O Node hero">
         <div className="absolute right-0 inset-y-0 w-1/2 opacity-10 pointer-events-none">
           <NodeMesh variant="hero" animated={false} />
         </div>
-        <div className="max-w-[1440px] mx-auto px-6 md:px-20 relative z-10">
-          <RevealWrapper>
+        <div className="max-w-[1440px] mx-auto px-6 md:px-20 relative z-10 flex flex-col md:flex-row items-center gap-12">
+          <RevealWrapper className="flex-1">
             <span className="font-sans text-[11px] font-semibold tracking-[0.25em] uppercase text-[#0D7A9E] block mb-6">
-              Bespoke Design
+              Our Collection
             </span>
-            <h1 className="font-serif text-5xl md:text-7xl text-[#161616] leading-[1.05] tracking-[-0.02em]">
-              Our <span className="italic text-[#0D7A9E]">Products</span>
+            <h1 className="font-serif text-5xl md:text-7xl text-[#161616] leading-[1.05] tracking-[-0.02em] mb-6">
+              arte <span className="italic text-[#0D7A9E]">'O'</span> node
             </h1>
+            <p className="font-sans font-light text-lg text-[#6B7280] leading-relaxed max-w-xl">
+              Discover our curated collection of bespoke architectural products and custom furniture pieces. Each design is crafted with precision, embodying our philosophy of functional aesthetics and enduring quality.
+            </p>
           </RevealWrapper>
         </div>
       </section>
