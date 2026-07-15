@@ -11,10 +11,8 @@ export const metadata: Metadata = {
 };
 
 const openRoles = [
-  { id: 'senior-architect', title: 'Senior Architect' },
-  { id: 'interior-designer', title: 'Interior Designer' },
-  { id: 'project-manager', title: 'Project Manager' },
-  { id: 'landscape-architect', title: 'Landscape Architect' },
+  { id: 'architect', title: 'Architect' },
+  { id: 'draftsman', title: 'Draftsman' },
 ];
 
 export default function CareersPage() {
