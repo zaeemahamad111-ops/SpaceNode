@@ -41,8 +41,8 @@ const LinkedinIcon = ({ size = 16 }) => (
 );
 
 const socials = [
-  { label: 'Instagram', href: '#', icon: InstagramIcon },
-  { label: 'Facebook', href: '#', icon: FacebookIcon },
+  { label: 'Instagram', href: 'https://www.instagram.com/space_node_architects?igsh=bG4wZjlnM2ozNXZ5&utm_source=qr', icon: InstagramIcon },
+  { label: 'Facebook', href: 'https://www.facebook.com/share/1Do9VspSmd/?mibextid=wwXIfr', icon: FacebookIcon },
   { label: 'LinkedIn', href: '#', icon: LinkedinIcon },
 ];
 

@@ -44,9 +44,11 @@ export default function ContactPage() {
                     Studio
                   </h2>
                   <address className="not-italic font-serif text-2xl text-[#161616] leading-relaxed mb-6">
-                    First Floor, Velleparambil building,<br />
-                    Kaloor, Cochin-17,<br />
-                    Kerala<br />
+                    <a href="https://maps.google.com/?q=10.000353,76.290550" target="_blank" rel="noopener noreferrer" className="hover:text-[#0D7A9E] transition-colors duration-300">
+                      First Floor, Velleparambil building,<br />
+                      Kaloor, Cochin-17,<br />
+                      Kerala<br />
+                    </a>
                   </address>
                 </div>
 
@@ -88,7 +90,7 @@ export default function ContactPage() {
       {/* Map */}
       <section className="h-[450px] relative overflow-hidden" aria-label="Office location map">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125521.44428490645!2d76.18900775!3d9.9312328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d514abec6bf%3A0xbd582caa5f6a3b36!2sKochi%2C%20Kerala!5e0!3m2!1sen!2sin!4v1705000000000!5m2!1sen!2sin"
+          src="https://maps.google.com/maps?q=10.000353,76.290550&t=&z=15&ie=UTF8&iwloc=&output=embed"
           width="100%"
           height="100%"
           style={{ border: 0, filter: 'grayscale(30%) contrast(1.1)' }}
