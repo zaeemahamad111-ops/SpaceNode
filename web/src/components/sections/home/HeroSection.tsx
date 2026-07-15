@@ -14,8 +14,20 @@ export default function HeroSection() {
 
   return (
     <section ref={ref} className="relative h-screen min-h-[700px] w-full flex items-center overflow-hidden" aria-label="Hero">
-      {/* Solid background instead of image */}
-      <motion.div className="absolute inset-0 z-0 bg-[#0A2333]" style={{ y }} />
+      {/* Video background with parallax */}
+      <motion.div className="absolute inset-0 z-0 bg-[#0A2333]" style={{ y }}>
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-70"
+        >
+          <source src="/videos/hero-background.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0A2333]/80 via-[#0A2333]/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A2333]/80 via-[#0A2333]/20 to-transparent" />
+      </motion.div>
 
       {/* Interactive Node mesh — full overlay */}
       <div className="absolute inset-0 z-10">
