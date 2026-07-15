@@ -68,12 +68,10 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                     Inquire About This Piece
                   </h3>
                   <div className="flex flex-col gap-4">
-                    <p className="font-sans text-center text-[#E05252] font-semibold text-sm mb-2">
-                      9746952443
-                    </p>
                     <div className="grid grid-cols-2 gap-4">
                       <a href={`tel:+919746952443`}
                         className="group flex items-center justify-center gap-2 bg-[#0A2333] text-white px-4 py-4 font-sans text-[11px] font-semibold tracking-[0.2em] uppercase hover:bg-[#113A54] transition-colors duration-300">
+                        <Phone size={14} className="text-white" />
                         Call Us
                       </a>
                       <a href={`https://wa.me/919746952443?text=Hello, I would like to inquire about the ${encodeURIComponent(product.name)}`}
