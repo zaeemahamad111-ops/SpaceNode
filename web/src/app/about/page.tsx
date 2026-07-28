@@ -5,11 +5,7 @@ import { ArrowRight } from 'lucide-react';
 import RevealWrapper from '@/components/ui/RevealWrapper';
 import NodeMesh from '@/components/ui/NodeMesh';
 import AboutTestimonials from '@/components/sections/about/AboutTestimonials';
-
-export const metadata: Metadata = {
-  title: 'About Us',
-  description: 'Learn about Space Node Architects, our vision, purpose, and the collective of architects shaping our studio.',
-};
+import { team } from '@/data/team';
 
 // --- HERO ---
 function AboutHero() {
@@ -24,9 +20,7 @@ function AboutHero() {
           </RevealWrapper>
           <RevealWrapper delay={0.1}>
             <h1 className="font-serif text-5xl md:text-7xl text-[#161616] leading-[1.05] tracking-[-0.02em] mb-8">
-              Creating Spaces,<br />
-              Not Just<br />
-              <span className="italic text-[#0D7A9E]">Structures.</span>
+              Creating Spaces, Not Just <span className="italic text-[#0D7A9E]">Structures.</span>
             </h1>
           </RevealWrapper>
           <RevealWrapper delay={0.2}>
@@ -43,7 +37,7 @@ function AboutHero() {
 // --- STUDIO STORY ---
 function StudioStory() {
   return (
-    <section className="py-32 md:py-40 bg-white overflow-hidden" aria-labelledby="studio-story-heading">
+    <section className="py-20 md:py-28 bg-white overflow-hidden" aria-labelledby="studio-story-heading">
       <div className="max-w-[1440px] mx-auto px-6 md:px-20">
         <div className="max-w-3xl">
           <RevealWrapper direction="left">
@@ -51,7 +45,7 @@ function StudioStory() {
               Our Studio
             </span>
             <h2 id="studio-story-heading" className="font-serif text-4xl md:text-5xl text-[#161616] leading-tight mb-8">
-              A studio shaped<br />by vision and<br /><span className="italic">purpose.</span>
+              A studio shaped by vision and <span className="italic">purpose.</span>
             </h2>
             <p className="font-sans font-light text-base text-[#6B7280] leading-relaxed mb-6">
               Space Node Architects is a multidisciplinary architecture and design practice creating refined residential and commercial environments. Rooted in purposeful planning, timeless aesthetics, and thoughtful execution, we shape spaces that inspire and endure.
@@ -76,54 +70,9 @@ function StudioStory() {
   );
 }
 
-// --- TEAM GRID ---
-const team = [
-  { 
-    name: 'Ar. Jeffin Kuncheria Varghese', 
-    title: 'Founder & Principal Architect', 
-    image: '', 
-    desc: [
-      "Jeffin is the Founder and Principal Architect of Space Node Architects, established in 2017. His practice is driven by a clear architectural intent—where space is shaped through function, context, and structural honesty rather than excess.",
-      "With projects across India, the UAE, and the USA, spanning residential, commercial, and assembly typologies, his work reflects a disciplined yet adaptive approach to design and execution.",
-      "Under his leadership, Space Node Architects focuses on creating precise, enduring architecture defined by clarity, proportion, and material integrity."
-    ]
-  },
-  { 
-    name: 'Ar. Jinsa Reji', 
-    title: 'Design Head & Co-founder', 
-    image: '', 
-    desc: [
-      "Jinsa is the Design Head & Co-founder of Space Node Architects, bringing extensive professional experience across India, the UAE, and Australia. Since 2017, she has worked on a diverse portfolio of residential, commercial, and interior projects, developing a design approach that is both globally informed and deeply responsive to local context.",
-      "She leads the studio's creative direction, guiding projects from the earliest design concepts through to execution. With expertise in design development, multidisciplinary coordination, and project delivery, she ensures that every project is thoughtfully resolved with clarity, precision, and attention to detail.",
-      "Her work is driven by the belief that architecture should elevate everyday life through spaces that are purposeful, timeless, and enduring. By balancing innovation with practicality, she creates environments that reflect each client's vision while responding sensitively to their context, function, and way of living.",
-      "As Design Head, Jinsa is committed to shaping architecture and interiors that embody refined aesthetics, technical excellence, and a lasting sense of place."
-    ]
-  },
-  { 
-    name: 'Ar. Bibite Joy', 
-    title: 'Associate Architect', 
-    image: '', 
-    desc: [
-      "Bibite Joy is an Associate Architect collaborating with Space Node Architects on large-scale and complex projects, bringing over a decade of professional experience in architecture and project delivery. With extensive expertise in residential and commercial developments across Kerala, he contributes a deep understanding of regional design practices, construction methodologies, and project execution.",
-      "His experience spans the complete design and delivery process, from conceptual planning and technical coordination to on-site execution, ensuring that every project is resolved with precision and practicality. Known for his collaborative approach and attention to detail, he works closely with the design team to translate ideas into well-crafted architectural solutions.",
-      "At Space Node Architects, Bibite plays a key role in delivering projects that balance design excellence, technical integrity, and functional performance, contributing to spaces that are thoughtful, enduring, and contextually responsive."
-    ]
-  },
-  { 
-    name: 'Ar. George Zacharia Mathew', 
-    title: 'Consulting Architect', 
-    image: '', 
-    desc: [
-      "George Zacharia is a Consulting Architect with over 10 years of professional experience in architectural design, planning, and project execution across a wide range of typologies and scales. His practice is guided by a strong emphasis on contextual responsiveness, functional efficiency, and a refined contemporary architectural approach.",
-      "He combines conceptual clarity with technical expertise to develop well-resolved spatial solutions that are both purposeful and precise in execution.",
-      "He is currently engaged in a collaborative practice with Space Node Architects, delivering projects across India and the United States, with a focus on sustainable, context-driven residential and commercial architecture."
-    ]
-  },
-];
-
 function TeamGrid() {
   return (
-    <section className="py-32 md:py-40 bg-white" aria-labelledby="team-heading">
+    <section className="py-20 md:py-28 bg-white" aria-labelledby="team-heading">
       <div className="max-w-[1440px] mx-auto px-6 md:px-20">
         <RevealWrapper className="mb-16">
           <span className="font-sans text-[11px] font-semibold tracking-[0.25em] uppercase text-[#0D7A9E] block mb-4">
@@ -138,7 +87,7 @@ function TeamGrid() {
           {team.map((member, i) => (
             <RevealWrapper key={member.name} delay={i * 0.1}>
               <div className="group">
-                <div className="overflow-hidden aspect-[3/4] mb-5 relative bg-[#F8F9FA]">
+                <Link href={`/team/${member.slug}`} className="block overflow-hidden aspect-[3/4] mb-5 relative bg-[#F8F9FA]">
                   {member.image && member.image.trim().length > 0 ? (
                     <Image
                       src={member.image}
@@ -158,14 +107,11 @@ function TeamGrid() {
                   )}
                   {/* Node connection indicator */}
                   <div className="absolute top-3 right-3 w-2 h-2 rounded-full bg-[#0D7A9E] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-                <h3 className="font-serif text-lg text-[#161616] mb-1">{member.name}</h3>
+                </Link>
+                <Link href={`/team/${member.slug}`}>
+                  <h3 className="font-serif text-lg text-[#161616] mb-1 hover:text-[#0D7A9E] transition-colors">{member.name}</h3>
+                </Link>
                 <p className="font-sans text-[10px] tracking-[0.15em] uppercase text-[#0D7A9E] mb-3">{member.title}</p>
-                <div className="font-sans font-light text-sm text-[#6B7280] leading-relaxed space-y-3">
-                  {member.desc.map((para, idx) => (
-                    <p key={idx}>{para}</p>
-                  ))}
-                </div>
               </div>
             </RevealWrapper>
           ))}
