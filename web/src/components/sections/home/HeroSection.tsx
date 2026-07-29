@@ -14,20 +14,8 @@ export default function HeroSection() {
 
   return (
     <section ref={ref} className="relative h-screen min-h-[700px] w-full flex items-center overflow-hidden" aria-label="Hero">
-      {/* Video background with parallax */}
-      <motion.div className="absolute inset-0 z-0 bg-[#0A2333]" style={{ y }}>
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-70"
-        >
-          <source src="/videos/hero-background.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0A2333]/80 via-[#0A2333]/40 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0A2333]/80 via-[#0A2333]/20 to-transparent" />
-      </motion.div>
+      {/* Solid background instead of video */}
+      <motion.div className="absolute inset-0 z-0 bg-[#0A2333]" style={{ y }} />
 
       {/* Interactive Node mesh — full overlay */}
       <div className="absolute inset-0 z-10">
@@ -46,7 +34,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
-          className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-[-0.02em] text-white mb-6 max-w-3xl"
+          className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-[-0.02em] text-white mb-6 w-full"
         >
           Structured · Styled · Sustained.
         </motion.h1>

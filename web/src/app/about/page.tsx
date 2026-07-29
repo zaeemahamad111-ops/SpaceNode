@@ -10,8 +10,8 @@ import { team } from '@/data/team';
 // --- HERO ---
 function AboutHero() {
   return (
-    <section className="relative pt-32 pb-0 bg-[#F8F9FA] overflow-hidden min-h-[60vh] flex items-end" aria-label="About hero">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-20 pb-16 w-full">
+    <section className="relative pt-32 pb-0 bg-[#F8F9FA] overflow-hidden min-h-[50vh] flex items-end" aria-label="About hero">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-20 pb-12 w-full">
         <div className="w-full">
           <RevealWrapper>
             <span className="font-sans text-[11px] font-semibold tracking-[0.25em] uppercase text-[#0D7A9E] block mb-6">
@@ -37,7 +37,7 @@ function AboutHero() {
 // --- STUDIO STORY ---
 function StudioStory() {
   return (
-    <section className="py-20 md:py-28 bg-white overflow-hidden" aria-labelledby="studio-story-heading">
+    <section className="pt-16 pb-12 md:pt-20 md:pb-16 bg-white overflow-hidden" aria-labelledby="studio-story-heading">
       <div className="max-w-[1440px] mx-auto px-6 md:px-20">
         <div className="w-full">
           <RevealWrapper direction="left">
@@ -62,7 +62,7 @@ function StudioStory() {
 
 function TeamGrid() {
   return (
-    <section className="py-20 md:py-28 bg-white" aria-labelledby="team-heading">
+    <section className="pt-8 pb-20 md:pt-12 md:pb-28 bg-white" aria-labelledby="team-heading">
       <div className="max-w-[1440px] mx-auto px-6 md:px-20">
         <RevealWrapper className="mb-16">
           <span className="font-sans text-[11px] font-semibold tracking-[0.25em] uppercase text-[#0D7A9E] block mb-4">
