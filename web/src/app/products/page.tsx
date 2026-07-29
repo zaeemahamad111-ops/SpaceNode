@@ -63,15 +63,17 @@ export default function ProductsPage() {
               </div>
             </RevealWrapper>
 
-            {/* AON Circular Logo Emblem */}
+            {/* AON Logo PNG Image */}
             <RevealWrapper delay={0.2} className="flex-shrink-0 self-start md:self-auto">
-              <div className="w-36 h-36 md:w-40 md:h-40 rounded-full bg-[#F5F2EC] border border-[#E2DBD0] p-4 flex flex-col items-center justify-center text-center shadow-sm hover:scale-105 transition-transform duration-300">
-                <span className="font-sans text-[9px] tracking-widest text-[#555555] lowercase mb-1">
-                  arte 'O' node
-                </span>
-                <span className="font-serif text-4xl md:text-5xl font-black tracking-tight text-[#161616] leading-none">
-                  AON
-                </span>
+              <div className="w-36 h-36 md:w-44 md:h-44 relative flex items-center justify-center">
+                <Image
+                  src="/images/aon-logo-full.png"
+                  alt="arte 'O' node AON logo"
+                  width={180}
+                  height={180}
+                  className="object-contain"
+                  priority
+                />
               </div>
             </RevealWrapper>
           </div>
