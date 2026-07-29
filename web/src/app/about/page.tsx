@@ -50,19 +50,9 @@ function StudioStory() {
             <p className="font-sans font-light text-base text-[#6B7280] leading-relaxed mb-6">
               Space Node Architects is a multidisciplinary architecture and design practice creating refined residential and commercial environments. Rooted in purposeful planning, timeless aesthetics, and thoughtful execution, we shape spaces that inspire and endure.
             </p>
-            <p className="font-sans font-light text-base text-[#6B7280] leading-relaxed mb-10">
+            <p className="font-sans font-light text-base text-[#6B7280] leading-relaxed">
               With projects and design collaborations spanning India, UAE, Australia, and the USA, our studio brings a global perspective to every space we create.
             </p>
-            <div className="pt-8 border-t border-[#E5E7EB]">
-              {[
-                { num: '170+', label: 'Projects Completed' },
-              ].map((s) => (
-                <div key={s.label}>
-                  <div className="font-serif text-3xl text-[#0D7A9E]">{s.num}</div>
-                  <div className="font-sans text-[10px] tracking-[0.12em] uppercase text-[#6B7280] mt-1 leading-tight">{s.label}</div>
-                </div>
-              ))}
-            </div>
           </RevealWrapper>
         </div>
       </div>
