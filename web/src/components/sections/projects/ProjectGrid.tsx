@@ -1,12 +1,13 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { projects } from '@/lib/projects';
+import { projects as fallbackProjects, Project } from '@/lib/projects';
 
-function ProjectCard({ project, index }: { project: (typeof projects)[0]; index: number }) {
+function ProjectCard({ project, index }: { project: Project; index: number }) {
   const isLarge = index === 0 || index === 2;
 
   return (
@@ -53,10 +54,23 @@ function ProjectCard({ project, index }: { project: (typeof projects)[0]; index:
 }
 
 export default function ProjectGrid() {
+  const [projectList, setProjectList] = useState<Project[]>(fallbackProjects);
+
+  useEffect(() => {
+    fetch('/api/cms/projects')
+      .then((res) => res.json())
+      .then((data) => {
+        if (Array.isArray(data) && data.length > 0) {
+          setProjectList(data);
+        }
+      })
+      .catch((err) => console.error(err));
+  }, []);
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-      {projects.map((project, i) => (
-        <ProjectCard key={project.id} project={project} index={i} />
+      {projectList.map((project, i) => (
+        <ProjectCard key={project.id || project.slug} project={project} index={i} />
       ))}
     </div>
   );

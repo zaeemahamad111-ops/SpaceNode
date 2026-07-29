@@ -1,4 +1,5 @@
 // lib/projects.ts
+import { readStore } from '@/lib/cms-store';
 
 export interface Project {
   id: string;
@@ -18,7 +19,7 @@ export interface Project {
   gallery?: string[];
 }
 
-export const projects: Project[] = [
+const fallbackProjects: Project[] = [
   {
     id: '1',
     slug: 'kerala-residence',
@@ -95,14 +96,14 @@ export const projects: Project[] = [
     year: '2022',
     category: 'Residential',
     type: 'Residential / Interior Design',
-    image: '/images/expertise-interior.png',
-    heroImage: '/images/expertise-interior.png',
+    image: '/images/expertise-new-interior.jpeg',
+    heroImage: '/images/expertise-new-interior.jpeg',
     description: 'An urban villa that creates a private sanctuary within the density of Bangalore through a series of interlocked courtyards.',
     challenge: 'Designing a family home in a dense urban neighborhood that achieves privacy, natural light, and connection to outdoor space within a constrained plot.',
     approach: 'Rather than a single large courtyard, we created a sequence of smaller outdoor spaces — an entry garden, a living courtyard, and a private plunge pool — that draw light and air deep into the plan.',
     solution: 'The 6,200 sq ft home achieves a sense of spaciousness despite its urban condition through the choreography of space, light, and material. Every room has a direct connection to one of the courtyards.',
     featured: false,
-    gallery: ['/images/expertise-interior.png'],
+    gallery: ['/images/expertise-new-interior.jpeg'],
   },
   {
     id: '6',
@@ -112,20 +113,29 @@ export const projects: Project[] = [
     year: '2024',
     category: 'Landscape',
     type: 'Landscape / Design',
-    image: '/images/expertise-landscape.png',
-    heroImage: '/images/expertise-landscape.png',
+    image: '/images/expertise-new-landscape.jpeg',
+    heroImage: '/images/expertise-new-landscape.jpeg',
     description: 'A 3-acre residential landscape that creates an immersive natural environment framing views of the Western Ghats.',
     challenge: 'Designing a landscape that feels both curated and wild — a cultivated naturalness that enhances rather than domesticates the dramatic site.',
     approach: 'Using a palette of native Kerala plants organized in ecological guilds that mimic natural forest communities, creating a landscape that requires minimal maintenance and supports local biodiversity.',
     solution: 'The landscape unfolds as a journey from the formal entry sequence through a meadow garden to a naturalistic grove overlooking the valley. A geometric reflecting pool bridges the formal and informal zones.',
     featured: false,
-    gallery: ['/images/expertise-landscape.png'],
+    gallery: ['/images/expertise-new-landscape.jpeg'],
   },
 ];
 
-export const getFeaturedProjects = () => projects.filter(p => p.featured);
-export const getProjectBySlug = (slug: string) => projects.find(p => p.slug === slug);
+export const getProjects = (): Project[] => {
+  if (typeof window === 'undefined') {
+    return readStore<Project[]>('projects.json', fallbackProjects);
+  }
+  return fallbackProjects;
+};
+
+export const projects: Project[] = getProjects();
+
+export const getFeaturedProjects = () => getProjects().filter(p => p.featured);
+export const getProjectBySlug = (slug: string) => getProjects().find(p => p.slug === slug);
 export const getRelatedProjects = (currentSlug: string, category: string) => 
-  projects.filter(p => p.slug !== currentSlug && p.category === category).slice(0, 3);
+  getProjects().filter(p => p.slug !== currentSlug && p.category === category).slice(0, 3);
 
 export type ProjectCategory = 'All Projects' | 'Residential' | 'Commercial' | 'Hospitality' | 'Landscape' | 'Mixed Use';

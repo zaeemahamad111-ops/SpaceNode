@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Mail, Phone, ArrowUpRight, MessageCircle } from 'lucide-react';
+import { Mail, Phone, MessageCircle } from 'lucide-react';
 import NodeMesh from '@/components/ui/NodeMesh';
+import { readStore } from '@/lib/cms-store';
 
 const footerNav = [
   { label: 'Home', href: '/' },
@@ -40,13 +41,22 @@ const LinkedinIcon = ({ size = 16 }) => (
   </svg>
 );
 
-const socials = [
-  { label: 'Instagram', href: 'https://www.instagram.com/space_node_architects?igsh=bG4wZjlnM2ozNXZ5&utm_source=qr', icon: InstagramIcon },
-  { label: 'Facebook', href: 'https://www.facebook.com/share/1Do9VspSmd/?mibextid=wwXIfr', icon: FacebookIcon },
-  { label: 'LinkedIn', href: '#', icon: LinkedinIcon },
-];
-
 export default function Footer() {
+  const contact = readStore('contact.json', {
+    address: 'First Floor, Velleparambil building, Kaloor, Cochin-17, Kerala',
+    phone: '+91 98765 43210',
+    email: 'info@spacenodearchitects.com',
+    instagramUrl: 'https://www.instagram.com/space_node_architects?igsh=bG4wZjlnM2ozNXZ5&utm_source=qr',
+    facebookUrl: 'https://www.facebook.com/share/1Do9VspSmd/?mibextid=wwXIfr',
+    linkedinUrl: '#',
+  });
+
+  const socials = [
+    { label: 'Instagram', href: contact.instagramUrl || '#', icon: InstagramIcon },
+    { label: 'Facebook', href: contact.facebookUrl || '#', icon: FacebookIcon },
+    { label: 'LinkedIn', href: contact.linkedinUrl || '#', icon: LinkedinIcon },
+  ];
+
   return (
     <footer className="relative bg-[#0A2333] overflow-hidden" role="contentinfo">
       {/* Node mesh overlay */}
@@ -61,7 +71,6 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="md:col-span-4">
             <Link href="/" className="flex items-center gap-3 mb-6">
-              {/* Transparent white logo for dark footer */}
               <Image
                 src="/images/logo-white.png"
                 alt="Space Node Architects logo"
@@ -90,6 +99,8 @@ export default function Footer() {
                   <Link
                     key={social.label}
                     href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label={social.label}
                     className="w-9 h-9 border border-white/20 flex items-center justify-center text-white/50 hover:text-[#0D7A9E] hover:border-[#0D7A9E] transition-all duration-300"
                   >
@@ -145,24 +156,23 @@ export default function Footer() {
             </h3>
             <address className="not-italic space-y-4">
               <p className="font-sans text-sm text-white/50 leading-relaxed">
-                First Floor, Velleparambil building<br />
-                Kaloor, Cochin-17, Kerala
+                {contact.address}
               </p>
               <div className="space-y-2">
-                <a href="tel:+918848162343" className="flex items-center gap-2 font-sans text-sm text-white/50 hover:text-[#6EB8D0] transition-colors duration-300">
+                <a href={`tel:${contact.phone}`} className="flex items-center gap-2 font-sans text-sm text-white/50 hover:text-[#6EB8D0] transition-colors duration-300">
                   <Phone size={14} className="text-[#6EB8D0]" />
-                  +91 88481 62343
+                  {contact.phone}
                 </a>
-                <a href="mailto:enquiries@spacenodearchitects.in" className="flex items-center gap-2 font-sans text-sm text-white/50 hover:text-[#6EB8D0] transition-colors duration-300">
+                <a href={`mailto:${contact.email}`} className="flex items-center gap-2 font-sans text-sm text-white/50 hover:text-[#6EB8D0] transition-colors duration-300">
                   <Mail size={13} />
-                  enquiries@spacenodearchitects.in
+                  {contact.email}
                 </a>
               </div>
             </address>
 
             {/* CTA */}
             <a
-              href="https://wa.me/918848162343"
+              href={`https://wa.me/${contact.phone.replace(/[^0-9]/g, '')}`}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-8 inline-flex items-center gap-2 border border-[#0D7A9E] text-[#0D7A9E] px-5 py-2.5 font-sans text-[10px] font-semibold tracking-[0.15em] uppercase hover:bg-[#0D7A9E] hover:text-white transition-all duration-300"

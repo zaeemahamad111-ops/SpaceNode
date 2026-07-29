@@ -4,17 +4,19 @@ import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import RevealWrapper from '@/components/ui/RevealWrapper';
 import NodeMesh from '@/components/ui/NodeMesh';
-import { team } from '@/data/team';
+import { getTeam } from '@/data/team';
 
 export function generateStaticParams() {
-  return team.map((member) => ({
+  const members = getTeam();
+  return members.map((member) => ({
     slug: member.slug,
   }));
 }
 
 export default async function TeamMemberPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
-  const member = team.find((m) => m.slug === resolvedParams.slug);
+  const teamMembers = getTeam();
+  const member = teamMembers.find((m) => m.slug === resolvedParams.slug);
 
   if (!member) {
     notFound();
@@ -60,24 +62,28 @@ export default async function TeamMemberPage({ params }: { params: Promise<{ slu
               <p className="font-sans text-sm tracking-[0.2em] uppercase text-[#0D7A9E] mb-10 pb-10 border-b border-[#E5E7EB]">{member.title}</p>
               
               {/* Highlights */}
-              <div className="mb-10">
-                <h2 className="font-sans text-[11px] font-semibold tracking-[0.15em] uppercase text-[#161616] mb-4">Highlights</h2>
-                <ul className="space-y-3">
-                  {member.highlights.map((highlight, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-[#6B7280] font-sans font-light text-base">
-                      <span className="text-[#0D7A9E] mt-1">•</span>
-                      <span>{highlight}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              {member.highlights && member.highlights.length > 0 && (
+                <div className="mb-10">
+                  <h2 className="font-sans text-[11px] font-semibold tracking-[0.15em] uppercase text-[#161616] mb-4">Highlights</h2>
+                  <ul className="space-y-3">
+                    {member.highlights.map((highlight, idx) => (
+                      <li key={idx} className="flex items-start gap-3 text-[#6B7280] font-sans font-light text-base">
+                        <span className="text-[#0D7A9E] mt-1">•</span>
+                        <span>{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
 
               {/* Bio Description */}
-              <div className="font-sans font-light text-base text-[#6B7280] leading-relaxed space-y-6">
-                {member.desc.map((paragraph, idx) => (
-                  <p key={idx}>{paragraph}</p>
-                ))}
-              </div>
+              {member.desc && member.desc.length > 0 && (
+                <div className="font-sans font-light text-base text-[#6B7280] leading-relaxed space-y-6">
+                  {member.desc.map((paragraph, idx) => (
+                    <p key={idx}>{paragraph}</p>
+                  ))}
+                </div>
+              )}
             </RevealWrapper>
           </div>
         </div>

@@ -5,14 +5,14 @@ import { notFound } from 'next/navigation';
 import { ArrowLeft, ArrowRight, MapPin, Calendar, Tag } from 'lucide-react';
 import RevealWrapper from '@/components/ui/RevealWrapper';
 import NodeMesh from '@/components/ui/NodeMesh';
-import { getProjectBySlug, getRelatedProjects, projects } from '@/lib/projects';
+import { getProjectBySlug, getRelatedProjects, getProjects } from '@/lib/projects';
 
 interface Props {
   params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
-  return projects.map((p) => ({ slug: p.slug }));
+  return getProjects().map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
