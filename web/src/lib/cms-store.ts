@@ -1,17 +1,18 @@
-import fs from 'fs';
-import path from 'path';
-
-const storeDir = path.join(process.cwd(), 'src', 'data', 'store');
-
-function ensureDir() {
-  if (!fs.existsSync(storeDir)) {
-    fs.mkdirSync(storeDir, { recursive: true });
-  }
-}
-
 export function readStore<T>(filename: string, fallback: T): T {
+  if (typeof window !== 'undefined') {
+    return fallback;
+  }
   try {
-    ensureDir();
+    // Dynamic require so bundlers do not try to package 'fs' for the client browser
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const fs = require('fs');
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const path = require('path');
+
+    const storeDir = path.join(process.cwd(), 'src', 'data', 'store');
+    if (!fs.existsSync(storeDir)) {
+      fs.mkdirSync(storeDir, { recursive: true });
+    }
     const filePath = path.join(storeDir, filename);
     if (!fs.existsSync(filePath)) {
       fs.writeFileSync(filePath, JSON.stringify(fallback, null, 2), 'utf-8');
@@ -26,8 +27,19 @@ export function readStore<T>(filename: string, fallback: T): T {
 }
 
 export function writeStore<T>(filename: string, data: T): boolean {
+  if (typeof window !== 'undefined') {
+    return false;
+  }
   try {
-    ensureDir();
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const fs = require('fs');
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const path = require('path');
+
+    const storeDir = path.join(process.cwd(), 'src', 'data', 'store');
+    if (!fs.existsSync(storeDir)) {
+      fs.mkdirSync(storeDir, { recursive: true });
+    }
     const filePath = path.join(storeDir, filename);
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf-8');
     return true;
