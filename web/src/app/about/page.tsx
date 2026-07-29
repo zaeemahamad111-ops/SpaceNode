@@ -12,7 +12,7 @@ function AboutHero() {
   return (
     <section className="relative pt-32 pb-0 bg-[#F8F9FA] overflow-hidden min-h-[60vh] flex items-end" aria-label="About hero">
       <div className="max-w-[1440px] mx-auto px-6 md:px-20 pb-16 w-full">
-        <div className="max-w-3xl">
+        <div className="w-full">
           <RevealWrapper>
             <span className="font-sans text-[11px] font-semibold tracking-[0.25em] uppercase text-[#0D7A9E] block mb-6">
               Who We Are
@@ -24,7 +24,7 @@ function AboutHero() {
             </h1>
           </RevealWrapper>
           <RevealWrapper delay={0.2}>
-            <p className="font-sans font-light text-lg text-[#6B7280] leading-relaxed max-w-md mb-8">
+            <p className="font-sans font-light text-lg text-[#6B7280] leading-relaxed mb-8">
               We are a collective of architects, designers, and thinkers crafting meaningful spaces through architecture, interiors, landscapes, and project management.
             </p>
           </RevealWrapper>
@@ -39,7 +39,7 @@ function StudioStory() {
   return (
     <section className="py-20 md:py-28 bg-white overflow-hidden" aria-labelledby="studio-story-heading">
       <div className="max-w-[1440px] mx-auto px-6 md:px-20">
-        <div className="max-w-3xl">
+        <div className="w-full">
           <RevealWrapper direction="left">
             <span className="font-sans text-[11px] font-semibold tracking-[0.25em] uppercase text-[#0D7A9E] block mb-6">
               Our Studio
