@@ -89,16 +89,7 @@ export default function ExpertisePage() {
             </RevealWrapper>
           </div>
 
-          {/* Service tabs */}
-          <RevealWrapper delay={0.3} className="mt-16 flex flex-wrap gap-0 border-t border-[#E5E7EB]">
-            {services.map((s) => (
-              <a key={s.id} href={`#${s.id}`}
-                className="group flex-1 min-w-[140px] py-6 px-4 border-r border-[#E5E7EB] last:border-r-0 text-center hover:bg-white transition-colors duration-300">
-                <div className="font-sans text-[10px] tracking-[0.15em] uppercase text-[#0D7A9E] mb-1">{s.num}</div>
-                <div className="font-serif text-base text-[#161616] group-hover:text-[#0D7A9E] transition-colors duration-300">{s.shortTitle || s.title}</div>
-              </a>
-            ))}
-          </RevealWrapper>
+
         </div>
       </section>
 
