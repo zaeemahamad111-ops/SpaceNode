@@ -56,7 +56,7 @@ const services = [
     subtitle: 'Strategic guidance and expert management',
     description:
       'Project management is one of our core strengths—especially for clients residing abroad or who require trusted on-ground coordination. Acting as the client’s representative, we oversee every stage of the project, from design coordination and vendor selection to procurement, budgeting, execution, and final handover. By collaborating with specialized contractors and vendors for each scope of work, we ensure superior quality, cost transparency, and timely delivery while maintaining the integrity of the design. Through regular updates, quality checks, and seamless coordination, we provide a stress-free experience—allowing clients to stay confident and informed, no matter where they are.',
-    image: '/images/expertise-consultancy.png',
+    image: '/images/expertise-new-consultancy.jpeg',
     href: '/contact',
     reversed: true,
   },
