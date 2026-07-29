@@ -63,14 +63,14 @@ export default function ProductsPage() {
               </div>
             </RevealWrapper>
 
-            {/* AON Logo PNG Image */}
+            {/* AON Logo PNG Image - 100% Larger */}
             <RevealWrapper delay={0.2} className="flex-shrink-0 self-start md:self-auto">
-              <div className="w-36 h-36 md:w-44 md:h-44 relative flex items-center justify-center">
+              <div className="w-72 h-72 md:w-96 md:h-96 relative flex items-center justify-center">
                 <Image
                   src="/images/aon-logo-full.png"
                   alt="arte 'O' node AON logo"
-                  width={180}
-                  height={180}
+                  width={360}
+                  height={360}
                   className="object-contain"
                   priority
                 />
