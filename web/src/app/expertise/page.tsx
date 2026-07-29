@@ -20,7 +20,7 @@ const services = [
     subtitle: 'Residential & Private Estates · Commercial & Office Spaces · Hospitality & Mixed-Use',
     description:
       'We provide end-to-end architectural design solutions—from concept development and planning to technical drawings, approvals, and execution support. By combining thoughtful design, technical precision, and functional planning, we create spaces that are timeless, practical, and aligned with each client’s vision.',
-    image: '/images/expertise-architecture.png',
+    image: '/images/expertise-new-architecture.jpeg',
     href: '/projects?category=Residential',
     reversed: false,
   },
@@ -32,7 +32,7 @@ const services = [
     subtitle: 'Thoughtful interiors that reflect personality',
     description:
       'At Space Node Architects, we create thoughtfuly designed interiors that balance aesthetics, comfort, and functionality. Our approach focuses on transforming spaces into environments that reflect the client\'s lifestyle, personality, and practical needs while maintaining timeless design appeal. We ensure every element is carefully considered to create cohesive, elegant, and functional interiors that enhance everyday living and working experiences.',
-    image: '/images/expertise-interior.png',
+    image: '/images/expertise-new-interior.jpeg',
     href: '/projects',
     reversed: true,
   },
@@ -44,7 +44,7 @@ const services = [
     subtitle: 'Outdoor spaces that connect architecture with nature',
     description:
       'We create thoughtfully designed outdoor environments that enhance the beauty and functionality of a space. From site planning and planting concepts to outdoor living areas and material selection, we design landscapes that harmoniously connect architecture and nature. We believe landscape design completes a project—transforming spaces into a well-balanced and enriching living atmosphere.',
-    image: '/images/expertise-landscape.png',
+    image: '/images/expertise-new-landscape.jpeg',
     href: '/projects?category=Landscape',
     reversed: false,
   },
@@ -74,31 +74,18 @@ export default function ExpertisePage() {
     <>
       {/* Hero */}
       <section className="relative pt-36 pb-20 bg-[#F8F9FA] overflow-hidden" aria-label="Expertise hero">
-        <div className="max-w-[1440px] mx-auto px-6 md:px-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-20 text-center">
+          <div className="max-w-3xl mx-auto">
             <RevealWrapper>
               <span className="font-sans text-[11px] font-semibold tracking-[0.25em] uppercase text-[#0D7A9E] block mb-6">
                 What We Do
               </span>
               <h1 className="font-serif text-6xl md:text-7xl text-[#161616] leading-[1.05] tracking-[-0.02em] mb-6">
-                What<br />We <span className="italic text-[#0D7A9E]">Do.</span>
+                What We <span className="italic text-[#0D7A9E]">Do.</span>
               </h1>
-              <p className="font-sans font-light text-lg text-[#6B7280] leading-relaxed max-w-sm">
+              <p className="font-sans font-light text-lg text-[#6B7280] leading-relaxed mx-auto">
                 Architecture, Interiors and Landscapes designed to endure through material honesty and spatial clarity.
               </p>
-            </RevealWrapper>
-            <RevealWrapper delay={0.2} direction="right" className="relative h-[500px] overflow-hidden">
-              <Image
-                src="/images/expertise-architecture.png"
-                alt="Space Node architecture — premium contemporary building"
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 opacity-20">
-                <NodeMesh variant="section" animated={false} />
-              </div>
             </RevealWrapper>
           </div>
 
