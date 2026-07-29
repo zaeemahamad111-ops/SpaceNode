@@ -1,8 +1,9 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Project, ProjectCategory } from '@/lib/projects';
-import { Plus, Edit2, Trash2, Search, Star, Image as ImageIcon, X, Save, Check } from 'lucide-react';
+import { Project } from '@/lib/projects';
+import ImageUploadInput from '@/components/admin/ImageUploadInput';
+import { Plus, Edit2, Trash2, Search, Star, Image as ImageIcon, X, Save } from 'lucide-react';
 import Image from 'next/image';
 
 const categories: Array<'Residential' | 'Commercial' | 'Hospitality' | 'Landscape' | 'Mixed Use'> = [
@@ -19,7 +20,6 @@ export default function ProjectsManager() {
   const [searchTerm, setSearchTerm] = useState('');
   const [editingProject, setEditingProject] = useState<Partial<Project> | null>(null);
   const [isNew, setIsNew] = useState(false);
-  const [saveSuccess, setSaveSuccess] = useState(false);
 
   useEffect(() => {
     fetchProjects();
@@ -72,8 +72,6 @@ export default function ProjectsManager() {
       });
 
       if (res.ok) {
-        setSaveSuccess(true);
-        setTimeout(() => setSaveSuccess(false), 2000);
         setEditingProject(null);
         fetchProjects();
       }
@@ -220,7 +218,7 @@ export default function ProjectsManager() {
             <form onSubmit={handleSave} className="space-y-5">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block font-sans text-xs uppercase tracking-wider text-gray-700 mb-1">
+                  <label className="block font-sans text-xs uppercase tracking-wider text-gray-700 mb-1 font-medium">
                     Project Name *
                   </label>
                   <input
@@ -234,24 +232,24 @@ export default function ProjectsManager() {
                         slug: e.target.value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, ''),
                       })
                     }
-                    className="w-full border border-gray-300 rounded-lg p-2.5 text-sm focus:border-[#0D7A9E] focus:outline-none"
+                    className="w-full border border-gray-300 rounded-xl p-2.5 text-sm focus:border-[#0D7A9E] focus:outline-none"
                   />
                 </div>
 
                 <div>
-                  <label className="block font-sans text-xs uppercase tracking-wider text-gray-700 mb-1">
+                  <label className="block font-sans text-xs uppercase tracking-wider text-gray-700 mb-1 font-medium">
                     URL Slug
                   </label>
                   <input
                     type="text"
                     value={editingProject.slug || ''}
                     onChange={(e) => setEditingProject({ ...editingProject, slug: e.target.value })}
-                    className="w-full border border-gray-300 rounded-lg p-2.5 text-sm font-mono text-xs focus:border-[#0D7A9E] focus:outline-none"
+                    className="w-full border border-gray-300 rounded-xl p-2.5 text-sm font-mono text-xs focus:border-[#0D7A9E] focus:outline-none"
                   />
                 </div>
 
                 <div>
-                  <label className="block font-sans text-xs uppercase tracking-wider text-gray-700 mb-1">
+                  <label className="block font-sans text-xs uppercase tracking-wider text-gray-700 mb-1 font-medium">
                     Category
                   </label>
                   <select
@@ -262,7 +260,7 @@ export default function ProjectsManager() {
                         category: e.target.value as 'Residential' | 'Commercial' | 'Hospitality' | 'Landscape' | 'Mixed Use',
                       })
                     }
-                    className="w-full border border-gray-300 rounded-lg p-2.5 text-sm focus:border-[#0D7A9E] focus:outline-none bg-white"
+                    className="w-full border border-gray-300 rounded-xl p-2.5 text-sm focus:border-[#0D7A9E] focus:outline-none bg-white"
                   >
                     {categories.map((c) => (
                       <option key={c} value={c}>
@@ -273,7 +271,7 @@ export default function ProjectsManager() {
                 </div>
 
                 <div>
-                  <label className="block font-sans text-xs uppercase tracking-wider text-gray-700 mb-1">
+                  <label className="block font-sans text-xs uppercase tracking-wider text-gray-700 mb-1 font-medium">
                     Type Label
                   </label>
                   <input
@@ -281,12 +279,12 @@ export default function ProjectsManager() {
                     value={editingProject.type || ''}
                     onChange={(e) => setEditingProject({ ...editingProject, type: e.target.value })}
                     placeholder="e.g. Residential / Architecture"
-                    className="w-full border border-gray-300 rounded-lg p-2.5 text-sm focus:border-[#0D7A9E] focus:outline-none"
+                    className="w-full border border-gray-300 rounded-xl p-2.5 text-sm focus:border-[#0D7A9E] focus:outline-none"
                   />
                 </div>
 
                 <div>
-                  <label className="block font-sans text-xs uppercase tracking-wider text-gray-700 mb-1">
+                  <label className="block font-sans text-xs uppercase tracking-wider text-gray-700 mb-1 font-medium">
                     Location
                   </label>
                   <input
@@ -294,94 +292,82 @@ export default function ProjectsManager() {
                     value={editingProject.location || ''}
                     onChange={(e) => setEditingProject({ ...editingProject, location: e.target.value })}
                     placeholder="e.g. Cochin, Kerala"
-                    className="w-full border border-gray-300 rounded-lg p-2.5 text-sm focus:border-[#0D7A9E] focus:outline-none"
+                    className="w-full border border-gray-300 rounded-xl p-2.5 text-sm focus:border-[#0D7A9E] focus:outline-none"
                   />
                 </div>
 
                 <div>
-                  <label className="block font-sans text-xs uppercase tracking-wider text-gray-700 mb-1">
+                  <label className="block font-sans text-xs uppercase tracking-wider text-gray-700 mb-1 font-medium">
                     Year
                   </label>
                   <input
                     type="text"
                     value={editingProject.year || ''}
                     onChange={(e) => setEditingProject({ ...editingProject, year: e.target.value })}
-                    className="w-full border border-gray-300 rounded-lg p-2.5 text-sm focus:border-[#0D7A9E] focus:outline-none"
+                    className="w-full border border-gray-300 rounded-xl p-2.5 text-sm focus:border-[#0D7A9E] focus:outline-none"
                   />
                 </div>
               </div>
 
-              <div>
-                <label className="block font-sans text-xs uppercase tracking-wider text-gray-700 mb-1">
-                  Card / Cover Image URL
-                </label>
-                <input
-                  type="text"
-                  value={editingProject.image || ''}
-                  onChange={(e) => setEditingProject({ ...editingProject, image: e.target.value })}
-                  placeholder="/images/filename.jpg or /uploads/filename.jpg"
-                  className="w-full border border-gray-300 rounded-lg p-2.5 text-sm font-mono text-xs focus:border-[#0D7A9E] focus:outline-none"
-                />
-              </div>
+              {/* Cover Image Upload Input */}
+              <ImageUploadInput
+                label="Card Cover Photo"
+                value={editingProject.image || ''}
+                onChange={(url) => setEditingProject({ ...editingProject, image: url })}
+              />
+
+              {/* Hero Image Upload Input */}
+              <ImageUploadInput
+                label="Hero Header Photo (Detail Page)"
+                value={editingProject.heroImage || ''}
+                onChange={(url) => setEditingProject({ ...editingProject, heroImage: url })}
+              />
 
               <div>
-                <label className="block font-sans text-xs uppercase tracking-wider text-gray-700 mb-1">
-                  Hero Header Image URL
-                </label>
-                <input
-                  type="text"
-                  value={editingProject.heroImage || ''}
-                  onChange={(e) => setEditingProject({ ...editingProject, heroImage: e.target.value })}
-                  placeholder="/images/filename.jpg or /uploads/filename.jpg"
-                  className="w-full border border-gray-300 rounded-lg p-2.5 text-sm font-mono text-xs focus:border-[#0D7A9E] focus:outline-none"
-                />
-              </div>
-
-              <div>
-                <label className="block font-sans text-xs uppercase tracking-wider text-gray-700 mb-1">
+                <label className="block font-sans text-xs uppercase tracking-wider text-gray-700 mb-1 font-medium">
                   Overview Description
                 </label>
                 <textarea
                   rows={2}
                   value={editingProject.description || ''}
                   onChange={(e) => setEditingProject({ ...editingProject, description: e.target.value })}
-                  className="w-full border border-gray-300 rounded-lg p-2.5 text-sm focus:border-[#0D7A9E] focus:outline-none"
+                  className="w-full border border-gray-300 rounded-xl p-2.5 text-sm focus:border-[#0D7A9E] focus:outline-none"
                 />
               </div>
 
               <div>
-                <label className="block font-sans text-xs uppercase tracking-wider text-gray-700 mb-1">
+                <label className="block font-sans text-xs uppercase tracking-wider text-gray-700 mb-1 font-medium">
                   The Challenge
                 </label>
                 <textarea
                   rows={3}
                   value={editingProject.challenge || ''}
                   onChange={(e) => setEditingProject({ ...editingProject, challenge: e.target.value })}
-                  className="w-full border border-gray-300 rounded-lg p-2.5 text-sm focus:border-[#0D7A9E] focus:outline-none"
+                  className="w-full border border-gray-300 rounded-xl p-2.5 text-sm focus:border-[#0D7A9E] focus:outline-none"
                 />
               </div>
 
               <div>
-                <label className="block font-sans text-xs uppercase tracking-wider text-gray-700 mb-1">
+                <label className="block font-sans text-xs uppercase tracking-wider text-gray-700 mb-1 font-medium">
                   The Approach
                 </label>
                 <textarea
                   rows={3}
                   value={editingProject.approach || ''}
                   onChange={(e) => setEditingProject({ ...editingProject, approach: e.target.value })}
-                  className="w-full border border-gray-300 rounded-lg p-2.5 text-sm focus:border-[#0D7A9E] focus:outline-none"
+                  className="w-full border border-gray-300 rounded-xl p-2.5 text-sm focus:border-[#0D7A9E] focus:outline-none"
                 />
               </div>
 
               <div>
-                <label className="block font-sans text-xs uppercase tracking-wider text-gray-700 mb-1">
+                <label className="block font-sans text-xs uppercase tracking-wider text-gray-700 mb-1 font-medium">
                   The Solution
                 </label>
                 <textarea
                   rows={3}
                   value={editingProject.solution || ''}
                   onChange={(e) => setEditingProject({ ...editingProject, solution: e.target.value })}
-                  className="w-full border border-gray-300 rounded-lg p-2.5 text-sm focus:border-[#0D7A9E] focus:outline-none"
+                  className="w-full border border-gray-300 rounded-xl p-2.5 text-sm focus:border-[#0D7A9E] focus:outline-none"
                 />
               </div>
 

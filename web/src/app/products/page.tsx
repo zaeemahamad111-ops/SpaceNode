@@ -5,10 +5,11 @@ import RevealWrapper from '@/components/ui/RevealWrapper';
 import NodeMesh from '@/components/ui/NodeMesh';
 import { products } from '@/data/products';
 
-export const metadata: Metadata = {
-  title: 'Products | Space Node Architects',
-  description: 'Curated architectural products and bespoke furniture by Space Node.',
-};
+import { getPageMetadata } from '@/lib/seo';
+
+export function generateMetadata(): Metadata {
+  return getPageMetadata('products');
+}
 
 export default function ProductsPage() {
   return (

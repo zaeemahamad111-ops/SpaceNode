@@ -5,10 +5,11 @@ import NodeMesh from '@/components/ui/NodeMesh';
 import ContactForm from '@/components/sections/contact/ContactForm';
 import { readStore } from '@/lib/cms-store';
 
-export const metadata: Metadata = {
-  title: 'Contact Us',
-  description: 'Start a journey with Space Node Architects. Let\'s build something extraordinary together.',
-};
+import { getPageMetadata } from '@/lib/seo';
+
+export function generateMetadata(): Metadata {
+  return getPageMetadata('contact');
+}
 
 export default function ContactPage() {
   const contact = readStore('contact.json', {

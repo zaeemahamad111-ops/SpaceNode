@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { TeamMember } from '@/app/api/cms/team/route';
+import ImageUploadInput from '@/components/admin/ImageUploadInput';
 import { Plus, Edit2, Trash2, User, X, Save, PlusCircle, MinusCircle } from 'lucide-react';
 import Image from 'next/image';
 
@@ -168,7 +169,7 @@ export default function TeamManager() {
             <form onSubmit={handleSave} className="space-y-5">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block font-sans text-xs uppercase tracking-wider text-gray-700 mb-1">
+                  <label className="block font-sans text-xs uppercase tracking-wider text-gray-700 mb-1 font-medium">
                     Full Name *
                   </label>
                   <input
@@ -182,12 +183,12 @@ export default function TeamManager() {
                         slug: e.target.value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, ''),
                       })
                     }
-                    className="w-full border border-gray-300 rounded-lg p-2.5 text-sm focus:border-[#0D7A9E] focus:outline-none"
+                    className="w-full border border-gray-300 rounded-xl p-2.5 text-sm focus:border-[#0D7A9E] focus:outline-none"
                   />
                 </div>
 
                 <div>
-                  <label className="block font-sans text-xs uppercase tracking-wider text-gray-700 mb-1">
+                  <label className="block font-sans text-xs uppercase tracking-wider text-gray-700 mb-1 font-medium">
                     Designation / Title
                   </label>
                   <input
@@ -196,28 +197,22 @@ export default function TeamManager() {
                     value={editingMember.title || ''}
                     onChange={(e) => setEditingMember({ ...editingMember, title: e.target.value })}
                     placeholder="e.g. Principal Architect"
-                    className="w-full border border-gray-300 rounded-lg p-2.5 text-sm focus:border-[#0D7A9E] focus:outline-none"
+                    className="w-full border border-gray-300 rounded-xl p-2.5 text-sm focus:border-[#0D7A9E] focus:outline-none"
                   />
                 </div>
               </div>
 
-              <div>
-                <label className="block font-sans text-xs uppercase tracking-wider text-gray-700 mb-1">
-                  Profile Photo URL
-                </label>
-                <input
-                  type="text"
-                  value={editingMember.image || ''}
-                  onChange={(e) => setEditingMember({ ...editingMember, image: e.target.value })}
-                  placeholder="/uploads/filename.jpg or image URL"
-                  className="w-full border border-gray-300 rounded-lg p-2.5 text-sm font-mono text-xs focus:border-[#0D7A9E] focus:outline-none"
-                />
-              </div>
+              {/* Profile Photo Upload Input */}
+              <ImageUploadInput
+                label="Profile Photo"
+                value={editingMember.image || ''}
+                onChange={(url) => setEditingMember({ ...editingMember, image: url })}
+              />
 
               {/* Highlights List */}
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <label className="block font-sans text-xs uppercase tracking-wider text-gray-700">
+                  <label className="block font-sans text-xs uppercase tracking-wider text-gray-700 font-medium">
                     Highlights (Bullet points)
                   </label>
                   <button
@@ -244,7 +239,7 @@ export default function TeamManager() {
                           updated[idx] = e.target.value;
                           setEditingMember({ ...editingMember, highlights: updated });
                         }}
-                        className="flex-1 border border-gray-300 rounded-lg p-2 text-sm focus:border-[#0D7A9E] focus:outline-none"
+                        className="flex-1 border border-gray-300 rounded-xl p-2 text-sm focus:border-[#0D7A9E] focus:outline-none"
                       />
                       <button
                         type="button"
@@ -264,7 +259,7 @@ export default function TeamManager() {
               {/* Bio Paragraphs */}
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <label className="block font-sans text-xs uppercase tracking-wider text-gray-700">
+                  <label className="block font-sans text-xs uppercase tracking-wider text-gray-700 font-medium">
                     Biography / Description Paragraphs
                   </label>
                   <button
@@ -291,7 +286,7 @@ export default function TeamManager() {
                           updated[idx] = e.target.value;
                           setEditingMember({ ...editingMember, desc: updated });
                         }}
-                        className="flex-1 border border-gray-300 rounded-lg p-2.5 text-sm focus:border-[#0D7A9E] focus:outline-none"
+                        className="flex-1 border border-gray-300 rounded-xl p-2.5 text-sm focus:border-[#0D7A9E] focus:outline-none"
                       />
                       <button
                         type="button"

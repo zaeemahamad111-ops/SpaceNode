@@ -6,6 +6,11 @@ import RevealWrapper from '@/components/ui/RevealWrapper';
 import NodeMesh from '@/components/ui/NodeMesh';
 import AboutTestimonials from '@/components/sections/about/AboutTestimonials';
 import { team } from '@/data/team';
+import { getPageMetadata } from '@/lib/seo';
+
+export function generateMetadata(): Metadata {
+  return getPageMetadata('about');
+}
 
 // --- HERO ---
 function AboutHero() {

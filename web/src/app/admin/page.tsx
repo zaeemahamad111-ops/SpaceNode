@@ -5,6 +5,8 @@ import AdminLoginForm from '@/components/admin/AdminLoginForm';
 import AdminNavbar, { AdminTab } from '@/components/admin/AdminNavbar';
 import ProjectsManager from '@/components/admin/ProjectsManager';
 import TeamManager from '@/components/admin/TeamManager';
+import SiteImagesManager from '@/components/admin/SiteImagesManager';
+import SEOManager from '@/components/admin/SEOManager';
 import MediaLibrary from '@/components/admin/MediaLibrary';
 import ContactManager from '@/components/admin/ContactManager';
 
@@ -13,7 +15,6 @@ export default function AdminPage() {
   const [activeTab, setActiveTab] = useState<AdminTab>('projects');
 
   useEffect(() => {
-    // Check if authenticated
     const checkAuth = async () => {
       try {
         const res = await fetch('/api/cms/projects');
@@ -61,6 +62,8 @@ export default function AdminPage() {
       <main className="max-w-[1440px] mx-auto px-6 md:px-12 py-10">
         {activeTab === 'projects' && <ProjectsManager />}
         {activeTab === 'team' && <TeamManager />}
+        {activeTab === 'site-images' && <SiteImagesManager />}
+        {activeTab === 'seo' && <SEOManager />}
         {activeTab === 'media' && <MediaLibrary />}
         {activeTab === 'contact' && <ContactManager />}
       </main>

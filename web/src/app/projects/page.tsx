@@ -5,10 +5,11 @@ import RevealWrapper from '@/components/ui/RevealWrapper';
 import NodeMesh from '@/components/ui/NodeMesh';
 import ProjectGrid from '@/components/sections/projects/ProjectGrid';
 
-export const metadata: Metadata = {
-  title: 'Selected Works',
-  description: 'A curated collection of residential, commercial, and hospitality projects defined by architectural permanence and spatial clarity.',
-};
+import { getPageMetadata } from '@/lib/seo';
+
+export function generateMetadata(): Metadata {
+  return getPageMetadata('projects');
+}
 
 export default function ProjectsPage() {
   return (

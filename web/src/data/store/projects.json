@@ -1,5 +1,22 @@
 [
   {
+    "id": "1785348775336",
+    "name": "abc",
+    "slug": "abc",
+    "category": "Residential",
+    "location": "kkm",
+    "year": "2026",
+    "type": "Residential / Architecture",
+    "description": "",
+    "challenge": "",
+    "approach": "",
+    "solution": "",
+    "featured": false,
+    "image": "/images/project-kerala.png",
+    "heroImage": "/images/project-kerala.png",
+    "gallery": []
+  },
+  {
     "id": "1",
     "slug": "kerala-residence",
     "name": "The Kerala Residence",

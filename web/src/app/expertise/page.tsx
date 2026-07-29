@@ -5,11 +5,11 @@ import { ArrowRight } from 'lucide-react';
 import RevealWrapper from '@/components/ui/RevealWrapper';
 import NodeMesh from '@/components/ui/NodeMesh';
 
-export const metadata: Metadata = {
-  title: 'Expertise',
-  description:
-    'Architecture, Interior Design, Landscape Design, and Project Consultancy — Space Node\'s areas of expertise spanning residential, commercial, and hospitality projects.',
-};
+import { getPageMetadata } from '@/lib/seo';
+
+export function generateMetadata(): Metadata {
+  return getPageMetadata('expertise');
+}
 
 const services = [
   {

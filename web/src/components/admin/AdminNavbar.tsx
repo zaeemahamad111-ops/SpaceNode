@@ -1,9 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { FolderKanban, Users, Image as ImageIcon, Phone, LogOut, Globe } from 'lucide-react';
+import { FolderKanban, Users, Image as ImageIcon, Phone, Search, Sliders, LogOut, Globe } from 'lucide-react';
 
-export type AdminTab = 'projects' | 'team' | 'media' | 'contact';
+export type AdminTab = 'projects' | 'team' | 'site-images' | 'seo' | 'media' | 'contact';
 
 interface AdminNavbarProps {
   activeTab: AdminTab;
@@ -14,9 +14,11 @@ interface AdminNavbarProps {
 export default function AdminNavbar({ activeTab, onTabChange, onLogout }: AdminNavbarProps) {
   const tabs = [
     { id: 'projects' as AdminTab, label: 'Projects', icon: FolderKanban },
-    { id: 'team' as AdminTab, label: 'Team Members', icon: Users },
+    { id: 'team' as AdminTab, label: 'Team', icon: Users },
+    { id: 'site-images' as AdminTab, label: 'Site Images', icon: Sliders },
+    { id: 'seo' as AdminTab, label: 'SEO & Meta', icon: Search },
     { id: 'media' as AdminTab, label: 'Media Library', icon: ImageIcon },
-    { id: 'contact' as AdminTab, label: 'Contact & Socials', icon: Phone },
+    { id: 'contact' as AdminTab, label: 'Contact', icon: Phone },
   ];
 
   return (
@@ -31,13 +33,13 @@ export default function AdminNavbar({ activeTab, onTabChange, onLogout }: AdminN
           <Link
             href="/"
             target="_blank"
-            className="hidden sm:inline-flex items-center gap-1.5 font-sans text-xs text-white/60 hover:text-white transition-colors bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg"
+            className="hidden xl:inline-flex items-center gap-1.5 font-sans text-xs text-white/60 hover:text-white transition-colors bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg"
           >
             <Globe size={13} /> View Live Site
           </Link>
         </div>
 
-        <nav className="flex items-center gap-1 md:gap-2">
+        <nav className="flex items-center gap-1 md:gap-1.5 overflow-x-auto">
           {tabs.map((t) => {
             const Icon = t.icon;
             const active = activeTab === t.id;
@@ -45,14 +47,14 @@ export default function AdminNavbar({ activeTab, onTabChange, onLogout }: AdminN
               <button
                 key={t.id}
                 onClick={() => onTabChange(t.id)}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-sans text-xs font-medium uppercase tracking-[0.12em] transition-all ${
+                className={`flex items-center gap-2 px-3.5 py-2.5 rounded-xl font-sans text-xs font-medium uppercase tracking-[0.1em] transition-all whitespace-nowrap ${
                   active
                     ? 'bg-[#0D7A9E] text-white shadow-md'
                     : 'text-white/70 hover:text-white hover:bg-white/5'
                 }`}
               >
-                <Icon size={16} />
-                <span className="hidden md:inline">{t.label}</span>
+                <Icon size={15} />
+                <span>{t.label}</span>
               </button>
             );
           })}
@@ -60,7 +62,7 @@ export default function AdminNavbar({ activeTab, onTabChange, onLogout }: AdminN
           <button
             onClick={onLogout}
             title="Log Out"
-            className="ml-4 p-2.5 rounded-xl text-white/60 hover:text-red-400 hover:bg-red-500/10 transition-colors"
+            className="ml-2 p-2.5 rounded-xl text-white/60 hover:text-red-400 hover:bg-red-500/10 transition-colors flex-shrink-0"
           >
             <LogOut size={18} />
           </button>
