@@ -5,10 +5,11 @@ import RevealWrapper from '@/components/ui/RevealWrapper';
 import NodeMesh from '@/components/ui/NodeMesh';
 import CareersOpenRoles from '@/components/sections/careers/CareersOpenRoles';
 
-export const metadata: Metadata = {
-  title: 'Careers',
-  description: 'Join the team behind timeless design. Space Node Architects is looking for visionary talent.',
-};
+import { getPageMetadata } from '@/lib/seo';
+
+export function generateMetadata(): Metadata {
+  return getPageMetadata('careers');
+}
 
 const openRoles = [
   { id: 'architect', title: 'Architect' },

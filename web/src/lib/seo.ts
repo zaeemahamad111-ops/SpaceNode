@@ -48,6 +48,12 @@ const defaultSEO: SEOStore = {
     description: "Start a journey with Space Node Architects. Contact our studio in Kaloor, Cochin, Kerala.",
     keywords: "contact architects, Cochin architect office, space node phone number, architecture consultation",
     ogImage: "/images/project-kerala.png"
+  },
+  careers: {
+    title: "Careers | Space Node Architects",
+    description: "Join the team behind timeless design. Space Node Architects is looking for visionary architectural talent.",
+    keywords: "architect jobs Cochin, architecture careers, draftsman vacancy, interior designer job Kerala",
+    ogImage: "/images/project-kochi.png"
   }
 };
 

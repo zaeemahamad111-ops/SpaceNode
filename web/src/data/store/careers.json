@@ -1,0 +1,29 @@
+[
+  {
+    "id": "architect",
+    "title": "Architect",
+    "dept": "Architecture",
+    "location": "Cochin, Kerala",
+    "type": "Full Time",
+    "desc": "Junior Architect (0-2 Years Experience): We are seeking a passionate and detail-oriented architect with 0-2 years of experience to join our studio. The ideal candidate should have a strong design sensibility, proficiency in AutoCAD, SketchUp, Lumion & D5, and a desire to contribute to the design and delivery of high-end projects.",
+    "active": true
+  },
+  {
+    "id": "draftsman",
+    "title": "Architectural Draftsman",
+    "dept": "Architecture",
+    "location": "Cochin / Dubai",
+    "type": "Full Time",
+    "desc": "Architectural Draftsman: We are looking for a skilled and detail-oriented Architectural Draftsman to join our team. The ideal candidate should be proficient in AutoCAD, possess a strong understanding of architectural drawings and construction detailing, and be able to produce accurate working drawings for high-end projects. Experience in coordinating with architects and consultants is an advantage.",
+    "active": true
+  },
+  {
+    "id": "interior-designer",
+    "title": "Interior Designer",
+    "dept": "Interior Design",
+    "location": "Cochin, Kerala",
+    "type": "Full Time",
+    "desc": "Bespoke Interior Designer with expertise in residential and commercial space planning, material selection, moodboards, 3D visualization, and site execution.",
+    "active": true
+  }
+]

@@ -1,9 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { FolderKanban, Users, Image as ImageIcon, Phone, Search, Sliders, LogOut, Globe } from 'lucide-react';
+import { FolderKanban, Users, Image as ImageIcon, Phone, Search, Sliders, LogOut, Globe, Briefcase } from 'lucide-react';
 
-export type AdminTab = 'projects' | 'team' | 'site-images' | 'seo' | 'media' | 'contact';
+export type AdminTab = 'projects' | 'team' | 'careers' | 'site-images' | 'seo' | 'media' | 'contact';
 
 interface AdminNavbarProps {
   activeTab: AdminTab;
@@ -15,6 +15,7 @@ export default function AdminNavbar({ activeTab, onTabChange, onLogout }: AdminN
   const tabs = [
     { id: 'projects' as AdminTab, label: 'Projects', icon: FolderKanban },
     { id: 'team' as AdminTab, label: 'Team', icon: Users },
+    { id: 'careers' as AdminTab, label: 'Careers', icon: Briefcase },
     { id: 'site-images' as AdminTab, label: 'Site Images', icon: Sliders },
     { id: 'seo' as AdminTab, label: 'SEO & Meta', icon: Search },
     { id: 'media' as AdminTab, label: 'Media Library', icon: ImageIcon },
