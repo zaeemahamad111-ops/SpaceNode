@@ -1,25 +1,42 @@
+const memoryCache: Record<string, any> = {};
+
 export function readStore<T>(filename: string, fallback: T): T {
   if (typeof window !== 'undefined') {
     return fallback;
   }
+  if (memoryCache[filename]) {
+    return memoryCache[filename] as T;
+  }
   try {
-    // Dynamic require so bundlers do not try to package 'fs' for the client browser
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const fs = require('fs');
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const path = require('path');
 
+    // 1. Try reading from /tmp (written by CMS on Vercel runtime)
+    try {
+      const tmpPath = path.join('/tmp', filename);
+      if (fs.existsSync(tmpPath)) {
+        const raw = fs.readFileSync(tmpPath, 'utf-8');
+        const parsed = JSON.parse(raw) as T;
+        memoryCache[filename] = parsed;
+        return parsed;
+      }
+    } catch (e) {
+      // Ignore /tmp read error
+    }
+
+    // 2. Try reading from src/data/store
     const storeDir = path.join(process.cwd(), 'src', 'data', 'store');
-    if (!fs.existsSync(storeDir)) {
-      fs.mkdirSync(storeDir, { recursive: true });
-    }
     const filePath = path.join(storeDir, filename);
-    if (!fs.existsSync(filePath)) {
-      fs.writeFileSync(filePath, JSON.stringify(fallback, null, 2), 'utf-8');
-      return fallback;
+    if (fs.existsSync(filePath)) {
+      const raw = fs.readFileSync(filePath, 'utf-8');
+      const parsed = JSON.parse(raw) as T;
+      memoryCache[filename] = parsed;
+      return parsed;
     }
-    const raw = fs.readFileSync(filePath, 'utf-8');
-    return JSON.parse(raw) as T;
+
+    return fallback;
   } catch (error) {
     console.error(`Error reading store file ${filename}:`, error);
     return fallback;
@@ -30,18 +47,36 @@ export function writeStore<T>(filename: string, data: T): boolean {
   if (typeof window !== 'undefined') {
     return false;
   }
+
+  // Update in-memory cache immediately
+  memoryCache[filename] = data;
+
   try {
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const fs = require('fs');
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const path = require('path');
 
-    const storeDir = path.join(process.cwd(), 'src', 'data', 'store');
-    if (!fs.existsSync(storeDir)) {
-      fs.mkdirSync(storeDir, { recursive: true });
+    // 1. Try writing to src/data/store (works on local dev)
+    try {
+      const storeDir = path.join(process.cwd(), 'src', 'data', 'store');
+      if (!fs.existsSync(storeDir)) {
+        fs.mkdirSync(storeDir, { recursive: true });
+      }
+      const filePath = path.join(storeDir, filename);
+      fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf-8');
+    } catch (e) {
+      // Ignore EROFS error on Vercel
     }
-    const filePath = path.join(storeDir, filename);
-    fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf-8');
+
+    // 2. Write to /tmp for Vercel serverless environment
+    try {
+      const tmpPath = path.join('/tmp', filename);
+      fs.writeFileSync(tmpPath, JSON.stringify(data, null, 2), 'utf-8');
+    } catch (e) {
+      console.warn(`Could not write to /tmp/${filename}:`, e);
+    }
+
     return true;
   } catch (error) {
     console.error(`Error writing store file ${filename}:`, error);

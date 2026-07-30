@@ -2,6 +2,9 @@ import { NextResponse } from 'next/server';
 import { readStore, writeStore } from '@/lib/cms-store';
 import { Project } from '@/lib/projects';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export async function GET() {
   const projects = readStore<Project[]>('projects.json', []);
   return NextResponse.json(projects);
