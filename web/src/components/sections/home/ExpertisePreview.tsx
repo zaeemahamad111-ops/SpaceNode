@@ -13,28 +13,28 @@ const initialServices = [
     title: 'Architectural Design',
     desc: 'We provide end-to-end architectural design solutions—from concept development and planning to technical drawings, approvals, and execution support.',
     href: '/expertise#architecture',
-    image: '/images/expertise-new-architecture.jpeg'
+    image: '/images/expertise-architecture.png'
   },
   {
     num: '02',
     title: 'Interior Design',
     desc: 'At Space Node Architects, we create thoughtfuly designed interiors that balance aesthetics, comfort, and functionality.',
     href: '/expertise#interior',
-    image: '/images/expertise-new-interior.jpeg'
+    image: '/images/expertise-interior.png'
   },
   {
     num: '03',
     title: 'Landscape Design',
     desc: 'We create thoughtfully designed outdoor environments that enhance the beauty and functionality of a space.',
     href: '/expertise#landscape',
-    image: '/images/expertise-new-landscape.jpeg'
+    image: '/images/expertise-landscape.png'
   },
   {
     num: '04',
     title: 'Project Management',
     desc: 'Project management is one of our core strengths—especially for clients residing abroad or who require trusted on-ground coordination.',
     href: '/expertise#consultancy',
-    image: '/images/expertise-new-consultancy.jpeg'
+    image: '/images/expertise-consultancy.png'
   },
 ];
 
