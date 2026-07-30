@@ -9,7 +9,6 @@ const footerNav = [
   { label: 'About Us', href: '/about' },
   { label: 'Expertise', href: '/expertise' },
   { label: 'Projects', href: '/projects' },
-  { label: 'Careers', href: '/contact#openings' },
   { label: 'Contact', href: '/contact' },
 ];
 
