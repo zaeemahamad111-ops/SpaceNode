@@ -44,7 +44,7 @@ const LinkedinIcon = ({ size = 16 }) => (
 export default function Footer() {
   const contact = readStore('contact.json', {
     address: 'First Floor, Velleparambil building, Kaloor, Cochin-17, Kerala',
-    phone: '+91 98765 43210',
+    phone: '+91 88481 62343',
     email: 'info@spacenodearchitects.com',
     instagramUrl: 'https://www.instagram.com/space_node_architects?igsh=bG4wZjlnM2ozNXZ5&utm_source=qr',
     facebookUrl: 'https://www.facebook.com/share/1Do9VspSmd/?mibextid=wwXIfr',

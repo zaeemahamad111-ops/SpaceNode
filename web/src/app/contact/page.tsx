@@ -15,7 +15,7 @@ export function generateMetadata(): Metadata {
 export default function ContactPage() {
   const contact = readStore('contact.json', {
     address: 'First Floor, Velleparambil building, Kaloor, Cochin-17, Kerala',
-    phone: '+91 98765 43210',
+    phone: '+91 88481 62343',
     email: 'info@spacenodearchitects.com',
     mapUrl: 'https://maps.google.com/?q=10.000353,76.290550',
     mapEmbedUrl: 'https://maps.google.com/maps?q=10.000353,76.290550&t=&z=15&ie=UTF8&iwloc=&output=embed',
