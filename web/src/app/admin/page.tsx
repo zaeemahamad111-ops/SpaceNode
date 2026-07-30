@@ -5,6 +5,7 @@ import AdminLoginForm from '@/components/admin/AdminLoginForm';
 import AdminNavbar, { AdminTab } from '@/components/admin/AdminNavbar';
 import ProjectsManager from '@/components/admin/ProjectsManager';
 import TeamManager from '@/components/admin/TeamManager';
+import TestimonialsManager from '@/components/admin/TestimonialsManager';
 import CareersManager from '@/components/admin/CareersManager';
 import SiteImagesManager from '@/components/admin/SiteImagesManager';
 import SEOManager from '@/components/admin/SEOManager';
@@ -63,6 +64,7 @@ export default function AdminPage() {
       <main className="max-w-[1440px] mx-auto px-6 md:px-12 py-10">
         {activeTab === 'projects' && <ProjectsManager />}
         {activeTab === 'team' && <TeamManager />}
+        {activeTab === 'testimonials' && <TestimonialsManager />}
         {activeTab === 'careers' && <CareersManager />}
         {activeTab === 'site-images' && <SiteImagesManager />}
         {activeTab === 'seo' && <SEOManager />}

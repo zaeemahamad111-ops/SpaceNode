@@ -1,0 +1,29 @@
+[
+  {
+    "id": "1",
+    "quote": "Space Node transformed our vision into a timeless space that feels both deeply rooted and beautifully contemporary.",
+    "name": "Anand Menon",
+    "designation": "Client",
+    "company": "The Kerala Residence",
+    "image": "/images/expertise-architecture.png",
+    "clientImage": ""
+  },
+  {
+    "id": "2",
+    "quote": "Their meticulous attention to detail and profound understanding of light created a workspace that our team genuinely loves.",
+    "name": "Sarah Jenkins",
+    "designation": "CEO",
+    "company": "TechNova Solutions",
+    "image": "/images/expertise-interior.png",
+    "clientImage": ""
+  },
+  {
+    "id": "3",
+    "quote": "From concept to execution, the process was seamless. They masterfully blended nature with architecture to give us an unforgettable retreat.",
+    "name": "Arun Patel",
+    "designation": "Managing Director",
+    "company": "Luxe Hospitality Group",
+    "image": "/images/expertise-landscape.png",
+    "clientImage": ""
+  }
+]

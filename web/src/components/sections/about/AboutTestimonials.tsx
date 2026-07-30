@@ -4,9 +4,11 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import RevealWrapper from '@/components/ui/RevealWrapper';
+import { TestimonialItem } from '@/app/api/cms/testimonials/route';
 
-const testimonials = [
+const defaultTestimonials: TestimonialItem[] = [
   {
+    id: "1",
     quote: "Space Node transformed our vision into a timeless space that feels both deeply rooted and beautifully contemporary.",
     name: "Anand Menon",
     designation: "Client",
@@ -15,6 +17,7 @@ const testimonials = [
     clientImage: ""
   },
   {
+    id: "2",
     quote: "Their meticulous attention to detail and profound understanding of light created a workspace that our team genuinely loves.",
     name: "Sarah Jenkins",
     designation: "CEO",
@@ -23,6 +26,7 @@ const testimonials = [
     clientImage: ""
   },
   {
+    id: "3",
     quote: "From concept to execution, the process was seamless. They masterfully blended nature with architecture to give us an unforgettable retreat.",
     name: "Arun Patel",
     designation: "Managing Director",
@@ -33,14 +37,33 @@ const testimonials = [
 ];
 
 export default function AboutTestimonials() {
+  const [testimonials, setTestimonials] = useState<TestimonialItem[]>(defaultTestimonials);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
+    fetch('/api/cms/testimonials')
+      .then((res) => res.json())
+      .then((data) => {
+        if (Array.isArray(data) && data.length > 0) {
+          setTestimonials(data);
+        }
+      })
+      .catch((err) => console.error('Failed to load testimonials', err));
+  }, []);
+
+  useEffect(() => {
+    if (testimonials.length === 0) return;
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % testimonials.length);
     }, 6000);
     return () => clearInterval(timer);
-  }, []);
+  }, [testimonials.length]);
+
+  if (testimonials.length === 0) {
+    return null;
+  }
+
+  const activeTestimonial = testimonials[currentIndex] || testimonials[0];
 
   return (
     <section className="py-24 md:py-32 bg-[#F8F9FA] overflow-hidden" aria-label="Client Testimonials">
@@ -58,7 +81,7 @@ export default function AboutTestimonials() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-stretch">
           
           {/* Architectural Image Side */}
-          <div className="lg:col-span-5 relative h-[400px] md:h-[500px] w-full overflow-hidden bg-[#E5E7EB]">
+          <div className="lg:col-span-5 relative h-[400px] md:h-[500px] w-full overflow-hidden bg-[#E5E7EB] rounded-2xl">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
@@ -69,8 +92,8 @@ export default function AboutTestimonials() {
                 className="absolute inset-0"
               >
                 <Image
-                  src={testimonials[currentIndex].image}
-                  alt={testimonials[currentIndex].company}
+                  src={activeTestimonial.image || '/images/expertise-architecture.png'}
+                  alt={activeTestimonial.company}
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 40vw"
@@ -106,17 +129,17 @@ export default function AboutTestimonials() {
                     <line x1="10" y1="10" x2="30" y2="30" stroke="#0D7A9E" strokeWidth="1" opacity="0.5"/>
                   </svg>
                   
-                  <blockquote className="font-serif text-3xl md:text-4xl text-[#161616] leading-[1.3] mb-10">
-                    &ldquo;{testimonials[currentIndex].quote}&rdquo;
+                  <blockquote className="font-serif text-2xl md:text-3xl lg:text-4xl text-[#161616] leading-[1.3] mb-8">
+                    &ldquo;{activeTestimonial.quote}&rdquo;
                   </blockquote>
                   
                   <div className="flex items-center gap-5">
                     {/* Circular Avatar Cutout */}
                     <div className="w-14 h-14 rounded-full overflow-hidden bg-[#E5E7EB] border border-[#D1D5DB] flex items-center justify-center relative shrink-0">
-                      {testimonials[currentIndex].clientImage && testimonials[currentIndex].clientImage.trim().length > 0 ? (
+                      {activeTestimonial.clientImage && activeTestimonial.clientImage.trim().length > 0 ? (
                         <Image
-                          src={testimonials[currentIndex].clientImage}
-                          alt={testimonials[currentIndex].name}
+                          src={activeTestimonial.clientImage}
+                          alt={activeTestimonial.name}
                           fill
                           className="object-cover"
                         />
@@ -128,10 +151,10 @@ export default function AboutTestimonials() {
                     </div>
                     <div>
                       <div className="font-sans font-semibold text-sm text-[#161616] mb-0.5 tracking-wide">
-                        {testimonials[currentIndex].name}
+                        {activeTestimonial.name}
                       </div>
                       <div className="font-sans text-[10px] tracking-[0.15em] uppercase text-[#0D7A9E]">
-                        {testimonials[currentIndex].designation}, {testimonials[currentIndex].company}
+                        {activeTestimonial.designation}, {activeTestimonial.company}
                       </div>
                     </div>
                   </div>
