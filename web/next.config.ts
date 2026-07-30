@@ -8,9 +8,16 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'images.unsplash.com',
       },
+      {
+        protocol: 'https',
+        hostname: '*.supabase.co',
+      },
+      {
+        protocol: 'https',
+        hostname: 'fwywmxujykytxwqlwfjj.supabase.co',
+      },
     ],
   },
-  // Ignore TypeScript errors in build for now
   typescript: {
     ignoreBuildErrors: false,
   },
