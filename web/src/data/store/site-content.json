@@ -2,6 +2,10 @@
   "home": {
     "heroBgImage": "",
     "aboutPreviewImage": "/images/project-kerala.png",
+    "expertiseArchitectureImage": "/images/expertise-new-architecture.jpeg",
+    "expertiseInteriorImage": "/images/expertise-new-interior.jpeg",
+    "expertiseLandscapeImage": "/images/expertise-new-landscape.jpeg",
+    "expertiseConsultancyImage": "/images/expertise-new-consultancy.jpeg",
     "ctaBgImage": ""
   },
   "about": {
@@ -14,6 +18,9 @@
     "interiorImage": "/images/expertise-new-interior.jpeg",
     "landscapeImage": "/images/expertise-new-landscape.jpeg",
     "projectManagementImage": "/images/expertise-new-consultancy.jpeg"
+  },
+  "products": {
+    "heroLogoImage": "/images/aon-logo-full.png"
   },
   "global": {
     "logoImage": "/images/logo-white.png",

@@ -2,12 +2,16 @@
 
 import { useState, useEffect } from 'react';
 import ImageUploadInput from '@/components/admin/ImageUploadInput';
-import { Save, Check, Layers, Layout, Compass, Globe } from 'lucide-react';
+import { Save, Check, Layers, Layout, Compass, ShoppingBag, Globe } from 'lucide-react';
 
 interface SiteContent {
   home?: {
     heroBgImage?: string;
     aboutPreviewImage?: string;
+    expertiseArchitectureImage?: string;
+    expertiseInteriorImage?: string;
+    expertiseLandscapeImage?: string;
+    expertiseConsultancyImage?: string;
     ctaBgImage?: string;
   };
   about?: {
@@ -20,6 +24,9 @@ interface SiteContent {
     interiorImage?: string;
     landscapeImage?: string;
     projectManagementImage?: string;
+  };
+  products?: {
+    heroLogoImage?: string;
   };
   global?: {
     logoImage?: string;
@@ -96,7 +103,7 @@ export default function SiteImagesManager() {
             <Layout size={20} className="text-[#0D7A9E]" /> Home Page (`/`) Photos
           </h2>
 
-          <div className="space-y-5">
+          <div className="space-y-6">
             <ImageUploadInput
               label="Home About Section Image"
               value={content.home?.aboutPreviewImage || ''}
@@ -108,16 +115,55 @@ export default function SiteImagesManager() {
               }
             />
 
-            <ImageUploadInput
-              label="Home Hero Background Overlay (Optional)"
-              value={content.home?.heroBgImage || ''}
-              onChange={(url) =>
-                setContent({
-                  ...content,
-                  home: { ...content.home, heroBgImage: url },
-                })
-              }
-            />
+            <div className="pt-4 border-t border-gray-100 space-y-5">
+              <h3 className="font-sans text-xs font-semibold uppercase tracking-wider text-[#0D7A9E]">
+                Home Page — Areas of Expertise Section Photos
+              </h3>
+
+              <ImageUploadInput
+                label="01. Architectural Design Card Image"
+                value={content.home?.expertiseArchitectureImage || ''}
+                onChange={(url) =>
+                  setContent({
+                    ...content,
+                    home: { ...content.home, expertiseArchitectureImage: url },
+                  })
+                }
+              />
+
+              <ImageUploadInput
+                label="02. Interior Design Card Image"
+                value={content.home?.expertiseInteriorImage || ''}
+                onChange={(url) =>
+                  setContent({
+                    ...content,
+                    home: { ...content.home, expertiseInteriorImage: url },
+                  })
+                }
+              />
+
+              <ImageUploadInput
+                label="03. Landscape Design Card Image"
+                value={content.home?.expertiseLandscapeImage || ''}
+                onChange={(url) =>
+                  setContent({
+                    ...content,
+                    home: { ...content.home, expertiseLandscapeImage: url },
+                  })
+                }
+              />
+
+              <ImageUploadInput
+                label="04. Project Management Card Image"
+                value={content.home?.expertiseConsultancyImage || ''}
+                onChange={(url) =>
+                  setContent({
+                    ...content,
+                    home: { ...content.home, expertiseConsultancyImage: url },
+                  })
+                }
+              />
+            </div>
           </div>
         </div>
 
@@ -199,6 +245,26 @@ export default function SiteImagesManager() {
                 setContent({
                   ...content,
                   about: { ...content.about, philosophyImage: url },
+                })
+              }
+            />
+          </div>
+        </div>
+
+        {/* Products Page Images */}
+        <div className="bg-white border border-gray-200 rounded-2xl p-6 md:p-8 shadow-sm space-y-6">
+          <h2 className="font-serif text-xl text-[#161616] border-b pb-3 flex items-center gap-2">
+            <ShoppingBag size={20} className="text-[#0D7A9E]" /> Arte 'O' Node Page (`/products`) Assets
+          </h2>
+
+          <div className="space-y-5">
+            <ImageUploadInput
+              label="AON Brand Hero Logo Image"
+              value={content.products?.heroLogoImage || ''}
+              onChange={(url) =>
+                setContent({
+                  ...content,
+                  products: { ...content.products, heroLogoImage: url },
                 })
               }
             />
