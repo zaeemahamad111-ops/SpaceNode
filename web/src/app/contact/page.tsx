@@ -3,6 +3,7 @@ import { Mail, Phone } from 'lucide-react';
 import RevealWrapper from '@/components/ui/RevealWrapper';
 import NodeMesh from '@/components/ui/NodeMesh';
 import ContactForm from '@/components/sections/contact/ContactForm';
+import CareersOpenRoles from '@/components/sections/careers/CareersOpenRoles';
 import { readStore } from '@/lib/cms-store';
 
 import { getPageMetadata } from '@/lib/seo';
@@ -94,17 +95,22 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* Openings Section Just Before Map */}
+      <div id="openings">
+        <CareersOpenRoles />
+      </div>
+
       {/* Map */}
       <section className="h-[450px] relative overflow-hidden" aria-label="Office location map">
         <iframe
           src={contact.mapEmbedUrl}
           width="100%"
           height="100%"
-          style={{ border: 0, filter: 'grayscale(30%) contrast(1.1)' }}
+          style={{ border: 0 }}
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="Space Node Architects — office location"
+          title="Space Node Architects Studio Location Map"
         />
       </section>
     </>

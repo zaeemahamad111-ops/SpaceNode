@@ -13,7 +13,7 @@ const navLinks = [
   { label: 'Expertise', href: '/expertise' },
   { label: 'Projects', href: '/projects' },
   { label: "Arte 'O' Node", href: '/products' },
-  { label: 'Careers', href: '/careers' },
+  { label: 'Careers', href: '/contact#openings' },
   { label: 'Contact', href: '/contact' },
 ];
 
