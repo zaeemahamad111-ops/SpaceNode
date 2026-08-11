@@ -19,9 +19,10 @@ export default function AdminPage() {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const res = await fetch('/api/cms/projects');
+        const res = await fetch('/api/cms/auth');
         if (res.ok) {
-          setIsAuthenticated(true);
+          const data = await res.json();
+          setIsAuthenticated(data.authenticated === true);
         } else {
           setIsAuthenticated(false);
         }

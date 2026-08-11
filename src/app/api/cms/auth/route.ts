@@ -1,5 +1,20 @@
 import { NextResponse } from 'next/server';
 import { readStore } from '@/lib/cms-store';
+import { cookies } from 'next/headers';
+
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
+export async function GET() {
+  const cookieStore = await cookies();
+  const token = cookieStore.get('sn_admin_token')?.value;
+
+  if (token === 'spacenode_authenticated_session') {
+    return NextResponse.json({ authenticated: true });
+  }
+
+  return NextResponse.json({ authenticated: false }, { status: 401 });
+}
 
 export async function POST(request: Request) {
   try {
@@ -11,7 +26,7 @@ export async function POST(request: Request) {
       response.cookies.set('sn_admin_token', 'spacenode_authenticated_session', {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
-        sameSite: 'strict',
+        sameSite: 'lax',
         maxAge: 60 * 60 * 24 * 7, // 1 week
         path: '/',
       });
