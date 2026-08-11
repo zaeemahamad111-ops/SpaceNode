@@ -20,7 +20,7 @@ const services = [
     subtitle: 'Residential & Private Estates · Commercial & Office Spaces · Hospitality & Mixed-Use',
     description:
       'We provide end-to-end architectural design solutions—from concept development and planning to technical drawings, approvals, and execution support. By combining thoughtful design, technical precision, and functional planning, we create spaces that are timeless, practical, and aligned with each client’s vision.',
-    image: '/images/expertise-new-architecture.jpeg',
+    image: '/images/architecture.jpeg',
     href: '/projects?category=Residential',
     reversed: false,
   },
@@ -32,7 +32,7 @@ const services = [
     subtitle: 'Thoughtful interiors that reflect personality',
     description:
       'At Space Node Architects, we create thoughtfuly designed interiors that balance aesthetics, comfort, and functionality. Our approach focuses on transforming spaces into environments that reflect the client\'s lifestyle, personality, and practical needs while maintaining timeless design appeal. We ensure every element is carefully considered to create cohesive, elegant, and functional interiors that enhance everyday living and working experiences.',
-    image: '/images/expertise-new-interior.jpeg',
+    image: '/images/interior.jpeg',
     href: '/projects',
     reversed: true,
   },
@@ -44,7 +44,7 @@ const services = [
     subtitle: 'Outdoor spaces that connect architecture with nature',
     description:
       'We create thoughtfully designed outdoor environments that enhance the beauty and functionality of a space. From site planning and planting concepts to outdoor living areas and material selection, we design landscapes that harmoniously connect architecture and nature. We believe landscape design completes a project—transforming spaces into a well-balanced and enriching living atmosphere.',
-    image: '/images/expertise-new-landscape.jpeg',
+    image: '/images/landscape.jpeg',
     href: '/projects?category=Landscape',
     reversed: false,
   },
@@ -56,7 +56,7 @@ const services = [
     subtitle: 'Strategic guidance and expert management',
     description:
       'Project management is one of our core strengths—especially for clients residing abroad or who require trusted on-ground coordination. Acting as the client’s representative, we oversee every stage of the project, from design coordination and vendor selection to procurement, budgeting, execution, and final handover. By collaborating with specialized contractors and vendors for each scope of work, we ensure superior quality, cost transparency, and timely delivery while maintaining the integrity of the design. Through regular updates, quality checks, and seamless coordination, we provide a stress-free experience—allowing clients to stay confident and informed, no matter where they are.',
-    image: '/images/expertise-new-consultancy.jpeg',
+    image: '/images/project-management.jpeg',
     href: '/contact',
     reversed: true,
   },

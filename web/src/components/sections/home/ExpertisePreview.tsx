@@ -1,74 +1,45 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import RevealWrapper from '@/components/ui/RevealWrapper';
 
-const initialServices = [
+const services = [
   {
     num: '01',
     title: 'Architectural Design',
     desc: 'We provide end-to-end architectural design solutions—from concept development and planning to technical drawings, approvals, and execution support.',
     href: '/expertise#architecture',
-    image: '/images/expertise-architecture.png'
+    image: '/images/architecture.jpeg'
   },
   {
     num: '02',
     title: 'Interior Design',
     desc: 'At Space Node Architects, we create thoughtfuly designed interiors that balance aesthetics, comfort, and functionality.',
     href: '/expertise#interior',
-    image: '/images/expertise-interior.png'
+    image: '/images/interior.jpeg'
   },
   {
     num: '03',
     title: 'Landscape Design',
     desc: 'We create thoughtfully designed outdoor environments that enhance the beauty and functionality of a space.',
     href: '/expertise#landscape',
-    image: '/images/expertise-landscape.png'
+    image: '/images/landscape.jpeg'
   },
   {
     num: '04',
     title: 'Project Management',
     desc: 'Project management is one of our core strengths—especially for clients residing abroad or who require trusted on-ground coordination.',
     href: '/expertise#consultancy',
-    image: '/images/expertise-consultancy.png'
+    image: '/images/project-management.jpeg'
   },
 ];
 
 export default function ExpertisePreview() {
   const [hoveredIndex, setHoveredIndex] = useState(0);
-  const [services, setServices] = useState(initialServices);
-
-  useEffect(() => {
-    fetch('/api/cms/site-content')
-      .then((res) => res.json())
-      .then((data) => {
-        if (data?.home) {
-          setServices([
-            {
-              ...initialServices[0],
-              image: data.home.expertiseArchitectureImage || initialServices[0].image,
-            },
-            {
-              ...initialServices[1],
-              image: data.home.expertiseInteriorImage || initialServices[1].image,
-            },
-            {
-              ...initialServices[2],
-              image: data.home.expertiseLandscapeImage || initialServices[2].image,
-            },
-            {
-              ...initialServices[3],
-              image: data.home.expertiseConsultancyImage || initialServices[3].image,
-            },
-          ]);
-        }
-      })
-      .catch((err) => console.error(err));
-  }, []);
 
   // For Mobile Scroll Jacking
   const targetRef = useRef<HTMLDivElement>(null);
